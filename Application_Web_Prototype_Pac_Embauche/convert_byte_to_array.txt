@@ -1,1 +1,0 @@
-http://stackoverflow.com/questions/21555394/how-to-create-bitmap-from-byte-array
