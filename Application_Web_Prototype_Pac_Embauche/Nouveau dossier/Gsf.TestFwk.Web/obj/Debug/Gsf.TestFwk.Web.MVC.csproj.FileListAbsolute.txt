@@ -1,0 +1,282 @@
+D:\Sources\FrameworkVNext\2015_ManzanaVerde\SourcesTest\Gsf.TestFwk.Web\bin\Gsf.TestFwk.Web.dll.config
+D:\Sources\FrameworkVNext\2015_ManzanaVerde\SourcesTest\Gsf.TestFwk.Web\bin\Gsf.TestFwk.Web.dll
+D:\Sources\FrameworkVNext\2015_ManzanaVerde\SourcesTest\Gsf.TestFwk.Web\bin\Gsf.TestFwk.Web.pdb
+D:\Sources\FrameworkVNext\2015_ManzanaVerde\SourcesTest\Gsf.TestFwk.Web\bin\Antlr3.Runtime.dll
+D:\Sources\FrameworkVNext\2015_ManzanaVerde\SourcesTest\Gsf.TestFwk.Web\bin\EntityFramework.dll
+D:\Sources\FrameworkVNext\2015_ManzanaVerde\SourcesTest\Gsf.TestFwk.Web\bin\EntityFramework.SqlServer.dll
+D:\Sources\FrameworkVNext\2015_ManzanaVerde\SourcesTest\Gsf.TestFwk.Web\bin\Gsf.Framework.dll
+D:\Sources\FrameworkVNext\2015_ManzanaVerde\SourcesTest\Gsf.TestFwk.Web\bin\Gsf.Framework.Web.dll
+D:\Sources\FrameworkVNext\2015_ManzanaVerde\SourcesTest\Gsf.TestFwk.Web\bin\Gsf.Framework.Web.MVC.dll
+D:\Sources\FrameworkVNext\2015_ManzanaVerde\SourcesTest\Gsf.TestFwk.Web\bin\Gsf.TestFwk.Business.dll
+D:\Sources\FrameworkVNext\2015_ManzanaVerde\SourcesTest\Gsf.TestFwk.Web\bin\Gsf.TestFwk.Model.dll
+D:\Sources\FrameworkVNext\2015_ManzanaVerde\SourcesTest\Gsf.TestFwk.Web\bin\Kendo.Mvc.dll
+D:\Sources\FrameworkVNext\2015_ManzanaVerde\SourcesTest\Gsf.TestFwk.Web\bin\Microsoft.AspNet.Identity.Core.dll
+D:\Sources\FrameworkVNext\2015_ManzanaVerde\SourcesTest\Gsf.TestFwk.Web\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\Sources\FrameworkVNext\2015_ManzanaVerde\SourcesTest\Gsf.TestFwk.Web\bin\Microsoft.AspNet.Identity.Owin.dll
+D:\Sources\FrameworkVNext\2015_ManzanaVerde\SourcesTest\Gsf.TestFwk.Web\bin\Microsoft.Owin.dll
+D:\Sources\FrameworkVNext\2015_ManzanaVerde\SourcesTest\Gsf.TestFwk.Web\bin\Microsoft.Owin.Host.SystemWeb.dll
+D:\Sources\FrameworkVNext\2015_ManzanaVerde\SourcesTest\Gsf.TestFwk.Web\bin\Microsoft.Owin.Security.Cookies.dll
+D:\Sources\FrameworkVNext\2015_ManzanaVerde\SourcesTest\Gsf.TestFwk.Web\bin\Microsoft.Owin.Security.dll
+D:\Sources\FrameworkVNext\2015_ManzanaVerde\SourcesTest\Gsf.TestFwk.Web\bin\Microsoft.Owin.Security.Facebook.dll
+D:\Sources\FrameworkVNext\2015_ManzanaVerde\SourcesTest\Gsf.TestFwk.Web\bin\Microsoft.Owin.Security.Google.dll
+D:\Sources\FrameworkVNext\2015_ManzanaVerde\SourcesTest\Gsf.TestFwk.Web\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+D:\Sources\FrameworkVNext\2015_ManzanaVerde\SourcesTest\Gsf.TestFwk.Web\bin\Microsoft.Owin.Security.OAuth.dll
+D:\Sources\FrameworkVNext\2015_ManzanaVerde\SourcesTest\Gsf.TestFwk.Web\bin\Microsoft.Owin.Security.Twitter.dll
+D:\Sources\FrameworkVNext\2015_ManzanaVerde\SourcesTest\Gsf.TestFwk.Web\bin\Microsoft.Web.Infrastructure.dll
+D:\Sources\FrameworkVNext\2015_ManzanaVerde\SourcesTest\Gsf.TestFwk.Web\bin\Newtonsoft.Json.dll
+D:\Sources\FrameworkVNext\2015_ManzanaVerde\SourcesTest\Gsf.TestFwk.Web\bin\Owin.dll
+D:\Sources\FrameworkVNext\2015_ManzanaVerde\SourcesTest\Gsf.TestFwk.Web\bin\System.Web.Helpers.dll
+D:\Sources\FrameworkVNext\2015_ManzanaVerde\SourcesTest\Gsf.TestFwk.Web\bin\System.Web.Mvc.dll
+D:\Sources\FrameworkVNext\2015_ManzanaVerde\SourcesTest\Gsf.TestFwk.Web\bin\System.Web.Optimization.dll
+D:\Sources\FrameworkVNext\2015_ManzanaVerde\SourcesTest\Gsf.TestFwk.Web\bin\System.Web.Razor.dll
+D:\Sources\FrameworkVNext\2015_ManzanaVerde\SourcesTest\Gsf.TestFwk.Web\bin\System.Web.WebPages.Deployment.dll
+D:\Sources\FrameworkVNext\2015_ManzanaVerde\SourcesTest\Gsf.TestFwk.Web\bin\System.Web.WebPages.dll
+D:\Sources\FrameworkVNext\2015_ManzanaVerde\SourcesTest\Gsf.TestFwk.Web\bin\System.Web.WebPages.Razor.dll
+D:\Sources\FrameworkVNext\2015_ManzanaVerde\SourcesTest\Gsf.TestFwk.Web\bin\WebGrease.dll
+D:\Sources\FrameworkVNext\2015_ManzanaVerde\SourcesTest\Gsf.TestFwk.Web\bin\Ninject.dll
+D:\Sources\FrameworkVNext\2015_ManzanaVerde\SourcesTest\Gsf.TestFwk.Web\bin\Gsf.TestFwk.Data.dll
+D:\Sources\FrameworkVNext\2015_ManzanaVerde\SourcesTest\Gsf.TestFwk.Web\bin\Gsf.Framework.Web.MVC.pdb
+D:\Sources\FrameworkVNext\2015_ManzanaVerde\SourcesTest\Gsf.TestFwk.Web\bin\Gsf.Framework.Web.pdb
+D:\Sources\FrameworkVNext\2015_ManzanaVerde\SourcesTest\Gsf.TestFwk.Web\bin\Gsf.Framework.pdb
+D:\Sources\FrameworkVNext\2015_ManzanaVerde\SourcesTest\Gsf.TestFwk.Web\bin\Gsf.TestFwk.Business.pdb
+D:\Sources\FrameworkVNext\2015_ManzanaVerde\SourcesTest\Gsf.TestFwk.Web\bin\Gsf.TestFwk.Model.pdb
+D:\Sources\FrameworkVNext\2015_ManzanaVerde\SourcesTest\Gsf.TestFwk.Web\bin\EntityFramework.xml
+D:\Sources\FrameworkVNext\2015_ManzanaVerde\SourcesTest\Gsf.TestFwk.Web\bin\EntityFramework.SqlServer.xml
+D:\Sources\FrameworkVNext\2015_ManzanaVerde\SourcesTest\Gsf.TestFwk.Web\bin\Microsoft.AspNet.Identity.Core.xml
+D:\Sources\FrameworkVNext\2015_ManzanaVerde\SourcesTest\Gsf.TestFwk.Web\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\Sources\FrameworkVNext\2015_ManzanaVerde\SourcesTest\Gsf.TestFwk.Web\bin\Microsoft.AspNet.Identity.Owin.xml
+D:\Sources\FrameworkVNext\2015_ManzanaVerde\SourcesTest\Gsf.TestFwk.Web\bin\Microsoft.Owin.xml
+D:\Sources\FrameworkVNext\2015_ManzanaVerde\SourcesTest\Gsf.TestFwk.Web\bin\Microsoft.Owin.Host.SystemWeb.xml
+D:\Sources\FrameworkVNext\2015_ManzanaVerde\SourcesTest\Gsf.TestFwk.Web\bin\Microsoft.Owin.Security.xml
+D:\Sources\FrameworkVNext\2015_ManzanaVerde\SourcesTest\Gsf.TestFwk.Web\bin\Microsoft.Owin.Security.Cookies.xml
+D:\Sources\FrameworkVNext\2015_ManzanaVerde\SourcesTest\Gsf.TestFwk.Web\bin\Microsoft.Owin.Security.OAuth.xml
+D:\Sources\FrameworkVNext\2015_ManzanaVerde\SourcesTest\Gsf.TestFwk.Web\bin\System.Web.Helpers.xml
+D:\Sources\FrameworkVNext\2015_ManzanaVerde\SourcesTest\Gsf.TestFwk.Web\bin\System.Web.Mvc.xml
+D:\Sources\FrameworkVNext\2015_ManzanaVerde\SourcesTest\Gsf.TestFwk.Web\bin\System.Web.Razor.xml
+D:\Sources\FrameworkVNext\2015_ManzanaVerde\SourcesTest\Gsf.TestFwk.Web\bin\System.Web.WebPages.xml
+D:\Sources\FrameworkVNext\2015_ManzanaVerde\SourcesTest\Gsf.TestFwk.Web\bin\System.Web.WebPages.Deployment.xml
+D:\Sources\FrameworkVNext\2015_ManzanaVerde\SourcesTest\Gsf.TestFwk.Web\bin\System.Web.WebPages.Razor.xml
+D:\Sources\FrameworkVNext\2015_ManzanaVerde\SourcesTest\Gsf.TestFwk.Web\bin\System.Web.Optimization.xml
+D:\Sources\FrameworkVNext\2015_ManzanaVerde\SourcesTest\Gsf.TestFwk.Web\bin\Newtonsoft.Json.xml
+D:\Sources\FrameworkVNext\2015_ManzanaVerde\SourcesTest\Gsf.TestFwk.Web\bin\Antlr3.Runtime.pdb
+D:\Sources\FrameworkVNext\2015_ManzanaVerde\SourcesTest\Gsf.TestFwk.Web\bin\Microsoft.Owin.Security.Facebook.xml
+D:\Sources\FrameworkVNext\2015_ManzanaVerde\SourcesTest\Gsf.TestFwk.Web\bin\Microsoft.Owin.Security.Google.xml
+D:\Sources\FrameworkVNext\2015_ManzanaVerde\SourcesTest\Gsf.TestFwk.Web\bin\Microsoft.Owin.Security.Twitter.xml
+D:\Sources\FrameworkVNext\2015_ManzanaVerde\SourcesTest\Gsf.TestFwk.Web\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+D:\Sources\FrameworkVNext\2015_ManzanaVerde\SourcesTest\Gsf.TestFwk.Web\bin\Ninject.pdb
+D:\Sources\FrameworkVNext\2015_ManzanaVerde\SourcesTest\Gsf.TestFwk.Web\bin\Ninject.xml
+D:\Sources\FrameworkVNext\2015_ManzanaVerde\SourcesTest\Gsf.TestFwk.Web\bin\Gsf.TestFwk.Data.pdb
+D:\Sources\FrameworkVNext\2015_ManzanaVerde\SourcesTest\Gsf.TestFwk.Web\obj\Debug\Gsf.TestFwk.Web.MVC.csprojResolveAssemblyReference.cache
+D:\Sources\FrameworkVNext\2015_ManzanaVerde\SourcesTest\Gsf.TestFwk.Web\obj\Debug\Gsf.TestFwk.Web.dll
+D:\Sources\FrameworkVNext\2015_ManzanaVerde\SourcesTest\Gsf.TestFwk.Web\obj\Debug\Gsf.TestFwk.Web.pdb
+D:\Sources\FrameworkVNext\2015_ManzanaVerde\SourcesTest\Gsf.TestFwk.Web\bin\Common.Logging.dll
+D:\Sources\FrameworkVNext\2015_ManzanaVerde\SourcesTest\Gsf.TestFwk.Web\bin\Gsf.Framework.Server.dll
+D:\Sources\FrameworkVNext\2015_ManzanaVerde\SourcesTest\Gsf.TestFwk.Web\bin\Gsf.Framework.Server.pdb
+D:\Sources\FrameworkVNext\2015_ManzanaVerde\SourcesTest\Gsf.TestFwk.Web\bin\Aide\Application tablette\GSF  - MBC - Documentation Tablette 123.pdf
+D:\Sources\FrameworkVNext\2015_ManzanaVerde\SourcesTest\Gsf.TestFwk.Web\bin\Aide\Console de pilotage\GSF  - MBC - Documentation 123.pdf
+D:\Sources\Temp\PSO\Gsf.TestFwk.Web\obj\Debug\Gsf.TestFwk.Web.dll
+D:\Sources\Temp\PSO\Gsf.TestFwk.Web\obj\Debug\Gsf.TestFwk.Web.pdb
+D:\Sources\Temp\PSO\Gsf.TestFwk.Web\bin\Aide\Application tablette\GSF  - MBC - Documentation Tablette 123.pdf
+D:\Sources\Temp\PSO\Gsf.TestFwk.Web\bin\Aide\Console de pilotage\GSF  - MBC - Documentation 123.pdf
+D:\Sources\Temp\PSO\Gsf.TestFwk.Web\bin\Gsf.TestFwk.Web.dll.config
+D:\Sources\Temp\PSO\Gsf.TestFwk.Web\bin\Gsf.TestFwk.Web.dll
+D:\Sources\Temp\PSO\Gsf.TestFwk.Web\bin\Gsf.TestFwk.Web.pdb
+D:\Sources\Temp\PSO\Gsf.TestFwk.Web\bin\Antlr3.Runtime.dll
+D:\Sources\Temp\PSO\Gsf.TestFwk.Web\bin\Common.Logging.dll
+D:\Sources\Temp\PSO\Gsf.TestFwk.Web\bin\EntityFramework.dll
+D:\Sources\Temp\PSO\Gsf.TestFwk.Web\bin\EntityFramework.SqlServer.dll
+D:\Sources\Temp\PSO\Gsf.TestFwk.Web\bin\Gsf.Framework.dll
+D:\Sources\Temp\PSO\Gsf.TestFwk.Web\bin\Gsf.Framework.Web.dll
+D:\Sources\Temp\PSO\Gsf.TestFwk.Web\bin\Gsf.Framework.Web.MVC.dll
+D:\Sources\Temp\PSO\Gsf.TestFwk.Web\bin\Microsoft.AspNet.Identity.Core.dll
+D:\Sources\Temp\PSO\Gsf.TestFwk.Web\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\Sources\Temp\PSO\Gsf.TestFwk.Web\bin\Microsoft.AspNet.Identity.Owin.dll
+D:\Sources\Temp\PSO\Gsf.TestFwk.Web\bin\Microsoft.Owin.dll
+D:\Sources\Temp\PSO\Gsf.TestFwk.Web\bin\Microsoft.Owin.Host.SystemWeb.dll
+D:\Sources\Temp\PSO\Gsf.TestFwk.Web\bin\Microsoft.Owin.Security.Cookies.dll
+D:\Sources\Temp\PSO\Gsf.TestFwk.Web\bin\Microsoft.Owin.Security.dll
+D:\Sources\Temp\PSO\Gsf.TestFwk.Web\bin\Microsoft.Owin.Security.Facebook.dll
+D:\Sources\Temp\PSO\Gsf.TestFwk.Web\bin\Microsoft.Owin.Security.Google.dll
+D:\Sources\Temp\PSO\Gsf.TestFwk.Web\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+D:\Sources\Temp\PSO\Gsf.TestFwk.Web\bin\Microsoft.Owin.Security.OAuth.dll
+D:\Sources\Temp\PSO\Gsf.TestFwk.Web\bin\Microsoft.Owin.Security.Twitter.dll
+D:\Sources\Temp\PSO\Gsf.TestFwk.Web\bin\Microsoft.Web.Infrastructure.dll
+D:\Sources\Temp\PSO\Gsf.TestFwk.Web\bin\Newtonsoft.Json.dll
+D:\Sources\Temp\PSO\Gsf.TestFwk.Web\bin\Owin.dll
+D:\Sources\Temp\PSO\Gsf.TestFwk.Web\bin\System.Web.Helpers.dll
+D:\Sources\Temp\PSO\Gsf.TestFwk.Web\bin\System.Web.Mvc.dll
+D:\Sources\Temp\PSO\Gsf.TestFwk.Web\bin\System.Web.Optimization.dll
+D:\Sources\Temp\PSO\Gsf.TestFwk.Web\bin\System.Web.Razor.dll
+D:\Sources\Temp\PSO\Gsf.TestFwk.Web\bin\System.Web.WebPages.Deployment.dll
+D:\Sources\Temp\PSO\Gsf.TestFwk.Web\bin\System.Web.WebPages.dll
+D:\Sources\Temp\PSO\Gsf.TestFwk.Web\bin\System.Web.WebPages.Razor.dll
+D:\Sources\Temp\PSO\Gsf.TestFwk.Web\bin\WebGrease.dll
+D:\Sources\Temp\PSO\Gsf.TestFwk.Web\bin\Ninject.dll
+D:\Sources\Temp\PSO\Gsf.TestFwk.Web\bin\Gsf.Framework.Server.dll
+D:\Sources\Temp\PSO\Gsf.TestFwk.Web\bin\EntityFramework.xml
+D:\Sources\Temp\PSO\Gsf.TestFwk.Web\bin\EntityFramework.SqlServer.xml
+D:\Sources\Temp\PSO\Gsf.TestFwk.Web\bin\Gsf.Framework.pdb
+D:\Sources\Temp\PSO\Gsf.TestFwk.Web\bin\Gsf.Framework.Web.pdb
+D:\Sources\Temp\PSO\Gsf.TestFwk.Web\bin\Gsf.Framework.Web.MVC.pdb
+D:\Sources\Temp\PSO\Gsf.TestFwk.Web\bin\Microsoft.AspNet.Identity.Core.xml
+D:\Sources\Temp\PSO\Gsf.TestFwk.Web\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\Sources\Temp\PSO\Gsf.TestFwk.Web\bin\Microsoft.AspNet.Identity.Owin.xml
+D:\Sources\Temp\PSO\Gsf.TestFwk.Web\bin\Microsoft.Owin.xml
+D:\Sources\Temp\PSO\Gsf.TestFwk.Web\bin\Microsoft.Owin.Host.SystemWeb.xml
+D:\Sources\Temp\PSO\Gsf.TestFwk.Web\bin\Microsoft.Owin.Security.xml
+D:\Sources\Temp\PSO\Gsf.TestFwk.Web\bin\Microsoft.Owin.Security.Cookies.xml
+D:\Sources\Temp\PSO\Gsf.TestFwk.Web\bin\Microsoft.Owin.Security.OAuth.xml
+D:\Sources\Temp\PSO\Gsf.TestFwk.Web\bin\System.Web.Helpers.xml
+D:\Sources\Temp\PSO\Gsf.TestFwk.Web\bin\System.Web.Mvc.xml
+D:\Sources\Temp\PSO\Gsf.TestFwk.Web\bin\System.Web.Razor.xml
+D:\Sources\Temp\PSO\Gsf.TestFwk.Web\bin\System.Web.WebPages.xml
+D:\Sources\Temp\PSO\Gsf.TestFwk.Web\bin\System.Web.WebPages.Deployment.xml
+D:\Sources\Temp\PSO\Gsf.TestFwk.Web\bin\System.Web.WebPages.Razor.xml
+D:\Sources\Temp\PSO\Gsf.TestFwk.Web\bin\System.Web.Optimization.xml
+D:\Sources\Temp\PSO\Gsf.TestFwk.Web\bin\Newtonsoft.Json.xml
+D:\Sources\Temp\PSO\Gsf.TestFwk.Web\bin\Antlr3.Runtime.pdb
+D:\Sources\Temp\PSO\Gsf.TestFwk.Web\bin\Microsoft.Owin.Security.Facebook.xml
+D:\Sources\Temp\PSO\Gsf.TestFwk.Web\bin\Microsoft.Owin.Security.Google.xml
+D:\Sources\Temp\PSO\Gsf.TestFwk.Web\bin\Microsoft.Owin.Security.Twitter.xml
+D:\Sources\Temp\PSO\Gsf.TestFwk.Web\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+D:\Sources\Temp\PSO\Gsf.TestFwk.Web\bin\Ninject.pdb
+D:\Sources\Temp\PSO\Gsf.TestFwk.Web\bin\Ninject.xml
+D:\Sources\Temp\PSO\Gsf.TestFwk.Web\bin\Gsf.Framework.Server.pdb
+\\sfichiers\VDI\PROFILES\psol\Documents\Nouveau dossier\Gsf.TestFwk.Web\bin\Aide\Application tablette\GSF  - MBC - Documentation Tablette 123.pdf
+\\sfichiers\VDI\PROFILES\psol\Documents\Nouveau dossier\Gsf.TestFwk.Web\bin\Aide\Console de pilotage\GSF  - MBC - Documentation 123.pdf
+\\sfichiers\VDI\PROFILES\psol\Documents\Nouveau dossier\Gsf.TestFwk.Web\bin\Gsf.TestFwk.Web.dll.config
+\\sfichiers\VDI\PROFILES\psol\Documents\Nouveau dossier\Gsf.TestFwk.Web\bin\Gsf.TestFwk.Web.dll
+\\sfichiers\VDI\PROFILES\psol\Documents\Nouveau dossier\Gsf.TestFwk.Web\bin\Gsf.TestFwk.Web.pdb
+\\sfichiers\VDI\PROFILES\psol\Documents\Nouveau dossier\Gsf.TestFwk.Web\bin\Antlr3.Runtime.dll
+\\sfichiers\VDI\PROFILES\psol\Documents\Nouveau dossier\Gsf.TestFwk.Web\bin\Common.Logging.dll
+\\sfichiers\VDI\PROFILES\psol\Documents\Nouveau dossier\Gsf.TestFwk.Web\bin\EntityFramework.dll
+\\sfichiers\VDI\PROFILES\psol\Documents\Nouveau dossier\Gsf.TestFwk.Web\bin\EntityFramework.SqlServer.dll
+\\sfichiers\VDI\PROFILES\psol\Documents\Nouveau dossier\Gsf.TestFwk.Web\bin\Gsf.Framework.dll
+\\sfichiers\VDI\PROFILES\psol\Documents\Nouveau dossier\Gsf.TestFwk.Web\bin\Gsf.Framework.Web.dll
+\\sfichiers\VDI\PROFILES\psol\Documents\Nouveau dossier\Gsf.TestFwk.Web\bin\Gsf.Framework.Web.MVC.dll
+\\sfichiers\VDI\PROFILES\psol\Documents\Nouveau dossier\Gsf.TestFwk.Web\bin\Microsoft.AspNet.Identity.Core.dll
+\\sfichiers\VDI\PROFILES\psol\Documents\Nouveau dossier\Gsf.TestFwk.Web\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+\\sfichiers\VDI\PROFILES\psol\Documents\Nouveau dossier\Gsf.TestFwk.Web\bin\Microsoft.AspNet.Identity.Owin.dll
+\\sfichiers\VDI\PROFILES\psol\Documents\Nouveau dossier\Gsf.TestFwk.Web\bin\Microsoft.Owin.dll
+\\sfichiers\VDI\PROFILES\psol\Documents\Nouveau dossier\Gsf.TestFwk.Web\bin\Microsoft.Owin.Host.SystemWeb.dll
+\\sfichiers\VDI\PROFILES\psol\Documents\Nouveau dossier\Gsf.TestFwk.Web\bin\Microsoft.Owin.Security.Cookies.dll
+\\sfichiers\VDI\PROFILES\psol\Documents\Nouveau dossier\Gsf.TestFwk.Web\bin\Microsoft.Owin.Security.dll
+\\sfichiers\VDI\PROFILES\psol\Documents\Nouveau dossier\Gsf.TestFwk.Web\bin\Microsoft.Owin.Security.Facebook.dll
+\\sfichiers\VDI\PROFILES\psol\Documents\Nouveau dossier\Gsf.TestFwk.Web\bin\Microsoft.Owin.Security.Google.dll
+\\sfichiers\VDI\PROFILES\psol\Documents\Nouveau dossier\Gsf.TestFwk.Web\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+\\sfichiers\VDI\PROFILES\psol\Documents\Nouveau dossier\Gsf.TestFwk.Web\bin\Microsoft.Owin.Security.OAuth.dll
+\\sfichiers\VDI\PROFILES\psol\Documents\Nouveau dossier\Gsf.TestFwk.Web\bin\Microsoft.Owin.Security.Twitter.dll
+\\sfichiers\VDI\PROFILES\psol\Documents\Nouveau dossier\Gsf.TestFwk.Web\bin\Microsoft.Web.Infrastructure.dll
+\\sfichiers\VDI\PROFILES\psol\Documents\Nouveau dossier\Gsf.TestFwk.Web\bin\Newtonsoft.Json.dll
+\\sfichiers\VDI\PROFILES\psol\Documents\Nouveau dossier\Gsf.TestFwk.Web\bin\Ninject.dll
+\\sfichiers\VDI\PROFILES\psol\Documents\Nouveau dossier\Gsf.TestFwk.Web\bin\Owin.dll
+\\sfichiers\VDI\PROFILES\psol\Documents\Nouveau dossier\Gsf.TestFwk.Web\bin\System.Web.Helpers.dll
+\\sfichiers\VDI\PROFILES\psol\Documents\Nouveau dossier\Gsf.TestFwk.Web\bin\System.Web.Mvc.dll
+\\sfichiers\VDI\PROFILES\psol\Documents\Nouveau dossier\Gsf.TestFwk.Web\bin\System.Web.Optimization.dll
+\\sfichiers\VDI\PROFILES\psol\Documents\Nouveau dossier\Gsf.TestFwk.Web\bin\System.Web.Razor.dll
+\\sfichiers\VDI\PROFILES\psol\Documents\Nouveau dossier\Gsf.TestFwk.Web\bin\System.Web.WebPages.Deployment.dll
+\\sfichiers\VDI\PROFILES\psol\Documents\Nouveau dossier\Gsf.TestFwk.Web\bin\System.Web.WebPages.dll
+\\sfichiers\VDI\PROFILES\psol\Documents\Nouveau dossier\Gsf.TestFwk.Web\bin\System.Web.WebPages.Razor.dll
+\\sfichiers\VDI\PROFILES\psol\Documents\Nouveau dossier\Gsf.TestFwk.Web\bin\WebGrease.dll
+\\sfichiers\VDI\PROFILES\psol\Documents\Nouveau dossier\Gsf.TestFwk.Web\bin\Gsf.Framework.Server.dll
+\\sfichiers\VDI\PROFILES\psol\Documents\Nouveau dossier\Gsf.TestFwk.Web\bin\EntityFramework.xml
+\\sfichiers\VDI\PROFILES\psol\Documents\Nouveau dossier\Gsf.TestFwk.Web\bin\EntityFramework.SqlServer.xml
+\\sfichiers\VDI\PROFILES\psol\Documents\Nouveau dossier\Gsf.TestFwk.Web\bin\Gsf.Framework.pdb
+\\sfichiers\VDI\PROFILES\psol\Documents\Nouveau dossier\Gsf.TestFwk.Web\bin\Gsf.Framework.Web.pdb
+\\sfichiers\VDI\PROFILES\psol\Documents\Nouveau dossier\Gsf.TestFwk.Web\bin\Gsf.Framework.Web.MVC.pdb
+\\sfichiers\VDI\PROFILES\psol\Documents\Nouveau dossier\Gsf.TestFwk.Web\bin\Microsoft.AspNet.Identity.Core.xml
+\\sfichiers\VDI\PROFILES\psol\Documents\Nouveau dossier\Gsf.TestFwk.Web\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+\\sfichiers\VDI\PROFILES\psol\Documents\Nouveau dossier\Gsf.TestFwk.Web\bin\Microsoft.AspNet.Identity.Owin.xml
+\\sfichiers\VDI\PROFILES\psol\Documents\Nouveau dossier\Gsf.TestFwk.Web\bin\Microsoft.Owin.xml
+\\sfichiers\VDI\PROFILES\psol\Documents\Nouveau dossier\Gsf.TestFwk.Web\bin\Microsoft.Owin.Host.SystemWeb.xml
+\\sfichiers\VDI\PROFILES\psol\Documents\Nouveau dossier\Gsf.TestFwk.Web\bin\Microsoft.Owin.Security.xml
+\\sfichiers\VDI\PROFILES\psol\Documents\Nouveau dossier\Gsf.TestFwk.Web\bin\Microsoft.Owin.Security.Cookies.xml
+\\sfichiers\VDI\PROFILES\psol\Documents\Nouveau dossier\Gsf.TestFwk.Web\bin\Microsoft.Owin.Security.OAuth.xml
+\\sfichiers\VDI\PROFILES\psol\Documents\Nouveau dossier\Gsf.TestFwk.Web\bin\Ninject.pdb
+\\sfichiers\VDI\PROFILES\psol\Documents\Nouveau dossier\Gsf.TestFwk.Web\bin\Ninject.xml
+\\sfichiers\VDI\PROFILES\psol\Documents\Nouveau dossier\Gsf.TestFwk.Web\bin\System.Web.Helpers.xml
+\\sfichiers\VDI\PROFILES\psol\Documents\Nouveau dossier\Gsf.TestFwk.Web\bin\System.Web.Mvc.xml
+\\sfichiers\VDI\PROFILES\psol\Documents\Nouveau dossier\Gsf.TestFwk.Web\bin\System.Web.Razor.xml
+\\sfichiers\VDI\PROFILES\psol\Documents\Nouveau dossier\Gsf.TestFwk.Web\bin\System.Web.WebPages.xml
+\\sfichiers\VDI\PROFILES\psol\Documents\Nouveau dossier\Gsf.TestFwk.Web\bin\System.Web.WebPages.Deployment.xml
+\\sfichiers\VDI\PROFILES\psol\Documents\Nouveau dossier\Gsf.TestFwk.Web\bin\System.Web.WebPages.Razor.xml
+\\sfichiers\VDI\PROFILES\psol\Documents\Nouveau dossier\Gsf.TestFwk.Web\bin\System.Web.Optimization.xml
+\\sfichiers\VDI\PROFILES\psol\Documents\Nouveau dossier\Gsf.TestFwk.Web\bin\Newtonsoft.Json.xml
+\\sfichiers\VDI\PROFILES\psol\Documents\Nouveau dossier\Gsf.TestFwk.Web\bin\Antlr3.Runtime.pdb
+\\sfichiers\VDI\PROFILES\psol\Documents\Nouveau dossier\Gsf.TestFwk.Web\bin\Microsoft.Owin.Security.Facebook.xml
+\\sfichiers\VDI\PROFILES\psol\Documents\Nouveau dossier\Gsf.TestFwk.Web\bin\Microsoft.Owin.Security.Google.xml
+\\sfichiers\VDI\PROFILES\psol\Documents\Nouveau dossier\Gsf.TestFwk.Web\bin\Microsoft.Owin.Security.Twitter.xml
+\\sfichiers\VDI\PROFILES\psol\Documents\Nouveau dossier\Gsf.TestFwk.Web\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+\\sfichiers\VDI\PROFILES\psol\Documents\Nouveau dossier\Gsf.TestFwk.Web\bin\Gsf.Framework.Server.pdb
+\\sfichiers\VDI\PROFILES\psol\Documents\Nouveau dossier\Gsf.TestFwk.Web\obj\Debug\Gsf.TestFwk.Web.dll
+\\sfichiers\VDI\PROFILES\psol\Documents\Nouveau dossier\Gsf.TestFwk.Web\obj\Debug\Gsf.TestFwk.Web.pdb
+\\sfichiers\VDI\PROFILES\psol\Documents\Nouveau dossier\Gsf.TestFwk.Web\obj\Debug\Gsf.TestFwk.Web.MVC.csprojResolveAssemblyReference.cache
+\\sfichiers\VDI\PROFILES\cjourdan\Documents\Nouveau dossier\Gsf.TestFwk.Web\bin\Aide\Application tablette\GSF  - MBC - Documentation Tablette 123.pdf
+\\sfichiers\VDI\PROFILES\cjourdan\Documents\Nouveau dossier\Gsf.TestFwk.Web\bin\Aide\Console de pilotage\GSF  - MBC - Documentation 123.pdf
+\\sfichiers\VDI\PROFILES\cjourdan\Documents\Nouveau dossier\Gsf.TestFwk.Web\bin\Gsf.TestFwk.Web.dll.config
+\\sfichiers\VDI\PROFILES\cjourdan\Documents\Nouveau dossier\Gsf.TestFwk.Web\bin\Gsf.TestFwk.Web.dll
+\\sfichiers\VDI\PROFILES\cjourdan\Documents\Nouveau dossier\Gsf.TestFwk.Web\bin\Gsf.TestFwk.Web.pdb
+\\sfichiers\VDI\PROFILES\cjourdan\Documents\Nouveau dossier\Gsf.TestFwk.Web\bin\Antlr3.Runtime.dll
+\\sfichiers\VDI\PROFILES\cjourdan\Documents\Nouveau dossier\Gsf.TestFwk.Web\bin\Common.Logging.dll
+\\sfichiers\VDI\PROFILES\cjourdan\Documents\Nouveau dossier\Gsf.TestFwk.Web\bin\EntityFramework.dll
+\\sfichiers\VDI\PROFILES\cjourdan\Documents\Nouveau dossier\Gsf.TestFwk.Web\bin\EntityFramework.SqlServer.dll
+\\sfichiers\VDI\PROFILES\cjourdan\Documents\Nouveau dossier\Gsf.TestFwk.Web\bin\Gsf.Framework.dll
+\\sfichiers\VDI\PROFILES\cjourdan\Documents\Nouveau dossier\Gsf.TestFwk.Web\bin\Gsf.Framework.Web.dll
+\\sfichiers\VDI\PROFILES\cjourdan\Documents\Nouveau dossier\Gsf.TestFwk.Web\bin\Gsf.Framework.Web.MVC.dll
+\\sfichiers\VDI\PROFILES\cjourdan\Documents\Nouveau dossier\Gsf.TestFwk.Web\bin\Microsoft.AspNet.Identity.Core.dll
+\\sfichiers\VDI\PROFILES\cjourdan\Documents\Nouveau dossier\Gsf.TestFwk.Web\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+\\sfichiers\VDI\PROFILES\cjourdan\Documents\Nouveau dossier\Gsf.TestFwk.Web\bin\Microsoft.AspNet.Identity.Owin.dll
+\\sfichiers\VDI\PROFILES\cjourdan\Documents\Nouveau dossier\Gsf.TestFwk.Web\bin\Microsoft.Owin.dll
+\\sfichiers\VDI\PROFILES\cjourdan\Documents\Nouveau dossier\Gsf.TestFwk.Web\bin\Microsoft.Owin.Host.SystemWeb.dll
+\\sfichiers\VDI\PROFILES\cjourdan\Documents\Nouveau dossier\Gsf.TestFwk.Web\bin\Microsoft.Owin.Security.Cookies.dll
+\\sfichiers\VDI\PROFILES\cjourdan\Documents\Nouveau dossier\Gsf.TestFwk.Web\bin\Microsoft.Owin.Security.dll
+\\sfichiers\VDI\PROFILES\cjourdan\Documents\Nouveau dossier\Gsf.TestFwk.Web\bin\Microsoft.Owin.Security.Facebook.dll
+\\sfichiers\VDI\PROFILES\cjourdan\Documents\Nouveau dossier\Gsf.TestFwk.Web\bin\Microsoft.Owin.Security.Google.dll
+\\sfichiers\VDI\PROFILES\cjourdan\Documents\Nouveau dossier\Gsf.TestFwk.Web\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+\\sfichiers\VDI\PROFILES\cjourdan\Documents\Nouveau dossier\Gsf.TestFwk.Web\bin\Microsoft.Owin.Security.OAuth.dll
+\\sfichiers\VDI\PROFILES\cjourdan\Documents\Nouveau dossier\Gsf.TestFwk.Web\bin\Microsoft.Owin.Security.Twitter.dll
+\\sfichiers\VDI\PROFILES\cjourdan\Documents\Nouveau dossier\Gsf.TestFwk.Web\bin\Microsoft.Web.Infrastructure.dll
+\\sfichiers\VDI\PROFILES\cjourdan\Documents\Nouveau dossier\Gsf.TestFwk.Web\bin\Newtonsoft.Json.dll
+\\sfichiers\VDI\PROFILES\cjourdan\Documents\Nouveau dossier\Gsf.TestFwk.Web\bin\Ninject.dll
+\\sfichiers\VDI\PROFILES\cjourdan\Documents\Nouveau dossier\Gsf.TestFwk.Web\bin\Owin.dll
+\\sfichiers\VDI\PROFILES\cjourdan\Documents\Nouveau dossier\Gsf.TestFwk.Web\bin\System.Web.Helpers.dll
+\\sfichiers\VDI\PROFILES\cjourdan\Documents\Nouveau dossier\Gsf.TestFwk.Web\bin\System.Web.Mvc.dll
+\\sfichiers\VDI\PROFILES\cjourdan\Documents\Nouveau dossier\Gsf.TestFwk.Web\bin\System.Web.Optimization.dll
+\\sfichiers\VDI\PROFILES\cjourdan\Documents\Nouveau dossier\Gsf.TestFwk.Web\bin\System.Web.Razor.dll
+\\sfichiers\VDI\PROFILES\cjourdan\Documents\Nouveau dossier\Gsf.TestFwk.Web\bin\System.Web.WebPages.Deployment.dll
+\\sfichiers\VDI\PROFILES\cjourdan\Documents\Nouveau dossier\Gsf.TestFwk.Web\bin\System.Web.WebPages.dll
+\\sfichiers\VDI\PROFILES\cjourdan\Documents\Nouveau dossier\Gsf.TestFwk.Web\bin\System.Web.WebPages.Razor.dll
+\\sfichiers\VDI\PROFILES\cjourdan\Documents\Nouveau dossier\Gsf.TestFwk.Web\bin\WebGrease.dll
+\\sfichiers\VDI\PROFILES\cjourdan\Documents\Nouveau dossier\Gsf.TestFwk.Web\bin\Gsf.Framework.Server.dll
+\\sfichiers\VDI\PROFILES\cjourdan\Documents\Nouveau dossier\Gsf.TestFwk.Web\bin\EntityFramework.xml
+\\sfichiers\VDI\PROFILES\cjourdan\Documents\Nouveau dossier\Gsf.TestFwk.Web\bin\EntityFramework.SqlServer.xml
+\\sfichiers\VDI\PROFILES\cjourdan\Documents\Nouveau dossier\Gsf.TestFwk.Web\bin\Gsf.Framework.pdb
+\\sfichiers\VDI\PROFILES\cjourdan\Documents\Nouveau dossier\Gsf.TestFwk.Web\bin\Gsf.Framework.Web.pdb
+\\sfichiers\VDI\PROFILES\cjourdan\Documents\Nouveau dossier\Gsf.TestFwk.Web\bin\Gsf.Framework.Web.MVC.pdb
+\\sfichiers\VDI\PROFILES\cjourdan\Documents\Nouveau dossier\Gsf.TestFwk.Web\bin\Microsoft.AspNet.Identity.Core.xml
+\\sfichiers\VDI\PROFILES\cjourdan\Documents\Nouveau dossier\Gsf.TestFwk.Web\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+\\sfichiers\VDI\PROFILES\cjourdan\Documents\Nouveau dossier\Gsf.TestFwk.Web\bin\Microsoft.AspNet.Identity.Owin.xml
+\\sfichiers\VDI\PROFILES\cjourdan\Documents\Nouveau dossier\Gsf.TestFwk.Web\bin\Microsoft.Owin.xml
+\\sfichiers\VDI\PROFILES\cjourdan\Documents\Nouveau dossier\Gsf.TestFwk.Web\bin\Microsoft.Owin.Host.SystemWeb.xml
+\\sfichiers\VDI\PROFILES\cjourdan\Documents\Nouveau dossier\Gsf.TestFwk.Web\bin\Microsoft.Owin.Security.xml
+\\sfichiers\VDI\PROFILES\cjourdan\Documents\Nouveau dossier\Gsf.TestFwk.Web\bin\Microsoft.Owin.Security.Cookies.xml
+\\sfichiers\VDI\PROFILES\cjourdan\Documents\Nouveau dossier\Gsf.TestFwk.Web\bin\Microsoft.Owin.Security.OAuth.xml
+\\sfichiers\VDI\PROFILES\cjourdan\Documents\Nouveau dossier\Gsf.TestFwk.Web\bin\Newtonsoft.Json.xml
+\\sfichiers\VDI\PROFILES\cjourdan\Documents\Nouveau dossier\Gsf.TestFwk.Web\bin\Ninject.pdb
+\\sfichiers\VDI\PROFILES\cjourdan\Documents\Nouveau dossier\Gsf.TestFwk.Web\bin\Ninject.xml
+\\sfichiers\VDI\PROFILES\cjourdan\Documents\Nouveau dossier\Gsf.TestFwk.Web\bin\System.Web.Helpers.xml
+\\sfichiers\VDI\PROFILES\cjourdan\Documents\Nouveau dossier\Gsf.TestFwk.Web\bin\System.Web.Mvc.xml
+\\sfichiers\VDI\PROFILES\cjourdan\Documents\Nouveau dossier\Gsf.TestFwk.Web\bin\System.Web.Razor.xml
+\\sfichiers\VDI\PROFILES\cjourdan\Documents\Nouveau dossier\Gsf.TestFwk.Web\bin\System.Web.WebPages.xml
+\\sfichiers\VDI\PROFILES\cjourdan\Documents\Nouveau dossier\Gsf.TestFwk.Web\bin\System.Web.WebPages.Deployment.xml
+\\sfichiers\VDI\PROFILES\cjourdan\Documents\Nouveau dossier\Gsf.TestFwk.Web\bin\System.Web.WebPages.Razor.xml
+\\sfichiers\VDI\PROFILES\cjourdan\Documents\Nouveau dossier\Gsf.TestFwk.Web\bin\System.Web.Optimization.xml
+\\sfichiers\VDI\PROFILES\cjourdan\Documents\Nouveau dossier\Gsf.TestFwk.Web\bin\Antlr3.Runtime.pdb
+\\sfichiers\VDI\PROFILES\cjourdan\Documents\Nouveau dossier\Gsf.TestFwk.Web\bin\Microsoft.Owin.Security.Facebook.xml
+\\sfichiers\VDI\PROFILES\cjourdan\Documents\Nouveau dossier\Gsf.TestFwk.Web\bin\Microsoft.Owin.Security.Google.xml
+\\sfichiers\VDI\PROFILES\cjourdan\Documents\Nouveau dossier\Gsf.TestFwk.Web\bin\Microsoft.Owin.Security.Twitter.xml
+\\sfichiers\VDI\PROFILES\cjourdan\Documents\Nouveau dossier\Gsf.TestFwk.Web\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+\\sfichiers\VDI\PROFILES\cjourdan\Documents\Nouveau dossier\Gsf.TestFwk.Web\bin\Gsf.Framework.Server.pdb
+\\sfichiers\VDI\PROFILES\cjourdan\Documents\Nouveau dossier\Gsf.TestFwk.Web\obj\Debug\Gsf.TestFwk.Web.dll
+\\sfichiers\VDI\PROFILES\cjourdan\Documents\Nouveau dossier\Gsf.TestFwk.Web\obj\Debug\Gsf.TestFwk.Web.pdb
+\\sfichiers\VDI\PROFILES\cjourdan\Documents\Nouveau dossier\Gsf.TestFwk.Web\obj\Debug\Gsf.TestFwk.Web.MVC.csprojResolveAssemblyReference.cache

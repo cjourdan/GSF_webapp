@@ -1,0 +1,286 @@
+@using Kendo.Mvc.UI
+
+@{
+    ViewBag.Title = "Collaborateur Page";
+}
+
+<script type="text/x-kendo-tmpl" id="employeeItemTemplate">
+    <div class="employee">
+        <div class="employee-wrapper">
+            @*<img src="@(Url.Content("~/content/"))#:Matricule#.bmp" class="img-responsive employee-list-image" />*@
+            <dl class="employee-list-details">
+                <dt class="nom_prenom">#:RDosNom# #:RDosPrenom#</dt>
+                <dt class="matricule">#:Matricule#</dt>
+            </dl>
+        </div>
+    </div>
+</script>
+
+<script type="text/javascript">
+    $(function () {
+        $("#people :checkbox").change(function (e) {
+            var checked = $.map($("#people :checked"), function (checkbox) {
+                return parseInt($(checkbox).val());
+            });
+
+            var filter = {
+                logic: "or",
+                filters: $.map(checked, function (value) {
+                    return {
+                        operator: "eq",
+                        field: "OwnerID",
+                        value: value
+                    };
+                })
+            };
+
+            var scheduler = $("#scheduler").data("kendoScheduler");
+
+            scheduler.dataSource.filter(filter);
+        });
+    })
+
+    function onListDataBound(e) {
+        this.select($(".employee:first"));
+
+         //var employeeGrid = $("#grid").data("kendoGrid");
+        //    employeeGrid.dataSource.read();
+    }
+
+    function onCriteriaChange() {
+        var employeeList = $("#EmployeesList").data("kendoListView"),
+            employee = employeeList.dataSource.getByUid(employeeList.select().attr("data-uid"));
+
+        var employeeGrid = $("#grid").data("kendoGrid");
+            filter = { Matricule: employee.Matricule },
+            employeeGrid.dataSource.filter({ field: "Matricule", operator: "eq", value: employee.Matricule });
+            employeeGrid.dataSource.read(filter);
+
+            //employeeSales = $("#EmployeeSales").data("kendoScheduler"),
+            //filter = { Matricule: employee.Matricule },
+            //template = kendo.template($("#employeeBioTemplate").html());
+
+        //employeeSales.dataSource.filter({ field: "Matricule", operator: "eq", value: employee.Matricule });
+        //employeeSales.dataSource.read(filter)
+    }
+
+    //function onCriteriaGidChange() {
+    //    var employeeGrid = $("#grid").data("kendoGrid");
+    //    filter = { Matricule: employee.Matricule },
+    //    employeeGrid.dataSource.filter({ field: "Matricule", operator: "eq", value: employee.Matricule });
+    //    employeeGrid.dataSource.read(filter);
+    //}
+
+</script>
+
+<style>
+    .ScrollbarListView {
+        overflow-y: scroll;
+        height: 400px;
+    }
+
+    .ScrollbarPlanning {
+        overflow-y: scroll;
+        height: 400px;
+    }
+
+#team-schedule {
+background: url('@Url.Content("~/Content/web/scheduler/")team-schedule.png') transparent no-repeat;
+height: 115px;
+position: relative;
+}
+
+#people {
+    background: url('@Url.Content("~/Content/web/scheduler/")scheduler-people.png') no-repeat;
+    width: 345px;
+    height: 115px;
+    position: absolute;
+    right: 0;
+}
+#alex {
+    position: absolute;
+    left: 4px;
+    top: 81px;
+}
+#bob {
+    position: absolute;
+    left: 119px;
+    top: 81px;
+}
+#charlie {
+    position: absolute;
+    left: 234px;
+    top: 81px;
+}
+</style>
+
+<div class="main-section-content row" style="">
+    <div id="employee-list" class="col col-xs-2">
+        <h3>Mes Collaborateurs</h3>
+        <div class="ScrollbarListView">
+            @*ListView*@
+            @(Html.ListView<Gsf.TestFwk.Web.Models.RecupDossier>()
+                .Name("EmployeesList")
+                .TagName("div")
+                .Events(e => e.DataBound("onListDataBound").Change("onCriteriaChange"))
+                .ClientTemplateId("employeeItemTemplate")
+                .DataSource(dataSource =>
+                {
+                    dataSource.Read(read => read.Action("EmployeesList", "List"));
+                    dataSource.PageSize(34);
+                })
+                .Selectable(s => s.Mode(ListViewSelectionMode.Single))
+            )
+        </div>
+    </div>
+
+    <div id="employee-details-wrapper" class="col col-xs-10">
+        <div id="employee-details" class="row">
+            <div class="container-fluid">
+                <div class="row">
+
+                    <!-- Tabs -->
+                    <div role="tabpanel" class="col-sm-12 col-md-12">
+
+                        <!-- Nav tabs -->
+                        <ul class="nav nav-tabs" role="tablist">
+                            <li role="presentation" class="active"><a href="#tab1" aria-controls="tab1" role="tab" data-toggle="tab">Fiche</a></li>
+                            <li role="presentation"><a href="#tab2" aria-controls="tab2" role="tab" data-toggle="tab">Planning</a></li>
+                        </ul>
+
+                        <!-- Tab content-->
+                        <div class="tab-content">
+                            <!-- Tab panel 1-->
+                            <div role="tabpanel" class="tab-pane active" id="tab1">
+                                <div class="telerik-wrapper">
+                                    @(Html.Grid<Gsf.TestFwk.Web.Models.RecupDossier>()
+                                .Name("grid")
+                                .Columns(columns =>
+                                {
+                                    columns.Bound(c => c.RDosMatriculePres).Title("Matricule").Width(100);
+                                    columns.Bound(c => c.RDosNom).Title("Nom").Width(160);
+                                    columns.Bound(c => c.RDosPrenom).Title("Prénom").Width(150);
+                                    columns.Bound(c => c.RDosSexe).Title("Sexe").Width(80);
+                                    columns.Bound(c => c.RDosAge).Title("Age").Width(50);
+                                    columns.Bound(c => c.RDosNomNaiss).Title("Nom de naissance").Width(160);
+                                    columns.Bound(c => c.RDosDateNaiss).Title("Date de naissance").Width(100);
+                                    columns.Bound(c => c.RDosNationalite).Title("Nationalité").Width(100);
+                                    columns.Bound(c => c.RDosVilleNaiss).Title("Ville de naissance").Width(150);
+                                    columns.Bound(c => c.RDosNumSS).Title("NumSS").Width(150);
+                                    //columns.Bound(c => c.RDosEmail).Title("Email").Width(150);
+                                    columns.Bound(c => c.RDosSitFAm).Title("SitFAm").Width(80);
+                                    columns.Bound(c => c.RDosNbKids).Title("Nbre Kids").Width(80);
+                                    columns.Bound(c => c.RDosNbPersCharge).Title("Nbre pers charge").Width(80);
+                                    columns.Bound(c => c.RDosAdresse).Title("Adresse").Width(160);
+                                    //columns.Bound(c => c.RDosDateEntreeSoc).Format("{0:MM/dd/yyyy}");
+                                })
+                                .Sortable()
+                                .Pageable()
+                                .Scrollable()
+                                .HtmlAttributes(new { style = "height:430px;" })
+                                .DataSource(dataSource => dataSource
+                                    .Ajax()
+                                    .PageSize(6)
+                                    .Read(read => read.Action("FicheIndicative_Employees", "Fiche"))
+                                )
+                                    )
+                                </div>
+                                </div>
+
+                            <!-- Tab panel 2-->
+                            <div role="tabpanel" class="tab-pane" id="tab2">
+                                <div class="telerik-wrapper" id="employeeSchedule">
+                                    <div class="ScrollbarPlanning">
+                                        @*<div id="scheduler"></div>*@
+                                        @*@(Html.HtmlMVC.Kendo().Scheduler<Kendo.Mvc.UI.ISchedulerEvent>()*@
+                                        @(Html.HtmlMVC.Kendo().Scheduler<Gsf.TestFwk.Web.Models.SaleViewModel>()
+                                    .Name("EmployeeSales")
+                                    .Date(new DateTime(2013, 1, 13))
+                                    .StartTime(new DateTime(2013, 6, 13, 7, 00, 00))
+                                    .Height(600)
+                                    .Views(views =>
+                                    {
+                                        views.DayView();
+                                        views.WorkWeekView(workWeekView => workWeekView.Selected(true));
+                                        views.WeekView();
+                                        views.MonthView();
+                                        views.AgendaView();
+                                        views.TimelineView();
+                                    })
+                                    .Editable(false)
+                                    .Timezone("Etc/UTC")
+                                    .Resources(resource =>
+                             {
+                                 resource.Add(m => m.EmployeeID)
+                                     .Title("Employee")
+                                     .DataTextField("EmployeeName")
+                                     .DataValueField("EmployeeID")
+                                     .DataColorField("EmployeeColor")
+                                     .DataSource(dataSource =>
+                                     {
+                                         dataSource.Read(read => read.Action("GetEmployees", "Scheduler"));
+                                     });
+                                 /*.BindTo(new[] {
+                                     new { Text = "Alex", Value = 1, Color = "#f8a398" } ,
+                                     new { Text = "Bob", Value = 2, Color = "#51a0ed" } ,
+                                     new { Text = "Charlie", Value = 3, Color = "#56ca85" }
+                                 });*/
+                             })
+                             .DataSource(d => d.Read("EmployeeSales", "Scheduler"))
+                                                //.DataSource(d => d
+                                                //    .Model(m =>
+                                                //    {
+                                                //        m.Id(f => f.TaskID);
+                                                //        m.Field(f => f.Title).DefaultValue("No title");
+                                                //        m.Field(f => f.OwnerID).DefaultValue(1);
+                                                //        m.Field(f => f.Title).DefaultValue("No title");
+                                                //        m.RecurrenceId(f => f.RecurrenceID);
+                                                //    })
+                                                //    .Read("EmployeeSales", "Scheduler")
+                                                //    .Create("Create", "Scheduler")
+                                                //    .Destroy("Destroy", "Scheduler")
+                                                //    .Update("Update", "Scheduler")
+                                                //    .Filter(filters =>
+                                                //    {
+                                                //        filters.Add(model => model.OwnerID).IsEqualTo(1).Or().IsEqualTo(2);
+                                                //    })
+                                        )
+                                        @*<script>
+                                                $("#scheduler").kendoScheduler({
+                                                    date: new Date("2015/12/13"),
+                                                    views: [
+                                                    "day", // a view configuration can be a string (the view type) or an object (the view configuration)
+                                                    { type: "week", selected: true }, // the "week" view will appear as initially selected
+                                                    "month",
+                                                    "agenda"
+                                                    ],
+                                                    dataSource: [
+                                                    {
+                                                        id: 1,
+                                                        start: new Date("2015/12/14 01:00 AM"),
+                                                        end: new Date("2015/12/14 02:00 AM"),
+                                                        title: "Job Interview"
+                                                    },
+                                                    {
+                                                        id: 2,
+                                                        start: new Date("2015/12/15 01:00 AM"),
+                                                        end: new Date("2015/12/15 02:00 AM"),
+                                                        title: "Job Interview 2"
+                                                    }
+                                                    ]
+                                                });
+                                            </script>*@
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@*</div>*@
+@*</div>*@
+@*</div>*@
+@*</div>*@

@@ -1,0 +1,19 @@
+﻿@inherits Gsf.Framework.Web.MVC.GsfWebViewPageSimple<Gsf.TestFwk.Web.Models.UserViewModel>
+
+<div class="container">
+    @using (Html.HtmlMVC.BeginForm("UpdateUser", "Home", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-signin" }))
+    {
+        @Html.PanelDefault("MAJ Utilisateur",
+        @<text>
+            @Html.TextBoxFor(m => m.Mail).PlaceHolder("Mail")
+            @Html.TextBoxFor(m => m.Name).PlaceHolder("Nom")
+            @Html.TextBoxFor(m => m.Surname).PlaceHolder("Prenom")
+            @Html.PasswordFor(m => m.Password, new { @placeholder = "Mot de passe" })
+            @*<input type="submit" value="Creer Utilisateur" />*@
+            <button class="k-button k-primary fullwidth-input" type="submit">MAJ Utilisateur</button>
+            @Html.ValidationSummary()
+        </text>,
+                                              "Fin")
+    }
+</div>
+<div class="bg_pattern"></div>

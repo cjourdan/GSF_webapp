@@ -1,0 +1,384 @@
+﻿@using Kendo.Mvc.UI
+
+@{
+    ViewBag.Title = "Home Page";
+}
+
+@(Html.Notification()
+    .Name("notification")
+    .Position(p => p.Pinned(true).Top(30).Right(30))
+    .Stacking(NotificationStackingSettings.Down)
+    .AutoHideAfter(10000)
+    .Templates(t =>
+    {
+        t.Add().Type("error").ClientTemplateID("errorTemplate");
+        t.Add().Type("upload-success").ClientTemplateID("successTemplate");
+    })
+)
+
+
+<!--Page Recherche(s) Salarié(s)-->
+<!-- Section 1 ========================================================================================================================= -->
+<section>
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Mod siteSelection -->
+            <div class="col-md-12">
+                @Html.Module("Selection salarié", "glyphicon glyphicon-search", "Selection de(s) Salarié(s)",
+                @<text>
+                    <!--  Autocomplete Telerik + layout form bootstrap-->
+                    <div class="form-group">
+                        <div class="col-sm-6">
+                            <label for="user_title">Nom</label>
+                            <input class="form-control k-textbox" id="userName" name="user[name]" required size="30" type="text">
+                        </div>
+                        <div class="col-sm-6">
+                            <label for="user_firstname">Prénom</label>
+                            <input class="form-control k-textbox" id="userFirstname" name="user[firstname]" required size="30" type="text">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-12">
+                            <label for="user_numSS">Numero de sécurité sociale</label>
+                            <input class="form-control k-textbox" id="userNumSS" name="user[numSS]" size="9" type="text" required width="100">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-3">
+                            <label for="DateEmbauche">Date embauche</label>
+                            <p>@Html.DatePicker().Name("dateEmbauche")</p>
+                            <button class="k-button k-state-default" id="Launch">
+                                <span class="glyphicon glyphicon-play-circle" aria-hidden="true"></span>
+                                Lancer la recherche
+                            </button>
+                        </div>
+                    </div>
+                </text>
+                    )
+            </div>
+
+            <script id="errorTemplate" type="text/x-kendo-template">
+                <div class="wrong-pass">
+                    <h3>#= title #</h3>
+                    <p>#= message #</p>
+                </div>
+            </script>
+
+            <script id="successTemplate" type="text/x-kendo-template">
+                <div class="upload-success">
+                    <h3>#= message #</h3>
+                </div>
+            </script>
+
+
+            <script>
+                $(document).ready(function () {
+                    var notification = $("#notification").data("kendoNotification");
+
+
+                    //var popupNotification = $("#popupNotification").data("kendoNotification");
+
+                    $("#Launch").click(function (event) {
+
+
+                        if ($("#userName").val() == "" || $("#userNumSS").val() == "" || $("#userFirstname").val() == "" || $("#dateEmbauche").val() == "") {
+                            //alert("La zone numéro de sécurité sociale est obligatoire, merci de la renseigner avant de lancer votre recherche");
+                            //popupNotification.show(("La zone numéro de sécurité sociale est obligatoire, merci de la renseigner avant de lancer votre recherche"), "error");
+                            if ($("#userNumSS").val() == "") {
+                                notification.show({
+                                    title: "Erreur dans la recherche",
+                                    message: "La saisie de la zone numéro de sécurité sociale est obligatoire."
+                                }, "error");
+                            }
+                            if ($("#userName").val() == "") {
+                                notification.show({
+                                    title: "Erreur dans la recherche",
+                                    message: "La saisie de la zone nom est obligatoire."
+                                }, "error");
+                            }
+                            if ($("#userFirstname").val() == "") {
+                                notification.show({
+                                    title: "Erreur dans la recherche",
+                                    message: "La saisie de la zone prénom est obligatoire."
+                                }, "error");
+                            }
+                            if ($("#dateEmbauche").val() == "") {
+                                notification.show({
+                                    title: "Erreur dans la recherche",
+                                    message: "La saisie de la zone date d'embauche est obligatoire."
+                                }, "error");
+                            }
+                        }
+                        else {
+                            var grid = $("#grid").data("kendoGrid");
+                            grid.dataSource.read();
+                        }
+                        //event.preventDefault();
+                        //var PersoId = $("#userNumSS").val();
+                        //$.ajax({
+                        //    url: "/Grid/HierarchyBinding_EmployeeData",
+                        //    type: "GET",
+                        //    cache: 'false',
+                        //    data: {
+                        //        numSS: PersoId
+                        //    }
+                        //});
+                    });
+                });
+            </script>
+
+            <style>
+                .k-notification {
+                    border: 0;
+                }
+
+                /* Error template */
+                .k-notification-error.k-group {
+                    background: rgba(100%,0%,0%,.7);
+                    color: #ffffff;
+                }
+
+                .wrong-pass {
+                    width: 300px;
+                    height: 100px;
+                }
+
+                    .wrong-pass h3 {
+                        font-size: 1em;
+                        padding: 32px 10px 5px;
+                    }
+
+                    .wrong-pass img {
+                        float: left;
+                        margin: 30px 15px 30px 30px;
+                    }
+
+                /* Success template */
+                .k-notification-upload-success.k-group {
+                    background: rgba(0%,60%,0%,.7);
+                    color: #fff;
+                }
+
+                .upload-success {
+                    width: 240px;
+                    height: 100px;
+                    padding: 0 30px;
+                    line-height: 100px;
+                }
+
+                    .upload-success h3 {
+                        font-size: 1.7em;
+                        font-weight: normal;
+                        display: inline-block;
+                        vertical-align: middle;
+                    }
+
+                    .upload-success img {
+                        display: inline-block;
+                        vertical-align: middle;
+                        margin-right: 10px;
+                    }
+            </style>
+
+        </div>
+        <!-- Row-->
+    </div>
+    <!-- End Container-->
+</section>
+<!-- /Section 1-->
+
+
+<section>
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Tabs -->
+            <div role="tabpanel" class="col-sm-12 col-md-12">
+
+                <!-- Nav tabs -->
+                <ul class="nav nav-tabs" role="tablist">
+                    <li role="presentation" class="active"><a href="#tab1" aria-controls="tab1" role="tab" data-toggle="tab">Liste de(s) Salarié(s)</a></li>
+                </ul>
+
+                <!-- Tab content-->
+                <div class="tab-content">
+                    <!-- Tab pane 1-->
+                    <div role="tabpanel" class="tab-pane active" id="tab1">
+
+                        <div class="telerik-wrapper">
+
+                            <!-- Code pour la page de Recherche salarié(s)
+                                Tableau Liste de(s) Salarié(s)-->
+                            @(Html.Grid<Gsf.TestFwk.Web.Models.RecupDossier>()
+        .Name("grid")
+        .Columns(columns =>
+        {
+            columns.Bound(c => c.RDosMatriculePres).Title("Matricule").Width(150);
+            columns.Bound(c => c.RDosNom).Title("Nom").Width(200).Filterable(ftb => ftb.Cell(cell => cell.Operator("contains")));
+            columns.Bound(c => c.RDosPrenom).Title("Prénom").Width(200);
+            columns.Bound(c => c.RDosAge).Title("Age").Width(100);
+            columns.Bound(c => c.RDosDateEntreeSoc).Title("Date Entrée Société").Format("{0:dd/MM/yyyy}").Width(150);
+        })
+        .Sortable()
+        .Pageable()
+        .Scrollable()
+        .ClientDetailTemplateId("template")
+        .HtmlAttributes(new { style = "height:430px;" })
+        .DataSource(dataSource => dataSource
+            .Ajax()
+            .PageSize(6)
+            .Read(read => read.Action("HierarchyBinding_Employees", "Home").Data("additionalInfo"))
+        )   
+        .Events(events => events.DataBound("dataBound"))
+                            )
+                            <script id="template" type="text/kendo-tmpl">
+                                @(Html.Grid<Gsf.TestFwk.Web.Models.RecupData>()
+            .Name("grid_#=RDosMatriculePres#") // template expression, to be evaluated in the master context
+            .Columns(columns =>
+            {
+                columns.Bound(c => c.Matricule).Width(110);
+                columns.Bound(c => c.Nom).Width(110);
+                columns.Bound(c => c.Prenom).Width(110);
+                //columns.Bound(c => c.RDatDateSortie).Title("Date sortie").Width(110);
+                //columns.Bound(c => c.RDatDateEntree).Title("Date entrée").Width(110);
+                //columns.Bound(c => c.RDatMotifSortieLib).Title("Motif sortie lib").Width(110);
+                //columns.Bound(c => c.RDatMotifEntreeLib).Title("Motif entrée lib").Width(110);
+                //columns.Bound(o => o.ShipAddress).ClientTemplate("\\#= ShipAddress \\#"); // escaped template expression, to be evaluated in the child/detail context
+            })
+            .DataSource(dataSource => dataSource
+                .Ajax()
+                .PageSize(10)
+                .Read(read => read.Action("HierarchyBinding_EmployeeData", "Home", new { matricule = "#=RDosMatriculePres#" }))
+            )
+            .Pageable()
+            .Sortable()
+            .ToClientTemplate()
+                                )
+                            </script>
+                            <script>
+                                function dataBound() {
+                                    this.expandRow(this.tbody.find("tr.k-master-row").first());
+                                }
+                            </script>
+
+
+                            @(Html.Window().Name("Details")
+                                .Title("Détails E/S")
+                                .Visible(false)
+                                .Modal(true)
+                                .Draggable(true)
+                                .Width(370)
+                            )
+                            @(Html.Window().Name("Details2")
+                                .Title("Détails Affectation")
+                                .Visible(false)
+                                .Modal(true)
+                                .Draggable(true)
+                                .Width(370)
+                            )
+
+                            <script>
+                                function additionalInfo() {
+                                    //alert("Veuillez renseigner la zone numéros SS - 2");
+
+                                    return {
+                                        numSS: $("#userNumSS").val(),
+                                        nomParam: $("#userName").val(),
+                                        prenomParam: $("#userFirstname").val(),
+                                        dateEmbParam: $("#dateEmbauche").val()
+                                    };
+                                };
+
+                            </script>
+                            <script>
+                                function additionalInfo2() {
+
+
+                                    return {
+                                        matricule: Matricule
+                                    };
+                                };
+                            </script>
+
+                            <script type="text/x-kendo-template" id="template">
+                                <div id="details-container">
+                                    <center>
+                                        <h2><span class="glyphicon glyphicon-user" aria-hidden="true"></span>#= RDosNom # #= RDosPrenom #</h2>
+                                    </center>
+                                    <em>
+                                        Matricule : #= RDosMatriculePres # - Numéro SS :  #= RDosNumSS #
+                                    </em>
+                                    <br>
+                                    <dl>
+                                        <dt>Date Entrée : #= kendo.toString(kendo.parseDate(RDosDateEntree, 'yyyy-MM-dd'), 'dd/MM/yyyy') #</dt>
+                                        <dt>Motif Entrée : #= RDosMotifEntree #  #= RDosMotifEntreeLib #</dt>
+                                    </dl>
+                                    <br>
+                                    <dl>
+                                        <dt>Date Sortie : #= kendo.toString(kendo.parseDate(RDosDateSortie, 'yyyy-MM-dd'), 'dd/MM/yyyy') #</dt>
+                                        <dt>Motif Sortie : #= RDosMotifSortie #  #= RDosMotifSortieLib #</dt>
+                                    </dl>
+                                </div>
+                            </script>
+
+                            <script type="text/x-kendo-template" id="template2">
+                                <div id="details-container">
+                                    <center>
+                                        <h2><span class="glyphicon glyphicon-user" aria-hidden="true"></span>#= RDosNom # #= RDosPrenom #</h2>
+                                    </center>
+                                    <em>
+                                        Matricule : #= RDosMatriculePres # - Numéro SS :  #= RDosNumSS #
+                                    </em>
+                                    <br>
+                                    <dl>
+                                        <dt>Date début affectation : #= kendo.toString(kendo.parseDate(RDosDateDebAF, 'yyyy-MM-dd'), 'dd/MM/yyyy') #</dt>
+                                        <dt>Date fin affectation : #= kendo.toString(kendo.parseDate(RDosDateFinAF, 'yyyy-MM-dd'), 'dd/MM/yyyy') #</dt>
+                                        <dt>Code Emploi : #= RDosEmploiAF #  #= RDosEmploiLibAF #</dt>
+                                    </dl>
+                                </div>
+                            </script>
+
+                            <script type="text/javascript">
+                                var detailsTemplate = kendo.template($("#template").html());
+                                var detailsTemplate2 = kendo.template($("#template2").html());
+
+                                function showDetails(e) {
+                                    e.preventDefault();
+
+                                    var dataItem = this.dataItem($(e.currentTarget).closest("tr"));
+                                    var wnd = $("#Details").data("kendoWindow");
+
+                                    wnd.content(detailsTemplate(dataItem));
+                                    wnd.center().open();
+                                }
+                                function showDetails2(e) {
+                                    e.preventDefault();
+
+                                    var dataItem = this.dataItem($(e.currentTarget).closest("tr"));
+                                    var wnd = $("#Details2").data("kendoWindow");
+
+                                    wnd.content(detailsTemplate2(dataItem));
+                                    wnd.center().open();
+                                }
+                            </script>
+
+                            <script>
+                                function dataBound() {
+                                    this.expandRow(this.tbody.find("tr.k-master-row").first());
+                                }
+                            </script>
+                            <script>
+                                function EmployeeData() {
+                                    return {
+                                        numeroSS: "26407"
+                                    };
+                                }
+                            </script>
+                        </div>
+                        <hr>
+                    </div>
+                    <br />
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

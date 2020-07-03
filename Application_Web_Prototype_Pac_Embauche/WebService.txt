@@ -1,0 +1,23 @@
+Visual Studio 2013
+
+Service References
+	ServiceHR
+	Clique Droit
+	Configurer la référence de service... 
+
+	Adresse : http://sgsrep.gsf.group:9010/gsf-hr-ws-cjour/pocService?wsdl
+
+
+
+Ancien Webservice : 
+
+Adresse : http://sgsrep.gsf.group:9010/gsf-poc-ws-pso/pocService?wsdl
+Adresse : http://sgsrep.gsf.group:9010/gsf-hr-ws-cjou/pocService?wsdl
+
+
+
+Nouveau Webservice : 
+ 
+Adresse : http://sgsrep.gsf.group:9010/gsf-hr-ws-cjour/pocService?wsdl
+
+Adresse : http://sgsrep.gsf.group:9010/gsf-hr-ws-alefoll/pocService?wsdl

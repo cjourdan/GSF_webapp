@@ -1,0 +1,472 @@
+﻿@model IEnumerable<Gsf.TestFwk.Web.Models.Employee>
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<!-- Section 1 ========================================================================================================================= -->
+<section>
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Mod siteSelection -->
+            <div class="col-md-3">
+                @Html.Module("siteSelection", "glyphicon glyphicon-map-marker", "Choix du site",
+                @<text>
+                    <!--  Autocomplete Telerik + layout form bootstrap-->
+                    <div class="form-group">
+                        <p>Sélectionnez un site</p>
+                        @Html.DropDownList().Name("ddlSites")
+
+                        <p>Roles : @ViewBag.Roles</p>
+                        <p>Societes : @ViewBag.Societes</p>
+                        <p>Agences : @ViewBag.Agences</p>
+                        <p>Sites : @ViewBag.Sites</p>
+
+
+                        <p>UsersForRoles : @ViewBag.Users</p>
+
+                        <p>EncryptURL : @ViewBag.EncryptURL</p>
+
+                        
+                    </div>
+                </text>
+                                                                                                     )
+            </div>
+            <div class="col-md-3">
+                @Html.Module("dateSelection", "glyphicon glyphicon-calendar", "Choix des dates",
+                @<text>
+                    <!--  Autocomplete Telerik + layout form bootstrap-->
+                    <div class="form-group">
+                        <p>Sélectionnez des dates</p>
+                        <p>Du @Html.DatePicker().Name("dtpDebut2")</p>
+                        <p>Au @Html.DatePicker().Name("dtpFin2")</p>
+                    </div>
+                </text>
+                                                                                                     )
+            </div>
+            <div class="col-md-6"></div>
+
+
+
+
+
+
+        </div>
+        <!-- Row-->
+    </div>
+    <!-- End Container-->
+</section>
+<!-- /Section 1-->
+
+
+<section>
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Tabs -->
+            <div role="tabpanel" class="col-sm-12 col-md-12">
+
+                <!-- Nav tabs -->
+                <ul class="nav nav-tabs" role="tablist">
+                    <li role="presentation" class="active"><a href="#tab1" aria-controls="tab1" role="tab" data-toggle="tab">Evènements</a></li>
+                    <li role="presentation"><a href="#tab2" aria-controls="tab2" role="tab" data-toggle="tab">Formulaire</a></li>
+                </ul>
+
+                <!-- Tab content-->
+                <div class="tab-content">
+                    <!-- Tab pane 1-->
+                    <div role="tabpanel" class="tab-pane active" id="tab1">
+
+                        <div class="telerik-wrapper">
+                            @(Html.Grid(Model)
+                            .Name("grid")
+                            .Columns(columns =>
+                            {
+                                columns.Bound(e => e.Age).Width(140);
+                                columns.Bound(e => e.Nom).Width(190);
+                                columns.Bound(e => e.Prenom);
+                                columns.Command(commands =>
+                                {
+                                    commands.Edit();
+                                }).Width(180).Title("Commands");
+                            })
+                            .Editable(editable => editable.Mode(Kendo.Mvc.UI.GridEditMode.PopUp))
+                            .DataSource(dataSource => dataSource
+                            .Server()
+                            .Model(model => model.Id(p => p.Age))
+                            .Update("update", "home")
+                            )
+
+                            )
+                        </div>
+                        <hr>
+                    </div>
+
+                    <!-- Tab pane 2 -->
+                    <div role="tabpanel" class="tab-pane" id="tab2">
+
+                        <!-- Panel Form -->
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+
+                                @Html.TitrePrincipal("Titre Principal du formulaire")
+                            </div>
+                            <div class="panel-body">
+                                <form class="form-horizontal">
+                                    <fieldset>
+                                        @Html.TitreSecondaire("Sous titre du formulaire")
+                                        <div class="form-group">
+                                            @Html.Label("Email", new { @class = "col-lg-2" })
+                                            <div class="col-lg-10">
+                                                @Html.TextBox().Name("toto")
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="col-lg-10 col-lg-offset-2">
+                                                @Html.Button().Name("Cancel").Content("Cancel")
+                                                @Html.PrimaryButton().Name("Submit").Content("Submit")
+                                            </div>
+                                        </div>
+                                    </fieldset>
+                                </form>
+                            </div>
+                        </div>
+
+
+                    </div>
+
+                    <br />
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-4">
+                <h1>h1. Bootstrap 3</h1>
+                <h2>h2. Heading 2</h2>
+                <h3>h3. Heading 3</h3>
+                <h4>h4. Heading 4</h4>
+                <h5>h5. Heading 5</h5>
+                <h6>h6. Heading 6</h6>
+            </div><!-- /col-md-4 -->
+
+            <div class="col-lg-8">
+                <h3>Bootstrap sample text</h3>
+                <p>In simple terms, a responsive web design figures out what resolution of device it's being served on. Flexible grids then size correctly to fit the screen.</p>
+                <p>The new Bootstrap 3 promises to be a smaller build. The separate Bootstrap base and responsive.css files have now been merged into one. There is no more fixed grid, only fluid.</p>
+                <hr>
+
+                @Html.BlockQuote(
+                @<text>
+                    <p><strong>Blockquote</strong> Have you ever had a project ?</p>
+                </text>
+                                                             )
+            </div><!-- /col-md-8 -->
+
+        </div><!-- /row -->
+        <div class="row">
+
+            <div class="col-lg-4">
+                <h3 id="labels">Labels</h3>
+                @Html.LabelCarreDefault("Default")
+                @Html.LabelCarreSuccess("Success")
+                @Html.LabelCarreWarning("Warning")
+                @Html.LabelCarreDanger("Danger")
+                @Html.LabelCarreInfo("Info2")
+            </div><!-- /col-md-4 -->
+
+            <div class="col-lg-4">
+                <h3 id="badges">Badges</h3>
+                @Html.LabelRondDefault("Default")
+            </div><!-- /col-md-4 -->
+
+            <div class="col-lg-4">
+                <h3 id="panels">Bootstrap Modal Window</h3>
+                <!-- Button trigger modal -->
+                <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+                    Launch demo modal
+                </button>
+            </div><!-- /col-md-4 -->
+        </div><!-- /row -->
+
+        <div class="row">
+            <div class="col-lg-12">
+                <h3 id="panels">Bootstrap 3 Panels</h3>
+            </div>
+            <div class="col-lg-4">
+                @Html.PanelDefault("Panel Default",
+                @<text>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tincidunt est vitae ultrices accumsan.
+                        @Html.HtmlMVC.ActionLink("Creer Utilisateur", "CreateUser", "Home")
+                    </p>
+                </text>)
+
+                @Html.PanelDefault("Panel Default avec footer",
+                @<text>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tincidunt est vitae ultrices accumsan.</p>
+                </text>,
+                                                             "Mon footer")
+            </div><!-- /col-lg-4 -->
+
+            <div class="col-lg-4">
+                @Html.PanelSuccess("Panel Success avec footer",
+                @<text>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tincidunt est vitae ultrices accumsan.</p>
+                </text>,
+                                                             "Mon footer")
+            </div><!-- /col-lg-4 -->
+
+        </div><!-- /row -->
+        <div class="row">
+
+            <div class="col-lg-4">
+                @Html.PanelInfo("Panel Info avec footer",
+                @<text>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tincidunt est vitae ultrices accumsan.</p>
+                </text>,
+                                                             "Mon footer")
+            </div><!-- /col-lg-4 -->
+
+            <div class="col-lg-4">
+                @Html.PanelWarning("Panel Warning avec footer",
+                @<text>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tincidunt est vitae ultrices accumsan.</p>
+                </text>,
+                                                             "Mon footer")
+            </div><!-- /col-lg-4 -->
+
+            <div class="col-lg-4">
+                @Html.PanelDanger("Panel Danger avec footer",
+                @<text>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tincidunt est vitae ultrices accumsan.</p>
+                </text>,
+                                                             "Mon footer")
+            </div><!-- /col-lg-4 -->
+
+        </div><!-- /row -->
+        <div class="row">
+
+            <div class="col-lg-4">
+                @Html.TreeView().Name("tree")
+                @(Html.Window()
+            .Name("window")
+            .Title("test window")
+            .Content(@<text>
+                bonjour
+            </text>)
+                                                               .Width(600)
+                                                               .Visible(false)
+                                                               .Actions(actions => actions.Close())
+                                                               .Modal(true)
+                )
+
+                <a id="undo" href="#"> Ouvrir la popup</a>
+                @*<span id="undo" class="k-button">Ouvrir window.</span>*@
+
+                <script>
+                    function onClose() {
+                    }
+
+                    $(document).ready(function () {
+                        $("#undo").bind("click", function () {
+                            $("#window").data("kendoWindow").open();
+                        });
+                    });
+                </script>
+
+
+
+                <div id="agglomerations">
+                    bonjour<a href="#" title="Canton - 26,300,000" id="canton">salut</a><a href="#" title="Jakarta - 25,800,000"
+                                                                                           id="jakarta"></a>
+                </div>
+
+                @(Html.Tooltip()
+        .For("#agglomerations")
+        .Filter("a")
+        .Width(120)
+                )
+
+                <script type="text/javascript">
+                    $(document).ready(function () {
+                        $("#agglomerations").data("kendoTooltip").show($("#canton"));
+                    });
+                </script>
+
+
+
+                @(Html.Notification()
+                .Name("popupNotification")
+                )
+
+                <button id="showPopupNotification" class="k-button">As a popup at bottom-right</button>
+
+                <script>
+                    $(document).ready(function () {
+                        var popupNotification = $("#popupNotification").data("kendoNotification");
+
+                        $("#showPopupNotification").click(function () {
+                            var d = new Date();
+                            popupNotification.show(kendo.toString(d, 'HH:MM:ss.') + kendo.toString(d.getMilliseconds(), "000"), "error");
+                        });
+
+                    });
+                </script>
+
+
+            </div><!-- /col-lg-4 -->
+            <div class="col-lg-4">
+                @Html.Calendar().Name("cal")
+            </div><!-- /col-lg-4 -->
+            <div class="col-lg-4">
+
+                @Html.Module("thechart", "glyphicon glyphicon-stats", "Le beau graphique",
+                @<text>
+                    <!--  Autocomplete Telerik + layout form bootstrap-->
+                    <div class="telerik-wrapper">
+
+                        @(Html.Chart()
+                    .Name("chart")
+                    .Title("Gross domestic product growth \n /GDP annual %/")
+                    .ChartArea(chartArea => chartArea
+                    .Background("transparent")
+                    )
+                    .Series(series =>
+                    {
+                        series.Area(new double[] { 3.907, 7.943, 7.848, 9.284, 9.263, 9.801, 3.890, 8.238, 9.552, 6.855 }).Name("India");
+                        series.Area(new double[] { 1.988, 2.733, 3.994, 3.464, 4.001, 3.939, 1.333, -2.245, 4.339, 2.727 }).Name("World");
+                        series.Area(new double[] { -0.253, 0.362, -3.519, 1.799, 2.252, 3.343, 0.843, 2.877, -5.416, 5.590 }).Name("Haiti");
+                    })
+                    .CategoryAxis(axis => axis
+                    .Categories("2002", "2003", "2004", "2005", "2006", "2007", "2008", "2009", "2010", "2011")
+                    .MajorGridLines(lines => lines.Visible(false))
+                    )
+                    .ValueAxis(axis => axis
+                    .Numeric()
+                    .Labels(labels => labels.Format("{0}%"))
+                    .AxisCrossingValue(-10)
+                    .Line(line => line.Visible(false))
+                    )
+                    .Tooltip(tooltip => tooltip
+                    .Visible(true)
+                    .Format("{0}%")
+                    .Template("#= series.name #: #= value #")
+                    )
+                        )
+
+
+                    </div>
+                </text>)
+
+            </div><!-- /col-lg-4 -->
+
+        </div><!-- /row -->
+
+        <div class="row">
+
+            <div class="col-lg-4">
+                @(Html.ProgressBar()
+                      .Name("fastAndFurious")
+                      .Type(Kendo.Mvc.UI.ProgressBarType.Percent)
+                      .Value(20)
+                      .Animation(a => a.Duration(600))
+                )
+                @(Html.Upload()
+            .Name("files")
+                )
+            </div><!-- /col-lg-4 -->
+            <div class="col-lg-4">
+                @Html.Module("thechart3", "glyphicon glyphicon-stats", "Les belles lignes",
+                @<text>
+                    <!--  Autocomplete Telerik + layout form bootstrap-->
+                    <div class="telerik-wrapper">
+
+                        @(
+ Html.Chart()
+                        .Name("chart3")
+                        .Title("Gross domestic product growth \n /GDP annual %/")
+
+                        .ChartArea(chartArea => chartArea
+                        .Background("transparent")
+                        )
+                        .Series(series =>
+                        {
+                            series.Line(new double[] { 3.907, 7.943, 7.848, 9.284, 9.263, 9.801, 3.890, 8.238, 9.552, 6.855 }).Name("India");
+                            series.Line(new double[] { 1.988, 2.733, 3.994, 3.464, 4.001, 3.939, 1.333, -2.245, 4.339, 2.727 }).Name("World");
+                            series.Line(new double[] { 4.743, 7.295, 7.175, 6.376, 8.153, 8.535, 5.247, -7.832, 4.3, 4.3 }).Name("Russian Federation");
+                            series.Line(new double[] { -0.253, 0.362, -3.519, 1.799, 2.252, 3.343, 0.843, 2.877, -5.416, 5.590 }).Name("Haiti");
+                        })
+                        .CategoryAxis(axis => axis
+                        .Categories("2002", "2003", "2004", "2005", "2006", "2007", "2008", "2009", "2010", "2011")
+                        .MajorGridLines(lines => lines.Visible(false))
+                        )
+                        .ValueAxis(axis => axis
+                        .Numeric().Labels(labels => labels.Format("{0}%"))
+                        .Line(line => line.Visible(false))
+                        .AxisCrossingValue(-10)
+                        )
+                        .Tooltip(tooltip => tooltip
+                        .Visible(true)
+                        .Format("{0}%")
+                        )
+                        )
+
+
+                    </div>
+                </text>)
+
+
+            </div><!-- /col-lg-4 -->
+            <div class="col-lg-4">
+
+                @Html.Module("thechart2", "glyphicon glyphicon-stats", "Le beau donut",
+                @<text>
+                    <!--  Autocomplete Telerik + layout form bootstrap-->
+                    <div class="telerik-wrapper">
+
+                        @(
+ Html.Chart()
+                    .Name("chart2")
+                    .Title(title => title
+                    .Text("Share of Internet Population Growth")
+                    )
+                    .Legend(legend => legend
+                    .Visible(false)
+                    )
+                    .SeriesDefaults(series =>
+                    series.Donut().StartAngle(150)
+                    )
+                    .Series(series =>
+                    {
+                        series.Donut(new dynamic[] {
+                    new {category = "Asia",value = 30.8},
+                    new {category = "Europe",value = 21.1},
+                    new {category = "LatinAmerica",value = 16.3},
+                    new {category = "Africa",value = 17.6},
+                    new {category = "MiddleEast",value = 9.2},
+                    new {category = "NorthAmerica",value = 4.6}
+                    })
+                        .Name("2011");
+
+
+                    })
+                    .Tooltip(tooltip => tooltip
+                    .Visible(true)
+                    .Template("#= category # (#= series.name #): #= value #%")
+                    )
+                        )
+
+
+                    </div>
+                </text>)
+
+            </div><!-- /col-lg-4 -->
+
+        </div><!-- /row -->
+
+
+    </div>
+</section>
+

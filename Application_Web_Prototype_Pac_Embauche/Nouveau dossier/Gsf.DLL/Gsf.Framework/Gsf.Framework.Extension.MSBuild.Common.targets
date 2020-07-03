@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+      <GsfFrameworkDirectory Condition="$(GsfFrameworkDirectory) == ''">$(MSBuildProjectDirectory)\Include\</GsfFrameworkDirectory>
+	  
+	  <AssemblyPhase Condition="$(AssemblyPhase) == ''">Unknown</AssemblyPhase>
+    </PropertyGroup>
+  
+    <!-- ============== MSBuild ExtensionPack Framework ============== -->
+    <UsingTask AssemblyFile="$(GsfFrameworkDirectory)Gsf.Framework.Extension.dll" TaskName="Gsf.Framework.Extension.MSBuild.FileSystem.FileUpdate"/>
+	  <UsingTask AssemblyFile="$(GsfFrameworkDirectory)Gsf.Framework.Extension.dll" TaskName="Gsf.Framework.Extension.MSBuild.FileSystem.Folder"/>
+    <UsingTask AssemblyFile="$(GsfFrameworkDirectory)Gsf.Framework.Extension.dll" TaskName="Gsf.Framework.Extension.MSBuild.AssemblyInfo"/>
+    <UsingTask AssemblyFile="$(GsfFrameworkDirectory)Gsf.Framework.Extension.dll" TaskName="Gsf.Framework.Extension.MSBuild.Subversion.Svn"/>
+    <UsingTask AssemblyFile="$(GsfFrameworkDirectory)Gsf.Framework.Extension.dll" TaskName="Gsf.Framework.Extension.MSBuild.VisualStudio.VSDevEnv"/>
+
+  <!-- ============== GSF Framework MSBuild Extension ============== -->
+  <!-- Target : AfficherVariables -->
+  <Target Name="AfficherVariables">
+    <Message Text="Environnement: $(Environnement)"/>
+    <Message Text="Configuration: $(Configuration)"/>
+    <Message Text="Path: $(Publication_LocalPath_WebAdmin)"/>
+  </Target>
+
+  <!-- Target : ValidateAssemblyInfoSettings -->
+  <Target Name = "ValidateAssemblyInfoSettings">
+    <ItemGroup>
+      <_RequiredProperties Include="Source_Path">
+        <Value>$(Source_Path)</Value>
+      </_RequiredProperties>
+      <_RequiredProperties Include="RootSvn_Path">
+        <Value>$(RootSvn_Path)</Value>
+      </_RequiredProperties>
+    </ItemGroup>
+    
+    <!-- Raise an error if any value in _RequiredProperties is missing -->
+    <Error Condition="'%(_RequiredProperties.Value)'==''"
+           Text = "Missing required property [%(_RequiredProperties.Identity)]"/>
+  </Target>
+
+  <!-- Target : UpdateAssemblyInfo / AssemblyInfoDependsOn -->
+  <PropertyGroup>
+    <AssemblyInfoDependsOn>
+      ValidateAssemblyInfoSettings;
+      $(AssemblyInfoDependsOn)
+    </AssemblyInfoDependsOn>
+  </PropertyGroup>
+  
+  <Target Name="UpdateAssemblyInfo" DependsOnTargets="$(AssemblyInfoDependsOn)" Condition="$(_AssemblyInformationalVersion) == ''">
+    <Message Text="Source_Path : $(Source_Path)"/>
+    
+	<!-- Version -->
+    <Gsf.Framework.Extension.MSBuild.Subversion.Svn TaskAction="Info" Item="$(RootSvn_Path)">
+      <Output TaskParameter="Info" ItemName="IInfo"/>
+    </Gsf.Framework.Extension.MSBuild.Subversion.Svn>
+    
+    <Gsf.Framework.Extension.MSBuild.AssemblyInfo AssemblyInfoFiles="$(Source_Path)\GlobalAssemblyInfo.cs"
+                                                  AssemblyFileBuildNumberType="DateString"
+                                                  AssemblyFileBuildNumberFormat="Mdd"
+                                                  AssemblyFileRevision="%(IInfo.EntryRevision)">
+      <Output TaskParameter="MaxAssemblyVersion" PropertyName="_AssemblyVersion"/>
+      <Output TaskParameter="MaxAssemblyFileVersion" PropertyName="_AssemblyFileVersion"/>
+	</Gsf.Framework.Extension.MSBuild.AssemblyInfo>
+	
+	<Gsf.Framework.Extension.MSBuild.Subversion.Svn TaskAction="GetAssemblyInformationalVersion" Item="$(RootSvn_Path)"
+													AssemblyVersion="$(_AssemblyVersion)"
+													AssemblyPhase="$(AssemblyPhase)"
+                          CheckAvailableTagInSvn="$(TagRevisionInSvn)"
+                          RepositoryPathTag="$(RepositoryPathTag)"
+                          RepositoryTagFormat="$(RepositoryTagFormat)">
+      <Output TaskParameter="PropertyValue" PropertyName="_AssemblyInformationalVersion"/>
+      <Output TaskParameter="RepositoryTag" PropertyName="_RepositioryTag"/>
+      <Output TaskParameter="RepositoryDestination" PropertyName="_RepositioryDestination"/>
+    </Gsf.Framework.Extension.MSBuild.Subversion.Svn>
+	
+	<Gsf.Framework.Extension.MSBuild.AssemblyInfo AssemblyInfoFiles="$(Source_Path)\GlobalAssemblyInfo.cs"
+                                                  AssemblyInformationalVersion="$(_AssemblyInformationalVersion)"
+                                                  UpdateAssemblyInformationalVersion="true"/>
+  </Target>
+
+  <Target Name="UpdateSvnTag" Condition="$(TagRevisionInSvn)" >
+	<Message Text="RootSvn_Path : $(RootSvn_Path)"/>
+    <Message Text="RepositioryTag : $(_RepositioryTag)"/>
+    <Message Text="RepositioryDestination : $(_RepositioryDestination)"/>
+    
+    <Gsf.Framework.Extension.MSBuild.Subversion.Svn TaskAction="Copy" Items="$(RootSvn_Path)" Destination="$(_RepositioryDestination)">
+    </Gsf.Framework.Extension.MSBuild.Subversion.Svn>
+
+  </Target>
+</Project>

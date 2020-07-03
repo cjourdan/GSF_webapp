@@ -1,0 +1,199 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit http://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <_PublishTargetUrl>\\SPOCETUDE01\d$\Hebergement\Site1</_PublishTargetUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="Aide/Application tablette/GSF  - MBC - Documentation Tablette 123.pdf">
+      <publishTime>04/07/2015 14:27:08</publishTime>
+    </File>
+    <File Include="Aide/Console de pilotage/GSF  - MBC - Documentation 123.pdf">
+      <publishTime>04/07/2015 14:27:08</publishTime>
+    </File>
+    <File Include="App_Data/GsfXmlMembershipProvider.Sample.xml">
+      <publishTime>01/28/2015 14:52:45</publishTime>
+    </File>
+    <File Include="App_Data/GsfXmlMembershipProvider.xml">
+      <publishTime>06/02/2015 11:36:49</publishTime>
+    </File>
+    <File Include="App_Data/GsfXmlRoleProvider.xml">
+      <publishTime>05/06/2015 13:03:29</publishTime>
+    </File>
+    <File Include="bin/Aide/Application tablette/GSF  - MBC - Documentation Tablette 123.pdf">
+      <publishTime>04/07/2015 14:27:08</publishTime>
+    </File>
+    <File Include="bin/Aide/Console de pilotage/GSF  - MBC - Documentation 123.pdf">
+      <publishTime>04/07/2015 14:27:08</publishTime>
+    </File>
+    <File Include="bin/Antlr3.Runtime.dll">
+      <publishTime>12/31/2014 10:51:09</publishTime>
+    </File>
+    <File Include="bin/Common.Logging.dll">
+      <publishTime>05/12/2015 12:33:40</publishTime>
+    </File>
+    <File Include="bin/EntityFramework.dll">
+      <publishTime>12/31/2014 10:51:09</publishTime>
+    </File>
+    <File Include="bin/EntityFramework.SqlServer.dll">
+      <publishTime>12/31/2014 10:51:09</publishTime>
+    </File>
+    <File Include="bin/Gsf.Framework.dll">
+      <publishTime>06/05/2015 14:18:19</publishTime>
+    </File>
+    <File Include="bin/Gsf.Framework.Referentiel.dll">
+      <publishTime>02/12/2015 17:56:32</publishTime>
+    </File>
+    <File Include="bin/Gsf.Framework.Server.dll">
+      <publishTime>06/05/2015 14:18:20</publishTime>
+    </File>
+    <File Include="bin/Gsf.Framework.Web.dll">
+      <publishTime>06/05/2015 14:18:21</publishTime>
+    </File>
+    <File Include="bin/Gsf.Framework.Web.MVC.dll">
+      <publishTime>06/05/2015 14:18:21</publishTime>
+    </File>
+    <File Include="bin/Gsf.TestFwk.Business.dll">
+      <publishTime>06/05/2015 14:18:20</publishTime>
+    </File>
+    <File Include="bin/Gsf.TestFwk.Data.dll">
+      <publishTime>06/05/2015 14:18:19</publishTime>
+    </File>
+    <File Include="bin/Gsf.TestFwk.Model.dll">
+      <publishTime>06/05/2015 14:18:19</publishTime>
+    </File>
+    <File Include="bin/Gsf.TestFwk.Web.dll">
+      <publishTime>06/05/2015 14:18:22</publishTime>
+    </File>
+    <File Include="bin/Kendo.Mvc.dll">
+      <publishTime>04/29/2015 12:17:14</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AspNet.Identity.Core.dll">
+      <publishTime>01/20/2015 11:13:48</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AspNet.Identity.EntityFramework.dll">
+      <publishTime>01/20/2015 11:13:49</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AspNet.Identity.Owin.dll">
+      <publishTime>01/20/2015 11:19:13</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Owin.dll">
+      <publishTime>02/23/2015 15:39:41</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Owin.Host.SystemWeb.dll">
+      <publishTime>01/20/2015 11:21:23</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Owin.Security.Cookies.dll">
+      <publishTime>04/07/2015 14:33:11</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Owin.Security.dll">
+      <publishTime>04/07/2015 14:33:08</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Owin.Security.Facebook.dll">
+      <publishTime>12/31/2014 10:51:27</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Owin.Security.Google.dll">
+      <publishTime>12/31/2014 10:51:30</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Owin.Security.MicrosoftAccount.dll">
+      <publishTime>12/31/2014 10:51:31</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Owin.Security.OAuth.dll">
+      <publishTime>01/20/2015 11:19:14</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Owin.Security.Twitter.dll">
+      <publishTime>12/31/2014 10:51:33</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Web.Infrastructure.dll">
+      <publishTime>12/31/2014 10:51:35</publishTime>
+    </File>
+    <File Include="bin/Newtonsoft.Json.dll">
+      <publishTime>12/31/2014 10:51:38</publishTime>
+    </File>
+    <File Include="bin/Ninject.dll">
+      <publishTime>03/18/2012 23:43:02</publishTime>
+    </File>
+    <File Include="bin/Owin.dll">
+      <publishTime>12/31/2014 10:51:42</publishTime>
+    </File>
+    <File Include="bin/System.Net.Http.Formatting.dll">
+      <publishTime>02/10/2015 10:25:24</publishTime>
+    </File>
+    <File Include="bin/System.Web.Helpers.dll">
+      <publishTime>01/19/2015 13:39:38</publishTime>
+    </File>
+    <File Include="bin/System.Web.Http.dll">
+      <publishTime>02/10/2015 10:25:24</publishTime>
+    </File>
+    <File Include="bin/System.Web.Http.Owin.dll">
+      <publishTime>02/10/2015 10:25:24</publishTime>
+    </File>
+    <File Include="bin/System.Web.Mvc.dll">
+      <publishTime>01/19/2015 13:39:37</publishTime>
+    </File>
+    <File Include="bin/System.Web.Optimization.dll">
+      <publishTime>12/31/2014 10:51:17</publishTime>
+    </File>
+    <File Include="bin/System.Web.Razor.dll">
+      <publishTime>01/19/2015 13:39:38</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.Deployment.dll">
+      <publishTime>01/19/2015 13:39:38</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.dll">
+      <publishTime>01/19/2015 13:39:38</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.Razor.dll">
+      <publishTime>01/19/2015 13:39:38</publishTime>
+    </File>
+    <File Include="bin/WebGrease.dll">
+      <publishTime>12/31/2014 10:51:44</publishTime>
+    </File>
+    <File Include="Config/authentification.config">
+      <publishTime>02/09/2015 13:17:59</publishTime>
+    </File>
+    <File Include="Content/Images/logo.png">
+      <publishTime>05/20/2015 10:27:40</publishTime>
+    </File>
+    <File Include="Content/Style/Application.css">
+      <publishTime>05/20/2015 10:27:40</publishTime>
+    </File>
+    <File Include="favicon.ico">
+      <publishTime>12/24/2014 13:52:58</publishTime>
+    </File>
+    <File Include="Global.asax">
+      <publishTime>12/24/2014 13:52:58</publishTime>
+    </File>
+    <File Include="packages.config">
+      <publishTime>05/12/2015 12:33:40</publishTime>
+    </File>
+    <File Include="Views/Account/Login.cshtml">
+      <publishTime>02/13/2015 14:25:14</publishTime>
+    </File>
+    <File Include="Views/Home/CreateUser.cshtml">
+      <publishTime>04/29/2015 17:44:57</publishTime>
+    </File>
+    <File Include="Views/Home/DeleteUser.cshtml">
+      <publishTime>04/29/2015 17:44:57</publishTime>
+    </File>
+    <File Include="Views/Home/Index.cshtml">
+      <publishTime>06/03/2015 17:42:38</publishTime>
+    </File>
+    <File Include="Views/Home/UpdateUser.cshtml">
+      <publishTime>04/29/2015 17:44:57</publishTime>
+    </File>
+    <File Include="Views/Web.config">
+      <publishTime>05/27/2015 17:43:11</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>06/05/2015 14:18:25</publishTime>
+    </File>
+    <File Include="Web.sitemap">
+      <publishTime>04/07/2015 14:27:08</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

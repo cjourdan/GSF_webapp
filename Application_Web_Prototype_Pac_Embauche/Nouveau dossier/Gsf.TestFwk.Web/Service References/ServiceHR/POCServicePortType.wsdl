@@ -1,0 +1,906 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ns1="http://gsf.fr/api/poc/ws" xmlns:ns2="http://gsf.fr/api/poc/schema" name="POCServicePortType" targetNamespace="http://gsf.fr/api/poc/ws" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xs:schema targetNamespace="http://gsf.fr/api/poc/ws" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="MajBlobZY00">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="in" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="MajBlobZY00Fault">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="MajBlobZY00Fault" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="MajBlobZY00Response">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="out" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="MajGTARealise">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="in" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="MajGTARealiseFault">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="MajGTARealiseFault" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="MajGTARealiseResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="out" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getDonneesReferentielContrat">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="in" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getDonneesReferentielContratFault">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="getDonneesReferentielContratFault" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getDonneesReferentielContratResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="out" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getDossierHR">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="in" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getDossierHRFault">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="getDossierHRFault" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getDossierHRResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="out" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getES">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="in" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getESFault">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="getESFault" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getESResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="out" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getEmployes">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="in" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getEmployesFault">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="getEmployesFault" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getEmployesResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="out" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getFicheEmploye">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="in" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getFicheEmployeFault">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="getFicheEmployeFault" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getFicheEmployeResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="out" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getFicheIndicative">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="in" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getFicheIndicativeFault">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="getFicheIndicativeFault" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getFicheIndicativeResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="out" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getHRDossier">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="in" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getHRDossierResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="out" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getListeEmploi">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="in" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getListeEmploiFault">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="getListeEmploiFault" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getListeEmploiResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="out" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getPaieEmploye">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="in" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getPaieEmployeFault">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="getPaieEmployeFault" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getPaieEmployeResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="out" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getPhoto">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="in" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getPhotoFault">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="getPhotoFault" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getPhotoResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="out" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getTeam">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="in" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getTeamFault">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="getTeamFault" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getTeamResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="out" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:schema>
+    <xs:schema xmlns:tns="http://gsf.fr/api/poc/schema" targetNamespace="http://gsf.fr/api/poc/schema" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="MajBlobZY00Fault" type="tns:CustomFaultException" />
+      <xs:element name="MajBlobZY00Request" type="tns:RequestUpdateZY00BlobDto" />
+      <xs:element name="MajBlobZY00Response" type="tns:CompteRenduDto" />
+      <xs:element name="MajGTARealiseFault" type="tns:CustomFaultException" />
+      <xs:element name="MajGTARealiseRequest" type="tns:RequestUpdateZY5L" />
+      <xs:element name="MajGTARealiseResponse" type="tns:CompteRenduDto" />
+      <xs:element name="getDonneesReferentielContratFault" type="tns:CustomFaultException" />
+      <xs:element name="getDonneesReferentielContratRequest" type="tns:RequestDonneesReferentielContratDto" />
+      <xs:element name="getDonneesReferentielContratResponse" type="tns:DonneesReferentielContratDto" />
+      <xs:element name="getDossierHRFault" type="tns:CustomFaultException" />
+      <xs:element name="getDossierHRRequest" type="tns:RequestDossierHRDto" />
+      <xs:element name="getDossierHRResponse" type="tns:ListeDossierHRDto" />
+      <xs:element name="getESFault" type="tns:CustomFaultException" />
+      <xs:element name="getESRequest" type="tns:RequestListeESDto" />
+      <xs:element name="getESResponse" type="tns:ListeESDto" />
+      <xs:element name="getEmployesFault" type="tns:CustomFaultException" />
+      <xs:element name="getEmployesRequest" type="tns:RequestListeSalariesDto" />
+      <xs:element name="getEmployesResponse" type="tns:ListeSalariesDto" />
+      <xs:element name="getFicheEmployeFault" type="tns:CustomFaultException" />
+      <xs:element name="getFicheEmployeRequest" type="tns:RequestFicheEmployeDto" />
+      <xs:element name="getFicheEmployeResponse" type="tns:EmployeDto" />
+      <xs:element name="getFicheIndicativeFault" type="tns:CustomFaultException" />
+      <xs:element name="getFicheIndicativeRequest" type="tns:RequestFicheIndicativeDto" />
+      <xs:element name="getFicheIndicativeResponse" type="tns:FicheIndicativeDto" />
+      <xs:element name="getListeEmploiFault" type="tns:CustomFaultException" />
+      <xs:element name="getListeEmploiRequest" type="tns:RequestListeEmploiDto" />
+      <xs:element name="getListeEmploiResponse" type="tns:ListeEmploiDto" />
+      <xs:element name="getPaieEmployeFault" type="tns:CustomFaultException" />
+      <xs:element name="getPaieEmployeRequest" type="tns:RequestFicheIndicativeDto" />
+      <xs:element name="getPaieEmployeResponse" type="tns:PaieDto" />
+      <xs:element name="getPhotoRequest" type="tns:RequestReadBlobZY00Dto" />
+      <xs:element name="getPhotoResponse" type="tns:HrBlobDto" />
+      <xs:element name="getPhotofault" type="tns:CustomFaultException" />
+      <xs:element name="getTeamFault" type="tns:CustomFaultException" />
+      <xs:element name="getTeamRequest" type="tns:RequestListeMemberDto" />
+      <xs:element name="getTeamResponse" type="tns:ListeMemberDto" />
+      <xs:element name="pingFault" type="tns:CustomFaultException" />
+      <xs:element name="pingRequest" type="tns:PingDto" />
+      <xs:element name="pingResponse" type="tns:PingDto" />
+      <xs:complexType name="RequestDossierHRDto">
+        <xs:sequence>
+          <xs:element name="numSS" type="xs:string" />
+          <xs:element name="nom" type="xs:string" />
+          <xs:element name="prenom" type="xs:string" />
+          <xs:element name="dateEmbauche" type="xs:string" />
+          <xs:element name="dateDebutGTA" type="xs:string" />
+          <xs:element name="dateFinGTA" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ListeDossierHRDto">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="dossiers" nillable="true" type="tns:DossierHRDto" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="DossierHRDto">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="matriculeNew" type="xs:string" />
+          <xs:element minOccurs="0" name="numSS" type="xs:string" />
+          <xs:element minOccurs="0" name="nom" type="xs:string" />
+          <xs:element minOccurs="0" name="prenom" type="xs:string" />
+          <xs:element minOccurs="0" name="age" type="xs:string" />
+          <xs:element minOccurs="0" name="dateEntSoc" type="xs:date" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="doc" nillable="true" type="tns:DocumentDto" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="crt" nillable="true" type="tns:ContratDto" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="affect" nillable="true" type="tns:AffectationDto" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="es" nillable="true" type="tns:EntreeSortieDto" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="realGTA" nillable="true" type="tns:GTADto" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="DocumentDto">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="type" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="typeLib" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="numeroDoc" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="dateDelivrance" nillable="true" type="xs:date" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="dateDebVal" nillable="true" type="xs:date" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="dateFinVal" nillable="true" type="xs:date" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ContratDto">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="dateDebut" nillable="true" type="xs:date" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="dateFin" nillable="true" type="xs:date" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="typeContrat" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="typeContratLib" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="natureContrat" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="natureContratLib" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="AffectationDto">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="dateDebut" nillable="true" type="xs:date" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="dateFin" nillable="true" type="xs:date" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="emploi" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="emploiLib" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="etabAffect" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="etabAffectLib" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="EntreeSortieDto">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="societe" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="societeLib" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="dateEntree" nillable="true" type="xs:date" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="heureEntree" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="motifEntree" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="motifEntreeLib" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="dateSortie" nillable="true" type="xs:date" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="heureSortie" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="motifSortie" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="motifSortieLib" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GTADto">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="dateReal" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="natureHeureReal" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="natureHeureRealLib" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="heureDebTheo" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="heureFinTheo" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="heureDebReal" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="heureFinReal" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="chantier" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="chantierLib" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="CustomFaultException">
+        <xs:sequence>
+          <xs:element name="message" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="RequestUpdateZY5L">
+        <xs:sequence>
+          <xs:element name="socCle" type="xs:string" />
+          <xs:element name="matCle" type="xs:string" />
+          <xs:element name="datAle" type="xs:string" />
+          <xs:element name="heuDeb" type="xs:string" />
+          <xs:element name="idCont" type="xs:string" />
+          <xs:element name="nature" type="xs:string" />
+          <xs:element name="heuFin" type="xs:string" />
+          <xs:element name="numCha" type="xs:string" />
+          <xs:element name="typPau" type="xs:string" />
+          <xs:element name="pauDeb" type="xs:string" />
+          <xs:element name="pauFin" type="xs:string" />
+          <xs:element name="durPau" type="xs:string" />
+          <xs:element minOccurs="0" name="updateScope" type="xs:string" />
+          <xs:element minOccurs="0" name="updateType" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="CompteRenduDto">
+        <xs:sequence>
+          <xs:element name="mouvementMaj" type="xs:string" />
+          <xs:element name="origine" type="xs:string" />
+          <xs:element name="typeFin" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="erreursHR" nillable="true" type="tns:ErreurHRDto" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ErreurHRDto">
+        <xs:sequence>
+          <xs:element name="poidsErreur" type="xs:string" />
+          <xs:element name="codeErreur" type="xs:string" />
+          <xs:element name="libErreur" type="xs:string" />
+          <xs:element name="informationHRErreur" type="xs:string" />
+          <xs:element name="rubriqueHRErreur" type="xs:string" />
+          <xs:element name="commentaire" type="xs:string" />
+          <xs:element name="descriptionErreur" type="xs:string" />
+          <xs:element name="traitementHRErreur" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="RequestListeEmploiDto">
+        <xs:sequence>
+          <xs:element name="codeConvention" type="xs:string" />
+          <xs:element name="classification" type="xs:string" />
+          <xs:element name="qualification" type="xs:string" />
+          <xs:element name="position" type="xs:string" />
+          <xs:element name="echelon" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ListeEmploiDto">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="emploi" nillable="true" type="tns:EmploiDto" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="EmploiDto">
+        <xs:sequence>
+          <xs:element name="code" type="xs:string" />
+          <xs:element name="libelleLong" type="xs:string" />
+          <xs:element name="libelleCourt" type="xs:string" />
+          <xs:element name="classification" type="xs:string" />
+          <xs:element name="qualification" type="xs:string" />
+          <xs:element minOccurs="0" name="position" type="xs:string" />
+          <xs:element minOccurs="0" name="echelon" type="xs:string" />
+          <xs:element minOccurs="0" name="annexe" type="xs:string" />
+          <xs:element minOccurs="0" name="groupe" type="xs:string" />
+          <xs:element minOccurs="0" name="coefficient" type="xs:string" />
+          <xs:element minOccurs="0" name="niveau" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="PingDto">
+        <xs:sequence>
+          <xs:element name="value" type="xs:int" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="RequestUpdateZY00BlobDto">
+        <xs:sequence>
+          <xs:element name="socCle" type="xs:string" />
+          <xs:element name="matricule" type="xs:string" />
+          <xs:element name="image" type="xs:string" />
+          <xs:element name="updateScope" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="RequestFicheEmployeDto">
+        <xs:sequence>
+          <xs:element name="matricule" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="EmployeDto">
+        <xs:sequence>
+          <xs:element name="matricule" type="xs:string" />
+          <xs:element name="nom" type="xs:string" />
+          <xs:element name="prenom" type="xs:string" />
+          <xs:element name="sexe" type="xs:string" />
+          <xs:element name="age" type="xs:int" />
+          <xs:element name="nomNaiss" type="xs:string" />
+          <xs:element name="villeNaiss" type="xs:string" />
+          <xs:element name="dateNaiss" type="xs:date" />
+          <xs:element name="numSS" type="xs:string" />
+          <xs:element name="nationalite" type="xs:string" />
+          <xs:element name="email" type="xs:string" />
+          <xs:element name="sitFAm" type="xs:string" />
+          <xs:element name="nbKids" type="xs:int" />
+          <xs:element name="nbPersCharge" type="xs:int" />
+          <xs:element name="adresse" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="RequestReadBlobZY00Dto">
+        <xs:sequence>
+          <xs:element name="matricule" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="HrBlobDto">
+        <xs:sequence>
+          <xs:element name="nom" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="blobByte" type="xs:byte" />
+          <xs:element name="compteRendu" type="tns:CompteRenduDto" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="RequestFicheIndicativeDto">
+        <xs:sequence>
+          <xs:element name="matricule" type="xs:string" />
+          <xs:element minOccurs="0" name="date" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="FicheIndicativeDto">
+        <xs:sequence>
+          <xs:element name="employe" type="tns:EmployeDto" />
+          <xs:element name="conges" type="tns:CongesDto" />
+          <xs:element name="infosContrat" type="tns:InfoContratDto" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="experiencePro" nillable="true" type="tns:ExperienceProfessionnelleDto" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="heuresContractuelles" nillable="true" type="tns:HeuresContractuellesDto" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="CongesDto">
+        <xs:sequence>
+          <xs:element name="echus" type="xs:float" />
+          <xs:element name="enCours" type="xs:float" />
+          <xs:element name="anciennete" type="xs:float" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="InfoContratDto">
+        <xs:sequence>
+          <xs:element name="emploi" type="tns:EmploiDto" />
+          <xs:element name="contrat" type="tns:ContratDto" />
+          <xs:element name="affectation" type="tns:AffectationDto" />
+          <xs:element name="activite" type="xs:string" />
+          <xs:element name="entreeGroupe" type="xs:string" />
+          <xs:element name="Anciennete" type="xs:string" />
+          <xs:element name="dateAgence" type="xs:date" />
+          <xs:element name="dateMetier" type="xs:date" />
+          <xs:element name="motifEntree" type="xs:string" />
+          <xs:element name="dateSortie" type="xs:date" />
+          <xs:element name="motifSortie" type="xs:string" />
+          <xs:element name="horaireMensuel" type="xs:float" />
+          <xs:element name="tauxHoraire" type="xs:float" />
+          <xs:element name="salaireBase" type="xs:float" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ExperienceProfessionnelleDto">
+        <xs:sequence>
+          <xs:element name="date" type="xs:date" />
+          <xs:element name="emploiLib" type="xs:string" />
+          <xs:element name="societeLib" type="xs:string" />
+          <xs:element name="etablissementLib" type="xs:string" />
+          <xs:element name="typeContrat" type="xs:string" />
+          <xs:element name="dateEntree" type="xs:date" />
+          <xs:element name="dateSortie" type="xs:date" />
+          <xs:element name="stc" type="xs:string" />
+          <xs:element name="motifApresSort" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="HeuresContractuellesDto">
+        <xs:sequence>
+          <xs:element name="dateEffet" type="xs:date" />
+          <xs:element name="activiteLib" type="xs:string" />
+          <xs:element minOccurs="0" name="heuressemaine" type="xs:float" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="RequestListeESDto">
+        <xs:sequence>
+          <xs:element name="matricule" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ListeESDto">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="entreeSortie" nillable="true" type="tns:EntreeSortieDto" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="RequestDonneesReferentielContratDto">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="codeSociete" type="xs:string" />
+          <xs:element minOccurs="0" name="codeEtablissement" type="xs:string" />
+          <xs:element name="dateEmbauche" type="xs:date" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="DonneesReferentielContratDto">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="societe" type="tns:SocieteDto" />
+          <xs:element minOccurs="0" name="etablissement" type="tns:EtablissementDto" />
+          <xs:element minOccurs="0" name="caisseURSSAF" type="tns:OrganismeDto" />
+          <xs:element minOccurs="0" name="caisseRetraiteComplementaire" type="tns:OrganismeDto" />
+          <xs:element minOccurs="0" name="organismePrevoyance" type="tns:OrganismeDto" />
+          <xs:element minOccurs="0" name="organismeParitaire" type="tns:OrganismeDto" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="accords" nillable="true" type="tns:AccordDto" />
+          <xs:element minOccurs="0" name="accordCollectifHR" type="xs:string" />
+          <xs:element minOccurs="0" name="jourAcompte" type="xs:int" />
+          <xs:element minOccurs="0" name="jourPaie" type="xs:int" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="SocieteDto">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="code" type="xs:string" />
+          <xs:element minOccurs="0" name="libelleLong" type="xs:string" />
+          <xs:element minOccurs="0" name="libelleCourt" type="xs:string" />
+          <xs:element minOccurs="0" name="adresse" type="tns:AdresseDto" />
+          <xs:element minOccurs="0" name="siren" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="AdresseDto">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="principal" type="xs:string" />
+          <xs:element minOccurs="0" name="complement" type="xs:string" />
+          <xs:element minOccurs="0" name="codePostal" type="xs:string" />
+          <xs:element minOccurs="0" name="ville" type="xs:string" />
+          <xs:element minOccurs="0" name="telephone" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="EtablissementDto">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="code" type="xs:string" />
+          <xs:element minOccurs="0" name="libelleLong" type="xs:string" />
+          <xs:element minOccurs="0" name="libelleCourt" type="xs:string" />
+          <xs:element minOccurs="0" name="adresse" type="tns:AdresseDto" />
+          <xs:element minOccurs="0" name="siret" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="OrganismeDto">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="code" type="xs:string" />
+          <xs:element minOccurs="0" name="libelleLong" type="xs:string" />
+          <xs:element minOccurs="0" name="libelleCourt" type="xs:string" />
+          <xs:element minOccurs="0" name="adresse" type="tns:AdresseDto" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="AccordDto">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="type" type="tns:TypeAccordDto" />
+          <xs:element minOccurs="0" name="theme" type="xs:string" />
+          <xs:element minOccurs="0" name="dateDebut" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="dateFin" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="libelleLong" type="xs:string" />
+          <xs:element minOccurs="0" name="reference" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="PaieDto">
+        <xs:sequence>
+          <xs:element name="annee" type="xs:int" />
+          <xs:element name="absences" type="xs:float" />
+          <xs:element name="horaireAnnuel" type="xs:float" />
+          <xs:element name="brutAnnuel" type="xs:float" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="RequestListeMemberDto">
+        <xs:sequence>
+          <xs:element name="matricule" type="xs:string" />
+          <xs:element minOccurs="0" name="date" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ListeMemberDto">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="members" nillable="true" type="tns:MemberDto" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="MemberDto">
+        <xs:sequence>
+          <xs:element name="matricule" type="xs:string" />
+          <xs:element name="firstname" type="xs:string" />
+          <xs:element name="lastname" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="RequestListeSalariesDto">
+        <xs:sequence>
+          <xs:element name="matricule" type="xs:string" />
+          <xs:element minOccurs="0" name="nom" type="xs:string" />
+          <xs:element minOccurs="0" name="prenom" type="xs:string" />
+          <xs:element minOccurs="0" name="numSS" type="xs:string" />
+          <xs:element minOccurs="0" name="date" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ListeSalariesDto">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="salaries" nillable="true" type="tns:SalarieDto" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="SalarieDto">
+        <xs:sequence>
+          <xs:element name="matricule" type="xs:string" />
+          <xs:element name="nom" type="xs:string" />
+          <xs:element name="prenom" type="xs:string" />
+          <xs:element name="numSS" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="RequestDto">
+        <xs:sequence>
+          <xs:element name="codeSoc" type="xs:string" />
+          <xs:element name="codeEtab" type="xs:string" />
+          <xs:element name="dateEmbauche" type="xs:date" />
+          <xs:element name="typeReg" type="xs:string" />
+          <xs:element name="classi" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:simpleType name="TypeAccordDto">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="Groupe" />
+          <xs:enumeration value="Societe" />
+          <xs:enumeration value="Etablissement" />
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="PingFault">
+    <wsdl:part name="PingFault" element="ns2:pingFault" />
+  </wsdl:message>
+  <wsdl:message name="GetDossierHRFault_Exception">
+    <wsdl:part name="GetDossierHRFault_Exception" element="ns2:getDossierHRFault" />
+  </wsdl:message>
+  <wsdl:message name="MajBlobZY00Response">
+    <wsdl:part name="output" element="ns2:MajBlobZY00Response" />
+  </wsdl:message>
+  <wsdl:message name="getES">
+    <wsdl:part name="input" element="ns2:getESRequest" />
+  </wsdl:message>
+  <wsdl:message name="GetFicheIndicativeFault_Exception">
+    <wsdl:part name="GetFicheIndicativeFault_Exception" element="ns2:getFicheIndicativeFault" />
+  </wsdl:message>
+  <wsdl:message name="getTeamResponse">
+    <wsdl:part name="output" element="ns2:getTeamResponse" />
+  </wsdl:message>
+  <wsdl:message name="MajBlobZY00">
+    <wsdl:part name="input" element="ns2:MajBlobZY00Request" />
+  </wsdl:message>
+  <wsdl:message name="getDonneesReferentielContratResponse">
+    <wsdl:part name="output" element="ns2:getDonneesReferentielContratResponse" />
+  </wsdl:message>
+  <wsdl:message name="getESResponse">
+    <wsdl:part name="output" element="ns2:getESResponse" />
+  </wsdl:message>
+  <wsdl:message name="getFicheIndicative">
+    <wsdl:part name="input" element="ns2:getFicheIndicativeRequest" />
+  </wsdl:message>
+  <wsdl:message name="getFicheEmploye">
+    <wsdl:part name="input" element="ns2:getFicheEmployeRequest" />
+  </wsdl:message>
+  <wsdl:message name="getPhotoResponse">
+    <wsdl:part name="output" element="ns2:getPhotoResponse" />
+  </wsdl:message>
+  <wsdl:message name="MajGTARealiseResponse">
+    <wsdl:part name="output" element="ns2:MajGTARealiseResponse" />
+  </wsdl:message>
+  <wsdl:message name="getDonneesReferentielContrat">
+    <wsdl:part name="input" element="ns2:getDonneesReferentielContratRequest" />
+  </wsdl:message>
+  <wsdl:message name="getEmployesResponse">
+    <wsdl:part name="output" element="ns2:getEmployesResponse" />
+  </wsdl:message>
+  <wsdl:message name="getPaieEmployeResponse">
+    <wsdl:part name="output" element="ns2:getPaieEmployeResponse" />
+  </wsdl:message>
+  <wsdl:message name="getDossierHR">
+    <wsdl:part name="input" element="ns2:getDossierHRRequest" />
+  </wsdl:message>
+  <wsdl:message name="GetTeamFault_Exception">
+    <wsdl:part name="GetTeamFault_Exception" element="ns2:getTeamFault" />
+  </wsdl:message>
+  <wsdl:message name="pingResponse">
+    <wsdl:part name="output" element="ns2:pingResponse" />
+  </wsdl:message>
+  <wsdl:message name="MajGTARealise">
+    <wsdl:part name="input" element="ns2:MajGTARealiseRequest" />
+  </wsdl:message>
+  <wsdl:message name="getFicheEmployeResponse">
+    <wsdl:part name="output" element="ns2:getFicheEmployeResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetEmployesFault_Exception">
+    <wsdl:part name="GetEmployesFault_Exception" element="ns2:getEmployesFault" />
+  </wsdl:message>
+  <wsdl:message name="getEmployes">
+    <wsdl:part name="input" element="ns2:getEmployesRequest" />
+  </wsdl:message>
+  <wsdl:message name="getTeam">
+    <wsdl:part name="input" element="ns2:getTeamRequest" />
+  </wsdl:message>
+  <wsdl:message name="MajGTARealiseFault_Exception">
+    <wsdl:part name="MajGTARealiseFault_Exception" element="ns2:MajGTARealiseFault" />
+  </wsdl:message>
+  <wsdl:message name="GetESFault_Exception">
+    <wsdl:part name="GetESFault_Exception" element="ns2:getESFault" />
+  </wsdl:message>
+  <wsdl:message name="getPhoto">
+    <wsdl:part name="input" element="ns2:getPhotoRequest" />
+  </wsdl:message>
+  <wsdl:message name="getPaieEmploye">
+    <wsdl:part name="input" element="ns2:getPaieEmployeRequest" />
+  </wsdl:message>
+  <wsdl:message name="getDossierHRResponse">
+    <wsdl:part name="output" element="ns2:getDossierHRResponse" />
+  </wsdl:message>
+  <wsdl:message name="getListeEmploi">
+    <wsdl:part name="input" element="ns2:getListeEmploiRequest" />
+  </wsdl:message>
+  <wsdl:message name="MajBlobZY00Fault_Exception">
+    <wsdl:part name="MajBlobZY00Fault_Exception" element="ns2:MajBlobZY00Fault" />
+  </wsdl:message>
+  <wsdl:message name="GetFicheEmployeFault_Exception">
+    <wsdl:part name="GetFicheEmployeFault_Exception" element="ns2:getFicheEmployeFault" />
+  </wsdl:message>
+  <wsdl:message name="GetPaieEmployeFault_Exception">
+    <wsdl:part name="GetPaieEmployeFault_Exception" element="ns2:getPaieEmployeFault" />
+  </wsdl:message>
+  <wsdl:message name="getListeEmploiResponse">
+    <wsdl:part name="output" element="ns2:getListeEmploiResponse" />
+  </wsdl:message>
+  <wsdl:message name="ping">
+    <wsdl:part name="input" element="ns2:pingRequest" />
+  </wsdl:message>
+  <wsdl:message name="getFicheIndicativeResponse">
+    <wsdl:part name="output" element="ns2:getFicheIndicativeResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetDonneesReferentielContratFault_Exception">
+    <wsdl:part name="GetDonneesReferentielContratFault_Exception" element="ns2:getDonneesReferentielContratFault" />
+  </wsdl:message>
+  <wsdl:message name="GetPhotoFault_Exception">
+    <wsdl:part name="GetPhotoFault_Exception" element="ns2:getPhotofault" />
+  </wsdl:message>
+  <wsdl:message name="GetListeEmploiFault_Exception">
+    <wsdl:part name="GetListeEmploiFault_Exception" element="ns2:getListeEmploiFault" />
+  </wsdl:message>
+  <wsdl:portType name="POCServicePortType">
+    <wsdl:operation name="getDossierHR">
+      <wsdl:input name="getDossierHR" message="ns1:getDossierHR" />
+      <wsdl:output name="getDossierHRResponse" message="ns1:getDossierHRResponse" />
+      <wsdl:fault name="GetDossierHRFault_Exception" message="ns1:GetDossierHRFault_Exception" />
+    </wsdl:operation>
+    <wsdl:operation name="MajGTARealise">
+      <wsdl:input name="MajGTARealise" message="ns1:MajGTARealise" />
+      <wsdl:output name="MajGTARealiseResponse" message="ns1:MajGTARealiseResponse" />
+      <wsdl:fault name="MajGTARealiseFault_Exception" message="ns1:MajGTARealiseFault_Exception" />
+    </wsdl:operation>
+    <wsdl:operation name="getListeEmploi">
+      <wsdl:input name="getListeEmploi" message="ns1:getListeEmploi" />
+      <wsdl:output name="getListeEmploiResponse" message="ns1:getListeEmploiResponse" />
+      <wsdl:fault name="GetListeEmploiFault_Exception" message="ns1:GetListeEmploiFault_Exception" />
+    </wsdl:operation>
+    <wsdl:operation name="ping">
+      <wsdl:input name="ping" message="ns1:ping" />
+      <wsdl:output name="pingResponse" message="ns1:pingResponse" />
+      <wsdl:fault name="PingFault" message="ns1:PingFault" />
+    </wsdl:operation>
+    <wsdl:operation name="MajBlobZY00">
+      <wsdl:input name="MajBlobZY00" message="ns1:MajBlobZY00" />
+      <wsdl:output name="MajBlobZY00Response" message="ns1:MajBlobZY00Response" />
+      <wsdl:fault name="MajBlobZY00Fault_Exception" message="ns1:MajBlobZY00Fault_Exception" />
+    </wsdl:operation>
+    <wsdl:operation name="getFicheEmploye">
+      <wsdl:input name="getFicheEmploye" message="ns1:getFicheEmploye" />
+      <wsdl:output name="getFicheEmployeResponse" message="ns1:getFicheEmployeResponse" />
+      <wsdl:fault name="GetFicheEmployeFault_Exception" message="ns1:GetFicheEmployeFault_Exception" />
+    </wsdl:operation>
+    <wsdl:operation name="getPhoto">
+      <wsdl:input name="getPhoto" message="ns1:getPhoto" />
+      <wsdl:output name="getPhotoResponse" message="ns1:getPhotoResponse" />
+      <wsdl:fault name="GetPhotoFault_Exception" message="ns1:GetPhotoFault_Exception" />
+    </wsdl:operation>
+    <wsdl:operation name="getFicheIndicative">
+      <wsdl:input name="getFicheIndicative" message="ns1:getFicheIndicative" />
+      <wsdl:output name="getFicheIndicativeResponse" message="ns1:getFicheIndicativeResponse" />
+      <wsdl:fault name="GetFicheIndicativeFault_Exception" message="ns1:GetFicheIndicativeFault_Exception" />
+    </wsdl:operation>
+    <wsdl:operation name="getES">
+      <wsdl:input name="getES" message="ns1:getES" />
+      <wsdl:output name="getESResponse" message="ns1:getESResponse" />
+      <wsdl:fault name="GetESFault_Exception" message="ns1:GetESFault_Exception" />
+    </wsdl:operation>
+    <wsdl:operation name="getDonneesReferentielContrat">
+      <wsdl:input name="getDonneesReferentielContrat" message="ns1:getDonneesReferentielContrat" />
+      <wsdl:output name="getDonneesReferentielContratResponse" message="ns1:getDonneesReferentielContratResponse" />
+      <wsdl:fault name="GetDonneesReferentielContratFault_Exception" message="ns1:GetDonneesReferentielContratFault_Exception" />
+    </wsdl:operation>
+    <wsdl:operation name="getPaieEmploye">
+      <wsdl:input name="getPaieEmploye" message="ns1:getPaieEmploye" />
+      <wsdl:output name="getPaieEmployeResponse" message="ns1:getPaieEmployeResponse" />
+      <wsdl:fault name="GetPaieEmployeFault_Exception" message="ns1:GetPaieEmployeFault_Exception" />
+    </wsdl:operation>
+    <wsdl:operation name="getTeam">
+      <wsdl:input name="getTeam" message="ns1:getTeam" />
+      <wsdl:output name="getTeamResponse" message="ns1:getTeamResponse" />
+      <wsdl:fault name="GetTeamFault_Exception" message="ns1:GetTeamFault_Exception" />
+    </wsdl:operation>
+    <wsdl:operation name="getEmployes">
+      <wsdl:input name="getEmployes" message="ns1:getEmployes" />
+      <wsdl:output name="getEmployesResponse" message="ns1:getEmployesResponse" />
+      <wsdl:fault name="GetEmployesFault_Exception" message="ns1:GetEmployesFault_Exception" />
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>

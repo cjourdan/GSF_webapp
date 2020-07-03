@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://impl.ws.poc.api.gsf.fr/" xmlns:ns1="http://gsf.fr/api/poc/ws" xmlns:ns3="http://cxf.apache.org/bindings/xformat" name="POCServiceImplService" targetNamespace="http://impl.ws.poc.api.gsf.fr/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:import namespace="http://gsf.fr/api/poc/ws" location="http://sgsrep.gsf.group:9010/gsf-hr-ws-cjour/pocService?wsdl=POCServicePortType.wsdl" />
+  <wsdl:types />
+  <wsdl:binding name="POCServiceImplServiceSoapBinding" type="ns1:POCServicePortType">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="getDossierHR">
+      <soap:operation soapAction="http://gsf.fr/api/poc/ws/getDossierHR" style="document" />
+      <wsdl:input name="getDossierHR">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getDossierHRResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="GetDossierHRFault_Exception">
+        <soap:fault use="literal" name="GetDossierHRFault_Exception" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="MajGTARealise">
+      <soap:operation soapAction="http://gsf.fr/api/poc/ws/MajGTARealise" style="document" />
+      <wsdl:input name="MajGTARealise">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="MajGTARealiseResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MajGTARealiseFault_Exception">
+        <soap:fault use="literal" name="MajGTARealiseFault_Exception" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getListeEmploi">
+      <soap:operation soapAction="http://gsf.fr/api/poc/ws/getListeEmploi" style="document" />
+      <wsdl:input name="getListeEmploi">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getListeEmploiResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="GetListeEmploiFault_Exception">
+        <soap:fault use="literal" name="GetListeEmploiFault_Exception" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ping">
+      <soap:operation soapAction="http://gsf.fr/api/poc/ws/ping" style="document" />
+      <wsdl:input name="ping">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="pingResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="PingFault">
+        <soap:fault use="literal" name="PingFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="MajBlobZY00">
+      <soap:operation soapAction="http://gsf.fr/api/poc/ws/MajBlobZY00" style="document" />
+      <wsdl:input name="MajBlobZY00">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="MajBlobZY00Response">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MajBlobZY00Fault_Exception">
+        <soap:fault use="literal" name="MajBlobZY00Fault_Exception" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getFicheEmploye">
+      <soap:operation soapAction="http://gsf.fr/api/poc/ws/getFicheEmploye" style="document" />
+      <wsdl:input name="getFicheEmploye">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getFicheEmployeResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="GetFicheEmployeFault_Exception">
+        <soap:fault use="literal" name="GetFicheEmployeFault_Exception" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getPhoto">
+      <soap:operation soapAction="http://gsf.fr/api/poc/ws/getPhoto" style="document" />
+      <wsdl:input name="getPhoto">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getPhotoResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="GetPhotoFault_Exception">
+        <soap:fault use="literal" name="GetPhotoFault_Exception" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getFicheIndicative">
+      <soap:operation soapAction="http://gsf.fr/api/poc/ws/getFicheIndicative" style="document" />
+      <wsdl:input name="getFicheIndicative">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getFicheIndicativeResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="GetFicheIndicativeFault_Exception">
+        <soap:fault use="literal" name="GetFicheIndicativeFault_Exception" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getES">
+      <soap:operation soapAction="http://gsf.fr/api/poc/ws/getES" style="document" />
+      <wsdl:input name="getES">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getESResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="GetESFault_Exception">
+        <soap:fault use="literal" name="GetESFault_Exception" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getDonneesReferentielContrat">
+      <soap:operation soapAction="http://gsf.fr/api/poc/ws/getDonneesReferentielContrat" style="document" />
+      <wsdl:input name="getDonneesReferentielContrat">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getDonneesReferentielContratResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="GetDonneesReferentielContratFault_Exception">
+        <soap:fault use="literal" name="GetDonneesReferentielContratFault_Exception" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getPaieEmploye">
+      <soap:operation soapAction="http://gsf.fr/api/poc/ws/getPaieEmploye" style="document" />
+      <wsdl:input name="getPaieEmploye">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getPaieEmployeResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="GetPaieEmployeFault_Exception">
+        <soap:fault use="literal" name="GetPaieEmployeFault_Exception" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getTeam">
+      <soap:operation soapAction="http://gsf.fr/api/poc/ws/getTeam" style="document" />
+      <wsdl:input name="getTeam">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getTeamResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="GetTeamFault_Exception">
+        <soap:fault use="literal" name="GetTeamFault_Exception" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getEmployes">
+      <soap:operation soapAction="http://gsf.fr/api/poc/ws/getEmployes" style="document" />
+      <wsdl:input name="getEmployes">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getEmployesResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="GetEmployesFault_Exception">
+        <soap:fault use="literal" name="GetEmployesFault_Exception" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="POCServiceImplService">
+    <wsdl:port name="POCServiceImplPort" binding="tns:POCServiceImplServiceSoapBinding">
+      <soap:address location="http://sgsrep.gsf.group:9010/gsf-hr-ws-cjour/pocService" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

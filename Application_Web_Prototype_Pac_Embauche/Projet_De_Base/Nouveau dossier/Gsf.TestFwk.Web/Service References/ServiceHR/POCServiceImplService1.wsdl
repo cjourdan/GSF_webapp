@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://impl.ws.poc.api.gsf.fr/" xmlns:ns1="http://gsf.fr/api/poc/ws" xmlns:ns3="http://cxf.apache.org/bindings/xformat" name="POCServiceImplService" targetNamespace="http://impl.ws.poc.api.gsf.fr/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:import namespace="http://gsf.fr/api/poc/ws" location="http://sgsrep.gsf.group:9010/gsf-poc-ws-pso/pocService?wsdl=POCServicePortType.wsdl" />
+  <wsdl:types />
+  <wsdl:binding name="POCServiceImplServiceSoapBinding" type="ns1:POCServicePortType">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="getHRDossier">
+      <soap:operation soapAction="http://gsf.fr/api/poc/ws/getHRDossier" style="document" />
+      <wsdl:input name="getHRDossier">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getHRDossierResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="GetHRDossierFault">
+        <soap:fault use="literal" name="GetHRDossierFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getDonneesReferentielContrat">
+      <soap:operation soapAction="http://gsf.fr/api/poc/ws/getDonneesReferentielContrat" style="document" />
+      <wsdl:input name="getDonneesReferentielContrat">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getDonneesReferentielContratResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="GetDonneesReferentielContratFault_Exception">
+        <soap:fault use="literal" name="GetDonneesReferentielContratFault_Exception" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="sendParameter">
+      <soap:operation soapAction="http://gsf.fr/api/poc/ws/sendParameter" style="document" />
+      <wsdl:input name="sendParameter">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="sendParameterResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="SendParameterFault">
+        <soap:fault use="literal" name="SendParameterFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getHRData">
+      <soap:operation soapAction="http://gsf.fr/api/poc/ws/getHRData" style="document" />
+      <wsdl:input name="getHRData">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getHRDataResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="GetHRDataFault">
+        <soap:fault use="literal" name="GetHRDataFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getListeEmploi">
+      <soap:operation soapAction="http://gsf.fr/api/poc/ws/getListeEmploi" style="document" />
+      <wsdl:input name="getListeEmploi">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getListeEmploiResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="GetListeEmploiFault_Exception">
+        <soap:fault use="literal" name="GetListeEmploiFault_Exception" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="POCServiceImplService">
+    <wsdl:port name="POCServiceImplPort" binding="tns:POCServiceImplServiceSoapBinding">
+      <soap:address location="http://sgsrep.gsf.group:9010/gsf-poc-ws-pso/pocService" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

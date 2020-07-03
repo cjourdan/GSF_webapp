@@ -1,0 +1,407 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ns1="http://gsf.fr/api/poc/ws" xmlns:ns2="http://gsf.fr/api/poc/schema" name="POCServicePortType" targetNamespace="http://gsf.fr/api/poc/ws" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xs:schema targetNamespace="http://gsf.fr/api/poc/ws" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="getDonneesReferentielContrat">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="in" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getDonneesReferentielContratFault">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="getDonneesReferentielContratFault" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getDonneesReferentielContratResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="out" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getListeEmploi">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="in" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getListeEmploiFault">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="getListeEmploiFault" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getListeEmploiResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="out" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:schema>
+    <xs:schema xmlns:tns="http://gsf.fr/api/poc/schema" targetNamespace="http://gsf.fr/api/poc/schema" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="geHRDossierResponse" type="tns:ResponseDossier" />
+      <xs:element name="getDonneesReferentielContratFault" type="tns:CustomFaultException" />
+      <xs:element name="getDonneesReferentielContratRequest" type="tns:RequestDonneesReferentielContrat" />
+      <xs:element name="getDonneesReferentielContratResponse" type="tns:ResponseDonneesReferentielContrat" />
+      <xs:element name="getHRDataFault" type="tns:CustomFaultException" />
+      <xs:element name="getHRDataRequest" type="tns:RequestDto" />
+      <xs:element name="getHRDataResponse" type="tns:ResponseDto" />
+      <xs:element name="getHRDossierFault" type="tns:CustomFaultException" />
+      <xs:element name="getHRDossierRequest" type="tns:RequestDossier" />
+      <xs:element name="getListeEmploiFault" type="tns:CustomFaultException" />
+      <xs:element name="getListeEmploiRequest" type="tns:RequestListeEmploi" />
+      <xs:element name="getListeEmploiResponse" type="tns:ResponseListeEmploi" />
+      <xs:element name="sendParameterFault" type="tns:CustomFaultException" />
+      <xs:element name="sendParameterRequest" type="tns:ParameterDto" />
+      <xs:element name="sendParameterResponse" type="tns:ParameterDto" />
+      <xs:complexType name="RequestDossier">
+        <xs:sequence>
+          <xs:element name="numDoss" type="xs:int" />
+          <xs:element name="nom" type="xs:string" />
+          <xs:element name="prenom" type="xs:string" />
+          <xs:element name="DateEmbauche" type="xs:date" />
+          <xs:element name="DateDebutGTA" type="xs:date" />
+          <xs:element name="DateFinGTA" type="xs:date" />
+          <xs:element name="user" type="xs:string" />
+          <xs:element name="pwd" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ResponseDossier">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="Dossier" type="tns:DossierHR" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="DossierHR">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="matriculeNew" type="xs:string" />
+          <xs:element minOccurs="0" name="numSS" type="xs:string" />
+          <xs:element minOccurs="0" name="nom" type="xs:string" />
+          <xs:element minOccurs="0" name="prenom" type="xs:string" />
+          <xs:element minOccurs="0" name="age" type="xs:string" />
+          <xs:element minOccurs="0" name="dateEntSoc" type="xs:date" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="Doc" type="tns:Document" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="Crt" type="tns:Contrat" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="Affect" type="tns:Affectation" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="ES" type="tns:EntreeSortie" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="RealGTA" type="tns:RealiseGTA" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="Document">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="Type" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="TypeLib" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="NumeroDoc" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="DateDelivrance" type="xs:date" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="DateDebVal" type="xs:date" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="DateFinVal" type="xs:date" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="Contrat">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="DateDebut" type="xs:date" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="DateFin" type="xs:date" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="TypeContrat" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="TypeContratLib" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="NatureContrat" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="NatureContratLib" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="Affectation">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="DateDebut" type="xs:date" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="DateFin" type="xs:date" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="Emploi" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="EmploiLib" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="EtabAffect" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="EtabAffectLib" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="EntreeSortie">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="Societe" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="SocieteLib" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="DateEntree" type="xs:date" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="HeureEntree" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="MotifEntree" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="MotifEntreeLib" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="DateSortie" type="xs:date" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="HeureSortie" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="MotifSortie" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="MotifSortieLib" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="RealiseGTA">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="DateReal" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="NatureHeureReal" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="NatureHeureRealLib" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="HeureDebTheo" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="HeureFinTheo" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="HeureDebReal" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="HeureFinReal" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="Chantier" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="ChantierLib" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="CustomFaultException">
+        <xs:sequence>
+          <xs:element name="message" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="RequestDonneesReferentielContrat">
+        <xs:sequence>
+          <xs:element name="CodeSociete" type="xs:string" />
+          <xs:element name="CodeEtablissement" type="xs:string" />
+          <xs:element name="idEmploi" type="xs:string" />
+          <xs:element name="DateEmbauche" type="xs:date" />
+          <xs:element name="login" type="xs:string" />
+          <xs:element name="pwd" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ResponseDonneesReferentielContrat">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Societe" type="tns:Societe" />
+          <xs:element minOccurs="0" name="Etablissement" type="tns:Etablissement" />
+          <xs:element minOccurs="0" name="CaisseURSSAF" type="tns:Organisme" />
+          <xs:element minOccurs="0" name="CaisseRetraiteComplementaire" type="tns:Organisme" />
+          <xs:element minOccurs="0" name="OrganismePrevoyance" type="tns:Organisme" />
+          <xs:element minOccurs="0" name="OrganismeParitaire" type="tns:Organisme" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="Accords" type="tns:Accord" />
+          <xs:element minOccurs="0" name="AccordCollectifHR" type="xs:string" />
+          <xs:element minOccurs="0" name="JourAcompte" type="xs:int" />
+          <xs:element minOccurs="0" name="JourPaie" type="xs:int" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="Societe">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Code" type="xs:string" />
+          <xs:element minOccurs="0" name="LibelleLong" type="xs:string" />
+          <xs:element minOccurs="0" name="LibelleCourt" type="xs:string" />
+          <xs:element minOccurs="0" name="Adresse" type="tns:Adresse" />
+          <xs:element minOccurs="0" name="SIREN" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="Adresse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Principal" type="xs:string" />
+          <xs:element minOccurs="0" name="Complement" type="xs:string" />
+          <xs:element minOccurs="0" name="CodePostal" type="xs:string" />
+          <xs:element minOccurs="0" name="Ville" type="xs:string" />
+          <xs:element minOccurs="0" name="Telephone" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="Etablissement">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Code" type="xs:string" />
+          <xs:element minOccurs="0" name="LibelleLong" type="xs:string" />
+          <xs:element minOccurs="0" name="LibelleCourt" type="xs:string" />
+          <xs:element minOccurs="0" name="Adresse" type="tns:Adresse" />
+          <xs:element minOccurs="0" name="SIRET" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="Organisme">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Code" type="xs:string" />
+          <xs:element minOccurs="0" name="LibelleLong" type="xs:string" />
+          <xs:element minOccurs="0" name="LibelleCourt" type="xs:string" />
+          <xs:element minOccurs="0" name="Adresse" type="tns:Adresse" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="Accord">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Type" type="tns:TypeAccord" />
+          <xs:element minOccurs="0" name="Theme" type="xs:string" />
+          <xs:element minOccurs="0" name="DateDebut" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="DateFin" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="LibelleLong" type="xs:string" />
+          <xs:element minOccurs="0" name="Reference" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ParameterDto">
+        <xs:sequence>
+          <xs:element name="reference" type="xs:string" />
+          <xs:element minOccurs="0" name="date" type="xs:dateTime" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="RequestDto">
+        <xs:sequence>
+          <xs:element name="CodeSoc" type="xs:string" />
+          <xs:element name="CodeEtab" type="xs:string" />
+          <xs:element name="DateEmbauche" type="xs:date" />
+          <xs:element name="TypeReg" type="xs:string" />
+          <xs:element name="Classi" type="xs:string" />
+          <xs:element name="userName" type="xs:string" />
+          <xs:element name="password" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ResponseDto">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="SocCode" type="xs:string" />
+          <xs:element minOccurs="0" name="SocLib" type="xs:string" />
+          <xs:element minOccurs="0" name="SocAdr" type="xs:string" />
+          <xs:element minOccurs="0" name="SocCplAdr" type="xs:string" />
+          <xs:element minOccurs="0" name="SocCP" type="xs:string" />
+          <xs:element minOccurs="0" name="SocVille" type="xs:string" />
+          <xs:element minOccurs="0" name="SocDatePaie" type="xs:string" />
+          <xs:element minOccurs="0" name="SocDateAcpt" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="SocAcc" type="tns:AccordSoc" />
+          <xs:element minOccurs="0" name="EtabCode" type="xs:string" />
+          <xs:element minOccurs="0" name="EtabLib" type="xs:string" />
+          <xs:element minOccurs="0" name="EtabAdr" type="xs:string" />
+          <xs:element minOccurs="0" name="EtabCplAdr" type="xs:string" />
+          <xs:element minOccurs="0" name="EtabCP" type="xs:string" />
+          <xs:element minOccurs="0" name="EtabVille" type="xs:string" />
+          <xs:element minOccurs="0" name="EtabNumUrssaf" type="xs:string" />
+          <xs:element minOccurs="0" name="EtabCaisseUrssaf" type="xs:string" />
+          <xs:element minOccurs="0" name="EtabSiret" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="EtabAcc" type="tns:AccordEtab" />
+          <xs:element minOccurs="0" name="CaisseRetNom" type="xs:string" />
+          <xs:element minOccurs="0" name="CaisseRetAdr" type="xs:string" />
+          <xs:element minOccurs="0" name="CaisseRetCplAdr" type="xs:string" />
+          <xs:element minOccurs="0" name="CaisseRetCP" type="xs:string" />
+          <xs:element minOccurs="0" name="CaisseRetVille" type="xs:string" />
+          <xs:element minOccurs="0" name="CaissePrevNom" type="xs:string" />
+          <xs:element minOccurs="0" name="CaissePrevAdr" type="xs:string" />
+          <xs:element minOccurs="0" name="CaissePrevCplAdr" type="xs:string" />
+          <xs:element minOccurs="0" name="CaissePrevCP" type="xs:string" />
+          <xs:element minOccurs="0" name="CaissePrevVille" type="xs:string" />
+          <xs:element minOccurs="0" name="OrgParit" type="xs:string" />
+          <xs:element minOccurs="0" name="OrgParitAdr" type="xs:string" />
+          <xs:element minOccurs="0" name="OrgParitCplAdr" type="xs:string" />
+          <xs:element minOccurs="0" name="OrgParitCP" type="xs:string" />
+          <xs:element minOccurs="0" name="OrgParitNumTel" type="xs:string" />
+          <xs:element minOccurs="0" name="AccordColl" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="AccordSoc">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="ThemeAccordSoc" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="DateDebutAccordSoc" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="DateFinAccordSoc" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="TexteAccordSoc" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="AccordEtab">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="ThemeAccord" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="DateDebutAccord" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="DateFinAccord" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="TexteAccord" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="RequestListeEmploi">
+        <xs:sequence>
+          <xs:element name="CodeConvention" type="xs:string" />
+          <xs:element name="Classification" type="xs:string" />
+          <xs:element name="Qualification" type="xs:string" />
+          <xs:element name="Position" type="xs:string" />
+          <xs:element name="Echelon" type="xs:string" />
+          <xs:element name="login" type="xs:string" />
+          <xs:element name="pwd" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ResponseListeEmploi">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="Emploi" type="tns:Emploi" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="Emploi">
+        <xs:sequence>
+          <xs:element name="Code" type="xs:string" />
+          <xs:element name="LibelleLong" type="xs:string" />
+          <xs:element name="LibelleCourt" type="xs:string" />
+          <xs:element name="Classification" type="xs:string" />
+          <xs:element name="Qualification" type="xs:string" />
+          <xs:element name="Position" type="xs:string" />
+          <xs:element name="Echelon" type="xs:int" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:simpleType name="TypeAccord">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="Groupe" />
+          <xs:enumeration value="Societe" />
+          <xs:enumeration value="Etablissement" />
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="getHRDossier">
+    <wsdl:part name="input" element="ns2:getHRDossierRequest" />
+  </wsdl:message>
+  <wsdl:message name="SendParameterFault">
+    <wsdl:part name="SendParameterFault" element="ns2:sendParameterFault" />
+  </wsdl:message>
+  <wsdl:message name="getListeEmploiResponse">
+    <wsdl:part name="output" element="ns2:getListeEmploiResponse" />
+  </wsdl:message>
+  <wsdl:message name="sendParameter">
+    <wsdl:part name="input" element="ns2:sendParameterRequest" />
+  </wsdl:message>
+  <wsdl:message name="getListeEmploi">
+    <wsdl:part name="input" element="ns2:getListeEmploiRequest" />
+  </wsdl:message>
+  <wsdl:message name="getHRData">
+    <wsdl:part name="input" element="ns2:getHRDataRequest" />
+  </wsdl:message>
+  <wsdl:message name="GetDonneesReferentielContratFault_Exception">
+    <wsdl:part name="GetDonneesReferentielContratFault_Exception" element="ns2:getDonneesReferentielContratFault" />
+  </wsdl:message>
+  <wsdl:message name="getDonneesReferentielContratResponse">
+    <wsdl:part name="output" element="ns2:getDonneesReferentielContratResponse" />
+  </wsdl:message>
+  <wsdl:message name="getHRDossierResponse">
+    <wsdl:part name="ouput" element="ns2:geHRDossierResponse" />
+  </wsdl:message>
+  <wsdl:message name="getHRDataResponse">
+    <wsdl:part name="output" element="ns2:getHRDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetHRDataFault">
+    <wsdl:part name="GetHRDataFault" element="ns2:getHRDataFault" />
+  </wsdl:message>
+  <wsdl:message name="GetListeEmploiFault_Exception">
+    <wsdl:part name="GetListeEmploiFault_Exception" element="ns2:getListeEmploiFault" />
+  </wsdl:message>
+  <wsdl:message name="sendParameterResponse">
+    <wsdl:part name="output" element="ns2:sendParameterResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetHRDossierFault">
+    <wsdl:part name="GetHRDossierFault" element="ns2:getHRDossierFault" />
+  </wsdl:message>
+  <wsdl:message name="getDonneesReferentielContrat">
+    <wsdl:part name="input" element="ns2:getDonneesReferentielContratRequest" />
+  </wsdl:message>
+  <wsdl:portType name="POCServicePortType">
+    <wsdl:operation name="getHRDossier">
+      <wsdl:input name="getHRDossier" message="ns1:getHRDossier" />
+      <wsdl:output name="getHRDossierResponse" message="ns1:getHRDossierResponse" />
+      <wsdl:fault name="GetHRDossierFault" message="ns1:GetHRDossierFault" />
+    </wsdl:operation>
+    <wsdl:operation name="getDonneesReferentielContrat">
+      <wsdl:input name="getDonneesReferentielContrat" message="ns1:getDonneesReferentielContrat" />
+      <wsdl:output name="getDonneesReferentielContratResponse" message="ns1:getDonneesReferentielContratResponse" />
+      <wsdl:fault name="GetDonneesReferentielContratFault_Exception" message="ns1:GetDonneesReferentielContratFault_Exception" />
+    </wsdl:operation>
+    <wsdl:operation name="sendParameter">
+      <wsdl:input name="sendParameter" message="ns1:sendParameter" />
+      <wsdl:output name="sendParameterResponse" message="ns1:sendParameterResponse" />
+      <wsdl:fault name="SendParameterFault" message="ns1:SendParameterFault" />
+    </wsdl:operation>
+    <wsdl:operation name="getHRData">
+      <wsdl:input name="getHRData" message="ns1:getHRData" />
+      <wsdl:output name="getHRDataResponse" message="ns1:getHRDataResponse" />
+      <wsdl:fault name="GetHRDataFault" message="ns1:GetHRDataFault" />
+    </wsdl:operation>
+    <wsdl:operation name="getListeEmploi">
+      <wsdl:input name="getListeEmploi" message="ns1:getListeEmploi" />
+      <wsdl:output name="getListeEmploiResponse" message="ns1:getListeEmploiResponse" />
+      <wsdl:fault name="GetListeEmploiFault_Exception" message="ns1:GetListeEmploiFault_Exception" />
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>

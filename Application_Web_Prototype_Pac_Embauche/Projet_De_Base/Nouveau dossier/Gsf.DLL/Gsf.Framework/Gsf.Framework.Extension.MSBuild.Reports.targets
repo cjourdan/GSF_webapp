@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+   <PropertyGroup>
+		<GsfFrameworkDirectory Condition="$(GsfFrameworkDirectory) == ''">$(MSBuildProjectDirectory)\Include\</GsfFrameworkDirectory>
+   </PropertyGroup>
+   
+  <Import Project="$(GsfFrameworkDirectory)\Gsf.Framework.Extension.MSBuild.Common.targets" />
+  
+	<!-- ============== GSF Framework MSBuild Extension ============== -->
+  <Target Name = "ValidateBuildSettings">
+    <ItemGroup>
+      <_RequiredProperties Include="Configuration">
+        <Value>$(Configuration)</Value>
+      </_RequiredProperties>
+      <_RequiredProperties Include="Solution_File">
+        <Value>$(Solution_File)</Value>
+      </_RequiredProperties>
+    </ItemGroup>
+    
+    <!-- Raise an error if any value in _RequiredProperties is missing -->
+    <Error Condition="'%(_RequiredProperties.Value)'==''"
+           Text = "Missing required property [%(_RequiredProperties.Identity)]"/>
+  </Target>
+
+  <!-- Target : Rebuild -->
+  <Target Name="Rebuild" DependsOnTargets="Clean;Build">
+  </Target>
+
+  <!-- Target : Clean -->
+  <Target Name="Clean">
+  </Target>
+
+  <Target Name="Build">
+    <Message Text="Debut de la compilation..."/>
+
+    <Gsf.Framework.Extension.MSBuild.VisualStudio.VSDevEnv
+                              FilePath="$(Solution_File)"
+                              Project="$(Project_File)"
+                              Configuration="$(Configuration)"
+                              Version="9"/>
+  </Target>
+
+  <!-- Target : Publish -->
+  <Target Name="Publish">
+    <Message Text="Debut de la publication..."/>
+
+    <Gsf.Framework.Extension.MSBuild.VisualStudio.VSDevEnv 
+                              FilePath="$(Solution_File)"
+                              Project="$(Project_File)"
+                              Configuration="$(Configuration)" 
+                              Deploy="true"
+                              Version="9"/>
+  </Target>
+</Project>

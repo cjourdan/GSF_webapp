@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+   <PropertyGroup>
+		<GsfFrameworkDirectory Condition="$(GsfFrameworkDirectory) == ''">$(MSBuildProjectDirectory)\Include\</GsfFrameworkDirectory>
+		<AssemblyInfo_File Condition="$(AssemblyInfo_File) == ''">$(Project_Path)/Properties/AssemblyInfo.cs</AssemblyInfo_File>
+   </PropertyGroup>
+   
+  <Import Project="$(GsfFrameworkDirectory)\Gsf.Framework.Extension.MSBuild.Common.targets" />
+  
+	<!-- ============== GSF Framework MSBuild Extension ============== -->
+  <Target Name = "ValidateBuildSettings">
+    <ItemGroup>
+      <_RequiredProperties Include="Configuration">
+        <Value>$(Configuration)</Value>
+      </_RequiredProperties>
+      <_RequiredProperties Include="Solution_File">
+        <Value>$(Solution_File)</Value>
+      </_RequiredProperties>
+	  <_RequiredProperties Include="Project_Path">
+        <Value>$(Project_Path)</Value>
+      </_RequiredProperties>
+	  <_RequiredProperties Include="Include_Path">
+        <Value>$(Include_Path)</Value>
+      </_RequiredProperties>
+      <_RequiredProperties Include="Publication_LocalPath">
+        <Value>$(Publication_LocalPath)</Value>
+      </_RequiredProperties>
+      <_RequiredProperties Include="Publication_ServeurPath">
+        <Value>$(Publication_ServeurPath)</Value>
+      </_RequiredProperties>
+    </ItemGroup>
+    
+    <!-- Raise an error if any value in _RequiredProperties is missing -->
+    <Error Condition="'%(_RequiredProperties.Value)'==''"
+           Text = "Missing required property [%(_RequiredProperties.Identity)]"/>
+  </Target>
+
+  <!-- Target : Rebuild -->
+  <Target Name="Rebuild" DependsOnTargets="Clean;Build">
+  </Target>
+
+  <!-- Target : Clean -->
+  <Target Name="Clean">
+    <MSBuild Projects="$(Solution_File)"
+             Properties="Configuration=$(Configuration);"
+             Targets="Clean"></MSBuild>
+
+    <RemoveDir Condition="Exists($(Publication_LocalPath))" Directories="$(Publication_LocalPath)"/>
+  </Target>
+
+  <!-- Target : Build / BuildDependsOn -->
+  <PropertyGroup>
+    <BuildDependsOn>
+      ValidateBuildSettings;
+      UpdateAssemblyInfo;
+      $(BuildDependsOn)
+    </BuildDependsOn>
+  </PropertyGroup>
+  
+  <Target Name="Build" DependsOnTargets ="$(BuildDependsOn)">
+    <Message Text="Debut de la compilation..."/>
+
+	<Copy SourceFiles="$(Project_Path)\app.config" DestinationFiles="$(Project_Path)\app.config.bak"/>
+	<Copy SourceFiles="$(Include_Path)\app.config" DestinationFiles="$(Project_Path)\app.config"/>
+			 
+	<MSBuild Projects="$(Solution_File)"
+             Properties="Configuration=$(Configuration);PublishDir=$(Publication_LocalPath);InstallUrl=$(InstallUrl);ProductName=$(ProductName);FriendlyName=$(ProductName);ManifestCertificateThumbprint=$(ManifestCertificateThumbprint);SignManifests=true;ApplicationVersion=$(_AssemblyFileVersion);MinimumRequiredVersion=$(_AssemblyFileVersion)"
+             Targets="Build;Publish"
+             ></MSBuild>
+			 
+	<Copy SourceFiles="$(Project_Path)\app.config.bak" DestinationFiles="$(Project_Path)\app.config"/>
+	<Copy SourceFiles="$(Include_Path)\publish.htm" DestinationFiles="$(Publication_LocalPath)\publish.htm"/>
+	
+	<FileUpdate Files="$(Publication_LocalPath)\publish.htm"
+                    IgnoreCase="true"
+                    Multiline="true" 
+                    Singleline="false"
+                    Regex="{VERSION}" 
+                    ReplacementText="$(_AssemblyVersion)"/>
+					
+	<FileUpdate Files="$(Publication_LocalPath)\publish.htm"
+                    IgnoreCase="true"
+                    Multiline="true" 
+                    Singleline="false"
+                    Regex="{FILEVERSION}" 
+                    ReplacementText="$(_AssemblyFileVersion)"/>
+
+	<FileUpdate Files="$(Publication_LocalPath)\publish.htm"
+                    IgnoreCase="true"
+                    Multiline="true" 
+                    Singleline="false"
+                    Regex="{INFORMATIONALVERSION}" 
+                    ReplacementText="$(_AssemblyInformationalVersion)"/>
+  </Target>
+
+  <!-- Target : Publish -->
+  <Target Name="Publish" Condition="$(Publication_ServeurPath) != ''">
+    <Message Text="Debut de la publication..."/>
+
+    <Gsf.Framework.Extension.MSBuild.FileSystem.Folder TaskAction="RemoveContent"
+                                             Path="$(Publication_ServeurPath)"
+                                             Force="true"/>
+
+    <ItemGroup>
+      <_SourceFiles Include="$(Publication_LocalPath)\**\*.*" />
+    </ItemGroup>
+    <Copy
+        SourceFiles="@(_SourceFiles)"
+        DestinationFiles="@(_SourceFiles->'$(Publication_ServeurPath)\%(RecursiveDir)%(Filename)%(Extension)')"
+    />
+  </Target>
+  
+  <!-- Target : UpdateAssemblyInfoDescription -->
+  <PropertyGroup>
+    <AssemblyInfoDependsOn>
+      UpdateAssemblyInfoDescription;
+      $(AssemblyInfoDependsOn)
+    </AssemblyInfoDependsOn>
+  </PropertyGroup>
+  
+  <Target Name="UpdateAssemblyInfoDescription">
+    <Message Text="UpdateAssemblyInfoDescription - AssemblyInfo_File : $(AssemblyInfo_File)"/>
+    
+	<Gsf.Framework.Extension.MSBuild.AssemblyInfo AssemblyInfoFiles="$(AssemblyInfo_File)"
+                                                  AssemblyDescription="$(ProductName)"
+												  SkipVersioning="true"/>
+  </Target>
+</Project>

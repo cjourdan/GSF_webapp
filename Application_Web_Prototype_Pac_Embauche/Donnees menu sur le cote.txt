@@ -1,0 +1,11 @@
+<script type="text/x-kendo-tmpl" id="employeeItemTemplate">
+    <div class="employee">
+        <div class="employee-wrapper">
+            <img src="/content/employees/#:EmployeeID#-t.png" class="img-responsive employee-list-image"/> 
+            <dl class="employee-list-details">    
+                <dt class="name">#:FirstName# #:LastName#</dt>
+                <dd class="title">#:Title#</dd>
+            </dl>
+        </div>
+    </div> 
+</script>

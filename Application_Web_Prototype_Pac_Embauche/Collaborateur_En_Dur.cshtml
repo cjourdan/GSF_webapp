@@ -1,0 +1,249 @@
+@using Kendo.Mvc.UI
+
+@{
+    ViewBag.Title = "Collaborateur Page";
+}
+
+<script type="text/x-kendo-tmpl" id="employeeItemTemplate">
+    <div class="employee">
+        <div class="employee-wrapper">
+            @*<img src="@(Url.Content("~/content/employees/"))#:EmployeeID#-t.png" class="img-responsive employee-list-image" />*@
+            <dl class="employee-list-details">
+                <dt class="nom_prenom">#:RDosNom# #:RDosPrenom#</dt>
+                <dt class="matricule">#:Matricule#</dt>
+                <dd class="age">#:RDosAge#</dd>
+            </dl>
+        </div>
+    </div>
+</script>
+
+<style>
+    h3 {
+        font-weight: normal;
+        padding: 0 0 1em 0;
+    }
+
+    .tab-section {
+        margin-left: 300px;
+        width: 1300px;
+    }
+
+    .k-tabstrip .k-content {
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+
+    #hint {
+        border: none;
+    }
+
+        #hint .k-tabstrip-items {
+            padding: 0;
+        }
+
+    .marge_conges {
+        margin-left: 28em;
+    }
+
+    .marge_cumul_paie {
+        margin-left: 20em;
+    }
+
+    .Scrollbar {
+        overflow-y: scroll;
+        height: 400px;
+    }
+
+    .ListViewFooter {
+        padding-bottom: 20px;
+    }
+</style>
+
+@*<script type="text/javascript">
+    function onListDataBound(e) {
+        this.select($(".employee:first"));
+    }
+    function onCriteriaChange() {
+        var employeeList = $("#ListingBinding_Employees").data("kendoListView"),
+            employee = employeeList.dataSource.getByUid(employeeList.select().attr("data-uid"));
+    }
+</script>*@
+
+<div id="employee-list" class="col col-xs-2">
+    <h3>Mes collaborateurs</h3>
+    <div class="Scrollbar">
+        <div class="ListViewFooter">
+            @*ListView*@
+            @(Html.ListView<Gsf.TestFwk.Web.Models.RecupDossier>()
+                .Name("ListingBinding_Employees")
+                .TagName("div")
+                    //.Events(e => e.DataBound("onListDataBound").Change("onCriteriaChange"))
+                 .ClientTemplateId("employeeItemTemplate")
+                 .DataSource(dataSource =>
+                 {
+                     dataSource.Read(read => read.Action("ListingBinding_Employees", "List"));
+                 })
+            )
+        </div>
+    </div>
+</div>
+
+<div class="tab-section">
+
+    <!-- Tabs -->
+    <div role="tabpanel" class="col-sm-12 col-md-12">
+
+        <!-- Nav tabs -->
+        <ul class="nav nav-tabs" role="tablist">
+            <li><a href="#tab1" data-toggle="tab">Fiche</a></li>
+            <li><a href="#tab2" data-toggle="tab">Planning</a></li>
+        </ul>
+
+        <!-- Tab content-->
+        <div class="tab-content">
+            <!-- Tab panel 1-->
+            <div class="tab-pane" id="tab1">
+                <label>Etat civil</label>
+                <table border="1" style="width:100%">
+                    <tr>
+                        <td>Nom: </td>
+                        <td>Prénom: </td>
+                        <td>Sexe: </td>
+                        <td>Age: </td>
+                    </tr>
+                    <tr>
+                        <td>Nom jeune fille: </td>
+                        <td>Né(e) le: </td>
+                    </tr>
+                    <tr>
+                        <td>N° Sécurité Sociale: </td>
+                        <td>Nationalité: </td>
+                        <td>Email: </td>
+                    </tr>
+                    <tr>
+                        <td>Situation familiale: </td>
+                        <td>Nbre d'enfants: </td>
+                        <td>Nbre Pers à charge: </td>
+                    </tr>
+                </table>
+                <label>Adresse<span class="marge_conges">Congés</span><span class="marge_cumul_paie">Cumul Paie</span></label>
+                <table border="1" style="width:100%">
+                    <tr>
+                        <td>Adresse postale</td>
+                        <td>Echus: </td>
+                        <td>Absences</td>
+                    <tr>
+                        <td></td>
+                        <td>En cours: </td>
+                        <td>Horaire Annuel: </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>Ancienneté: </td>
+                        <td>Brut Annuel: </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>Divers: </td>
+                    </tr>
+                </table>
+                <label>Contrat actuel</label>
+                <table border="1" style="width:100%">
+                    <tr>
+                        <td>Emploi: </td>
+                        <td>Etablissement: </td>
+                        <td>Activité: </td>
+                    </tr>
+                    <tr>
+                        <td>Entrée groupe: </td>
+                        <td>Ancienneté: </td>
+                        <td>Qualification: </td>
+                    </tr>
+                    <tr>
+                        <td>Date agence :</td>
+                        <td>Motif: </td>
+                        <td>Type contrat</td>
+                    </tr>
+                    <tr>
+                        <td>Date métier: </td>
+                        <td>Date de sortie: </td>
+                        <td>Motif de sortie: </td>
+                    </tr>
+                    <tr>
+                        <td>Horaire Mensuel: </td>
+                        <td>Taux Horaire: </td>
+                        <td>Salaire de Base: </td>
+                    </tr>
+                </table>
+                <label>Expérience Professionnelle GSF</label>
+                <table border="1" style="width:100%">
+                    <tr>
+                        <td>Date</td>
+                        <td>Emploi</td>
+                        <td>Société</td>
+                        <td>Etablissement</td>
+                        <td>Contrat</td>
+                        <td>Entrée</td>
+                        <td>Sortie</td>
+                        <td>Stc</td>
+                        <td>Mot sit après sort</td>
+                    </tr>
+                    <tr>
+                        <td>GGDGD</td>
+                        <td>dgdgdgdg</td>
+                        <td>cvcvcvcb</td>
+                        <td>,n,n,n</td>
+                        <td>vcvcvcv</td>
+                        <td>rerere</td>
+                        <td>nbnbnb</td>
+                        <td>qsqsqs</td>
+                        <td>bnbnbn</td>
+                    </tr>
+                </table>
+                <label>Heures Contractuelles</label>
+                <table border="1" style="width:100%">
+                    <tr>
+                        <td>Date d'effet</td>
+                        <td>LibelléActivité</td>
+                        <td>H.présence/sem.</td>
+                    </tr>
+                    <tr>
+                        <td>TEST</td>
+                        <td>BCBBCBb</td>
+                        <td>vgfgfgf</td>
+                    </tr>
+                </table>
+            </div>
+
+            <!-- Tab panel 2-->
+            <div class="tab-pane" id="tab2">
+                <div id="scheduler"></div>
+                <script>
+                    $("#scheduler").kendoScheduler({
+                        date: new Date("2015/12/09"),
+                        views: [
+                          "day", // a view configuration can be a string (the view type) or an object (the view configuration)
+                          { type: "week", selected: true }, // the "week" view will appear as initially selected
+                          "month",
+                          "agenda"
+                        ],
+                        dataSource: [
+                          {
+                              id: 1,
+                              start: new Date("2015/12/09 08:00 AM"),
+                              end: new Date("2015/12/09 09:00 AM"),
+                              title: "Job Interview"
+                          },
+                          {
+                              id: 2,
+                              start: new Date("2015/12/10 10:15 AM"),
+                              end: new Date("2015/12/10 12:30 PM"),
+                              title: "Job Interview 2"
+                          }
+                        ]
+                    });
+                </script>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,487 @@
+﻿@using Kendo.Mvc.UI
+
+@{
+    ViewBag.Title = "Home Page";
+}
+
+
+
+<!-- Section 1 ========================================================================================================================= -->
+<section>
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Mod siteSelection -->            
+            <div class="col-md-12">
+                @Html.Module("Mes Collaborateurs", "glyphicon glyphicon-search", "Mes Collaborateurs",
+                @<text>
+                    <div class="demo-section">
+                        <h2>Liste de mes collaborateurs</h2>
+                        @(Html.DropDownList()
+                          .Name("ListColl")
+                          .HtmlAttributes(new { style = "width: 400px" })
+                          .DataTextField("Text")
+                          .DataValueField("Value")
+                          .DataSource(source =>
+                          {
+                              source.Read(read =>
+                              {
+                                  read.Action("ListBinding_Employees", "Home");
+                              });
+                          })
+                          //.Height(300)
+                          //.HeaderTemplate("<div class=\"dropdown-header\">" +                                        
+                          //              "<span class=\"k-widget k-header\">Information salarié</span>" +
+                          //          "</div>")
+                          //.Template("<span class=\"k-state-default\"><h3>#: data.RDosNom #</h3><p>#: data.RDosPrenom #</p></span>")
+                          //.ValueTemplate("<span>#:data.RDosNom#</span>")
+                        )
+                    </div>                    
+                </text>
+                )
+            </div>
+            <script>
+                $(document).ready(function () {
+
+                    $("#Launch").click(function (event)
+                    {
+
+                        var grid = $("#grid").data("kendoGrid");
+                        grid.dataSource.read();
+
+                        //event.preventDefault();
+                        //var PersoId = $("#userNumSS").val();
+                        //$.ajax({
+                        //    url: "/Grid/HierarchyBinding_EmployeeData",
+                        //    type: "GET",
+                        //    cache: 'false',
+                        //    data: {
+                        //        matricule: PersoId
+                        //    }
+                        //});
+                    });
+                });
+            </script>
+
+
+
+        <style>
+            .dropdown-header {
+                font-size: 1.2em;
+            }
+
+                .dropdown-header > span {
+                    -webkit-box-sizing: border-box;
+                    -moz-box-sizing: border-box;
+                    box-sizing: border-box;
+                    text-align: left;
+                    display: inline-block;
+                    border-style: solid;
+                    border-width: 0 0 1px 1px;
+                    padding: .3em .6em;
+                    width: 312px;
+                }
+
+                    .dropdown-header > span:first-child {
+                        width: 82px;
+                        border-left-width: 0;
+                    }
+
+            .demo-section {
+                width: 400px;
+                margin: 35px auto 50px;
+                padding: 30px;
+            }
+
+                .demo-section h2 {
+                    text-transform: uppercase;
+                    font-size: 1.2em;
+                    margin-bottom: 10px;
+                }
+
+            .selected-value {
+                float: left;
+                width: 16px;
+                margin: 0 4px;
+            }
+
+            #customers-list .k-item > span {
+                -webkit-box-sizing: border-box;
+                -moz-box-sizing: border-box;
+                box-sizing: border-box;
+                display: inline-block;
+                border-style: solid;
+                border-width: 0 0 1px 1px;
+                vertical-align: top;
+                min-height: 95px;
+                width: 79%;
+                padding: .6em 0 0 .6em;
+            }
+
+                #customers-list .k-item > span:first-child {
+                    width: 77px;
+                    border-left-width: 0;
+                    padding: .6em 0 0 0;
+                }
+
+            #customers-list img {
+                -moz-box-shadow: 0 0 2px rgba(0,0,0,.4);
+                -webkit-box-shadow: 0 0 2px rgba(0,0,0,.4);
+                box-shadow: 0 0 2px rgba(0,0,0,.4);
+                width: 70px;
+                height: 70px;
+            }
+
+            #customers-list h3 {
+                font-size: 1.6em;
+                margin: 0;
+                padding: 0;
+            }
+
+            #customers-list p {
+                margin: 0;
+                padding: 0;
+            }
+        </style>
+        
+       <div class="col-md-12">
+                @Html.Module("dateGTA", "glyphicon glyphicon-calendar", "Affichage GTA",
+                    @<text>
+                        <div class="demo-section2">
+                            
+                            <div id="special-days">
+                                @(Html.HtmlMVC.Kendo().Scheduler<Kendo.Mvc.UI.ISchedulerEvent>()
+                                    .Name("scheduler")
+                                    .Date(new DateTime(2013, 6, 13))
+                                    .StartTime(new DateTime(2013, 6, 13, 7, 00, 00))
+                                    .Height(600)
+                                    .Views(views =>
+                                    {
+                                        views.DayView();
+                                        views.WorkWeekView(workWeekView => workWeekView.Selected(true));
+                                        views.WeekView();
+                                        views.MonthView();
+                                        views.AgendaView();
+                                        views.TimelineView();
+                                    })
+                                    .Timezone("Etc/UTC")
+                                )
+                            </div>
+                        </div>
+                    </text>
+                    )
+            </div>
+
+                @*<script type="text/javascript">
+                    $(function () {
+                        $("#people :checkbox").change(function (e) {
+                            var checked = $.map($("#people :checked"), function (checkbox) {
+                                return parseInt($(checkbox).val());
+                            });
+
+                            var filter = {
+                                logic: "or",
+                                filters: $.map(checked, function (value) {
+                                    return {
+                                        operator: "eq",
+                                        field: "OwnerID",
+                                        value: value
+                                    };
+                                })
+                            };
+
+                            var scheduler = $("#scheduler").data("kendoScheduler");
+
+                            scheduler.dataSource.filter(filter);
+                        });
+                    })
+                </script>
+
+                <style>
+                #scheduler {
+                    font-size: 14px;
+                }
+                #team-schedule {
+                    background: url('@Url.Content("~/Content/web/scheduler/")team-schedule.png') transparent no-repeat;
+                    height: 115px;
+                    position: relative;
+                }
+
+                #people {
+                    background: url('@Url.Content("~/Content/web/scheduler/")scheduler-people.png') no-repeat;
+                    width: 345px;
+                    height: 115px;
+                    position: absolute;
+                    right: 0;
+                }
+                #alex {
+                    position: absolute;
+                    left: 4px;
+                    top: 81px;
+                }
+                #bob {
+                    position: absolute;
+                    left: 119px;
+                    top: 81px;
+                }
+                #charlie {
+                    position: absolute;
+                    left: 234px;
+                    top: 81px;
+                }
+                </style>*@
+        @*<div id="employee-list" class="col-sm-6">
+                <h3>TEAM MEMBERS</h3>
+                @(Html.ListView<Gsf.TestFwk.Web.Models.RecupDossier>()
+                        .Name("EmployeesList")
+                        .TagName("div")
+                        .ClientTemplateId("employeeItemTemplate")
+                        .DataSource(dataSource =>
+                        {
+                            dataSource.Read(read => read.Action("HierarchyBinding_Employees", "Grid"));
+                            dataSource.PageSize(9);
+                        })
+                )
+            </div>
+            <script type="text/x-kendo-tmpl" id="employeeItemTemplate">
+                <div class="employee">
+                    <div class="employee-wrapper">
+                        <dl class="employee-list-details">
+                            <dt class="name">#:model_nom# #:model_prenom#</dt>
+                            <dd class="title">#:model_matricule#</dd>
+                        </dl>
+                    </div>
+                </div>
+            </script>*@
+
+
+
+
+
+
+    </div>
+        <!-- Row-->
+    </div>
+    <!-- End Container-->
+</section>
+<!-- /Section 1-->
+
+
+@*<section>
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Tabs -->
+            <div role="tabpanel" class="col-sm-12 col-md-12">
+
+                <!-- Nav tabs -->
+                <ul class="nav nav-tabs" role="tablist">
+                    <li role="presentation" class="active"><a href="#tab1" aria-controls="tab1" role="tab" data-toggle="tab">Liste de(s) Salarié(s)</a></li>
+                </ul>
+
+                <!-- Tab content-->
+                <div class="tab-content">
+                    <!-- Tab pane 1-->
+                    <div role="tabpanel" class="tab-pane active" id="tab1">
+
+                        <div class="telerik-wrapper">
+
+
+                            @(Html.Grid<Gsf.TestFwk.Web.Models.RecupDossier>()
+                                .Name("grid")
+                                .Columns(columns =>
+                                {
+                                    columns.Bound(c => c.RDosMatriculePres).Title("Matricule").Width(150);
+                                    columns.Bound(c => c.RDosNom).Title("Nom").Width(200).Filterable(ftb => ftb.Cell(cell => cell.Operator("contains")));
+                                    columns.Bound(c => c.RDosPrenom).Title("Prénom").Width(200);
+                                    columns.Bound(c => c.RDosAge).Title("Age").Width(100);
+                                    columns.Bound(c => c.RDosDateEntreeSoc).Title("Date Entrée Société").Format("{0:dd/MM/yyyy}").Width(150);
+                                    //columns.Bound(c => c.RDosNumSS).Title("Numéro").Width(200);
+                                    columns.Command(command => {
+                                        command.Custom("E-S").Click("showDetails").HtmlAttributes(new { @class = "glyphicon glyphicon-transfer" }).HtmlAttributes(new { style = "width:100px;" });
+                                        command.Custom("Affect").Click("showDetails2").HtmlAttributes(new { @class = "glyphicon glyphicon-check" }).HtmlAttributes(new { style = "width:100px;" });
+                                    }).Title("Détails").Width(150);
+                                    //columns.Command(command => command.Custom(" Affectation").Click("showDetails2").HtmlAttributes(new { @class = "glyphicon glyphicon-check" })).Title("Détails Affectation").Width(150);
+
+                                    //columns.Bound(c => c.matriculeNew).Title("Matricule").Width(200);
+                                    //columns.Bound(c => c.nom).Title("Nom").Width(200).Filterable(ftb => ftb.Cell(cell => cell.Operator("contains")));
+                                    //columns.Bound(c => c.prenom).Title("Prénom").Width(200);
+                                    //columns.Bound(c => c.age).Title("Age").Width(200);
+                                    ////columns.Bound(c => c.ES[0].DateSortie[0].Day.ToString()).Title("Test").Width(200);
+                                    //int i = 0;
+                                    //foreach (Gsf.TestFwk.Web.ServiceHR.DossierHR col in ViewBag.lo_dossiers)
+                                    //{
+                                    //    columns.Bound(col.ES[i].DateSortie[i].Day.ToString()).Title("Test").Width(200);
+                                    //    i++;
+                                    //}
+                                    //columns.Bound(c => c.dateEntSoc).Title("Date Entrée Société").Format("{0:dd/MM/yyyy}").Width(150);
+                                })
+                                .Sortable()
+                                .Scrollable()
+                                //.ClientDetailTemplateId("template")
+                                //.HtmlAttributes(new { style = "height:430px;" })
+                                .Filterable()
+                                .Groupable()
+                                .Pageable(pageable => pageable
+                                .Refresh(true)
+                                .PageSizes(true)
+                                .ButtonCount(5))
+                                //.Events(events => events.DataBound("dataBound"))
+                                .DataSource(dataSource => dataSource
+                                    .Ajax()
+                                    .Read(read => read.Action("HierarchyBinding_Employees", "Grid").Data("additionalInfo"))
+                                )
+                                .ColumnMenu()
+                                //.Events(events => events.DataBound("dataBound"))
+
+                            )
+                            @(Html.Window().Name("Details")
+                                .Title("Détails E/S")
+                                .Visible(false)
+                                .Modal(true)
+                                .Draggable(true)
+                                .Width(370)
+                            )
+                            @(Html.Window().Name("Details2")
+                                .Title("Détails Affectation")
+                                .Visible(false)
+                                .Modal(true)
+                                .Draggable(true)
+                                .Width(370)
+                            )
+
+                            <script>
+                                function additionalInfo() {
+                                    alert($("#userNumSS").val());
+
+                                return {
+                                    matricule: $("#userNumSS").val()
+                                }
+                            }
+                           </script>
+                            <script type="text/x-kendo-template" id="template">
+                             <div id="details-container">
+                                        <center>
+                                            <h2><span class="glyphicon glyphicon-user" aria-hidden="true"></span>#= RDosNom # #= RDosPrenom #</h2>
+                                        </center>
+                                            <em>Matricule : #= RDosMatriculePres # - Numéro SS :  #= RDosNumSS #
+                                    </em>
+                                <br>
+                                <dl>
+                                    <dt>Date Entrée : #= kendo.toString(kendo.parseDate(RDosDateEntree, 'yyyy-MM-dd'), 'dd/MM/yyyy') #</dt>
+                                    <dt>Motif Entrée : #= RDosMotifEntree #  #= RDosMotifEntreeLib #</dt>
+                                </dl>
+                                <br>
+                                <dl>
+                                    <dt>Date Sortie : #= kendo.toString(kendo.parseDate(RDosDateSortie, 'yyyy-MM-dd'), 'dd/MM/yyyy') #</dt>
+                                    <dt>Motif Sortie : #= RDosMotifSortie #  #= RDosMotifSortieLib #</dt>
+                                </dl>
+                            </div>
+                            </script>
+
+                            <script type="text/x-kendo-template" id="template2">
+                                <div id="details-container">
+                                    <center>
+                                        <h2><span class="glyphicon glyphicon-user" aria-hidden="true"></span>#= RDosNom # #= RDosPrenom #</h2>
+                                    </center>
+                                    <em>
+                                        Matricule : #= RDosMatriculePres # - Numéro SS :  #= RDosNumSS #
+                                    </em>
+                                    <br>
+                                    <dl>
+                                        <dt>Date début affectation : #= kendo.toString(kendo.parseDate(RDosDateDebAF, 'yyyy-MM-dd'), 'dd/MM/yyyy') #</dt>
+                                        <dt>Date fin affectation : #= kendo.toString(kendo.parseDate(RDosDateFinAF, 'yyyy-MM-dd'), 'dd/MM/yyyy') #</dt>
+                                        <dt>Code Emploi : #= RDosEmploiAF #  #= RDosEmploiLibAF #</dt>
+                                    </dl>
+                                </div>
+                            </script>
+
+                            <script type="text/javascript">
+                                var detailsTemplate = kendo.template($("#template").html());
+                                var detailsTemplate2 = kendo.template($("#template2").html());
+
+                                function showDetails(e) {
+                                    e.preventDefault();
+
+                                    var dataItem = this.dataItem($(e.currentTarget).closest("tr"));
+                                    var wnd = $("#Details").data("kendoWindow");
+
+                                    wnd.content(detailsTemplate(dataItem));
+                                    wnd.center().open();
+                                }
+                                function showDetails2(e) {
+                                    e.preventDefault();
+
+                                    var dataItem = this.dataItem($(e.currentTarget).closest("tr"));
+                                    var wnd = $("#Details2").data("kendoWindow");
+
+                                    wnd.content(detailsTemplate2(dataItem));
+                                    wnd.center().open();
+                                }
+                            </script>
+
+                            <script>
+                                function dataBound() {
+                                    this.expandRow(this.tbody.find("tr.k-master-row").first());
+                                }
+                            </script>
+                            <script id="template" type="text/kendo-tmpl">
+                                        @(Html.Grid<Gsf.TestFwk.Web.Models.RecupData>()
+                                            .Name("grid_#=Matricule#")
+                                            .DataSource(dataSource => dataSource
+                                                        .Ajax()
+                                                        .PageSize(10)
+                                                        .Read(read => read.Action("HierarchyBinding_EmployeeData", "Grid", new { matricule = ":Matricule" }))
+                                                //.Read(read2 => read2.Action("Salarie_Read", "Home"))
+                                            )
+                                            .Columns(columns =>
+                                            {
+                                                columns.Bound(c => c.RDatDateEntree).Title("Date d'entrée").Format("{0:dd/MM/yyyy}").Width(150);
+                                                columns.Bound(c => c.RDatMotifEntree).Title("Motif d'entrée").Width(150).ClientTemplate("<strong>\\#:RDatMotifEntree\\#</strong>");
+                                                columns.Bound(c => c.RDatMotifEntreeLib).Title("Libellé").Width(150);
+                                                columns.Bound(c => c.RDatDateSortie).Title("Date de sortie").Format("{0:dd/MM/yyyy}").Width(150);
+                                                columns.Bound(c => c.RDatMotifSortie).Title("Motif de sortie").Width(150);
+                                                columns.Bound(c => c.RDatMotifSortieLib).Title("Libellé").Width(150);
+                                                //columns.Bound(c => c.matriculeNew).Title("Matricule").Width(200);
+                                                //columns.Bound(c => c.ES[0].DateEntree[0].Date).Title("Date d'entrée").Format("{0:dd/MM/yyyy}").Width(200).ClientTemplate("<strong><#= ES #></strong>");
+                                                //int i = 0;
+                                                //foreach (Gsf.TestFwk.Web.ServiceHR.DossierHR col in ViewBag.lo_dossiers)
+                                                //{
+                                                //    columns.Bound(col.ES[i].DateSortie[i].Day.ToString()).Title("Test").Width(200);
+                                                //    i++;
+                                                //}
+                                                //columns.Bound(c => c.ES.First().DateEntree.First()).Title("Numéro SS");
+                                                //columns.Bound(c => c.ES[0].DateEntree[0]).Title("Date d'entrée").Format("{0:dd/MM/yyyy}").Width(200).ClientTemplate("<strong><#= ES #></strong>");
+                                                //columns.Bound(c => c.ES[0].DateSortie[0]).Title("Date de sortie").Format("{0:dd/MM/yyyy}").Width(200).ClientTemplate("<strong><#= ES #></strong>");
+                                            })
+
+                                            .Pageable(pageable => pageable
+                                            .Refresh(true)
+                                            .PageSizes(true)
+                                            .ButtonCount(5)).Sortable()
+                                            .ToClientTemplate())
+                            </script>
+
+
+                            <script>
+                                function EmployeeData() {
+                                    return {
+                                        numeroSS : "26407"
+                                    };
+                                }
+                            </script>
+                            
+
+                            @*<script>
+                                $("#launch").click(function () {
+                                    $("#grid").refresh(true);
+                                    alert("OK!!!");
+                                });
+                            </script>*@
+                        @*</div>
+                        <hr>
+                    </div>
+                    <br />
+                </div>
+            </div>
+        </div>
+    </div>
+</section>*@

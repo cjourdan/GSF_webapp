@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
+  <siteMapNode title="Home" controller="Home" action="Overview">
+    <siteMapNode title="Accueil" description="glyphicon glyphicon-home" >
+      <siteMapNode controller="Home" action="Index" title="Recherche salarié(s)" description="glyphicon glyphicon-list" />
+      <siteMapNode controller="Accueil" action="Collaborateur" title="Mes Collaborateurs" description="glyphicon glyphicon-list" />
+      <siteMapNode controller="Accueil" action="Archives" title="Archives" description="glyphicon glyphicon-pushpin" />
+    </siteMapNode>
+    <siteMapNode title="Administration" description="glyphicon glyphicon-dashboard" >
+      <siteMapNode controller="Administration" action="Fonctionelle" title="Fonctionelle" description="glyphicon glyphicon-random" />
+      <siteMapNode controller="Administration" action="Technique" title="Technique" description="glyphicon glyphicon-wrench" >
+        <siteMapNode controller="Administration" action="Fonctionelle" title="Test"/>
+      </siteMapNode>
+    </siteMapNode>
+  </siteMapNode>
+</siteMap>

@@ -1,0 +1,329 @@
+http://sgsrep.gsf.group:9010/gsf-hr-ws-cjour/pocService?wsdl
+
+
+Fichier Collaborateur.cshtml
+
+@(Html.Grid<Gsf.TestFwk.Web.Models.RecupDossier>()
+    .Name("grid")
+    .Columns(columns =>
+    {
+        columns.Bound(p => p.RDosMatriculePres).Title("Matricule");
+        columns.Bound(p => p.RDosNom).Title("Nom");
+        columns.Bound(p => p.RDosPrenom).Title("Prénom");
+        columns.Bound(p => p.RDosSexe).Title("Sexe");
+        columns.Bound(p => p.RDosAge).Title("Age");
+        columns.Bound(p => p.RDosNomNaiss).Title("Nom de naissance");
+        columns.Bound(p => p.RDosDateNaiss).Title("Date de naissance");
+        columns.Bound(p => p.RDosNationalite).Title("Nationalité");
+        columns.Bound(p => p.RDosVilleNaiss).Title("Ville de naissance");
+        columns.Bound(p => p.RDosNumSS).Title("NumSS");
+        //columns.Bound(p => p.RDosEmail).Title("Email");
+        columns.Bound(p => p.RDosSitFAm).Title("SitFAm");
+        columns.Bound(p => p.RDosNbKids).Title("Nbre Kids");
+        columns.Bound(p => p.RDosNbPersCharge).Title("Nbre pers charge");
+        columns.Bound(p => p.RDosAdresse).Title("Adresse");
+        //columns.Bound(p => p.RDosDateEntreeSoc).Format("{0:MM/dd/yyyy}");
+    })
+    .Pageable()
+    .Sortable()
+    .Scrollable()
+    .HtmlAttributes(new { style = "height:550px;" })
+    .DataSource(dataSource => dataSource
+        .Ajax()
+        .PageSize(20)
+        .Read(read => read.Action("FicheIndicative_Employees", "Fiche"))
+     )
+                            
+							
+FicheController.cs
+						
+using System.Collections.Generic;
+using System.Web.Mvc;
+using System.Security.Claims;
+using Kendo.Mvc.UI;
+using Kendo.Mvc.Extensions;
+using System;
+using System.Linq;
+using Gsf.Framework.Web.Securite;
+using Gsf.Framework.Serialization;
+using Gsf.Framework.Web.Securite.Owin;
+using Gsf.Framework.Web;
+using Gsf.TestFwk.Web.ServiceHR;
+using Gsf.TestFwk.Web.Models;
+using Kendo.Mvc.UI.Html;
+
+namespace Gsf.TestFwk.Web.Controllers
+{
+    public partial class FicheController : Gsf.Framework.Web.MVC.Controllers.GsfBaseController
+    {
+        // GET: FicheIndicative
+        public ActionResult FicheIndicative()
+        {
+            return View();
+        }
+
+        public ActionResult FicheIndicative_Employees([DataSourceRequest] DataSourceRequest request, Int32? matricule, String str_date)
+        {
+
+            ServiceHR.POCServicePortTypeClient lo_service = new ServiceHR.POCServicePortTypeClient();
+
+            string li_matricule_employees = "7251";
+            str_date = "2013-01-01";
+
+
+            if (li_matricule_employees != null)
+            {
+                lo_service.Open();
+
+                EmployeDto la_fiche = lo_service.getFicheEmploye(new ServiceHR.RequestFicheEmployeDto() { matricule = li_matricule_employees });
+
+                lo_service.Close();
+
+                List<RecupDossier> lo_MesDossiers = new List<RecupDossier>();
+
+                lo_MesDossiers.Add(new RecupDossier
+                {
+                    RDosMatriculePres = la_fiche.matricule,
+                    RDosNom = la_fiche.nom,
+                    RDosPrenom = la_fiche.prenom,
+                    RDosSexe = la_fiche.sexe,
+                    RDosAge = la_fiche.age,
+                    RDosNomNaiss = la_fiche.nomNaiss,
+                    RDosDateNaiss = la_fiche.dateNaiss,
+                    RDosNationalite = la_fiche.nationalite,
+                    RDosVilleNaiss = la_fiche.villeNaiss,
+                    RDosNumSS = la_fiche.numSS,
+                    //RDosEmail = la_fiche.email,
+                    RDosSitFAm = la_fiche.sitFAm,
+                    RDosNbKids = la_fiche.nbKids,
+                    RDosNbPersCharge = la_fiche.nbPersCharge,
+                    RDosAdresse = la_fiche.adresse
+                });
+
+                return Json(lo_MesDossiers.ToDataSourceResult(request));
+            }
+            else
+            {
+                return Json(null);
+            }
+        }
+    }
+}
+
+IndexController.cs
+using System.Collections.Generic;
+using System.Web.Mvc;
+using System.Security.Claims;
+using Kendo.Mvc.UI;
+using Kendo.Mvc.Extensions;
+using System;
+using System.Linq;
+using Gsf.Framework.Web.Securite;
+using Gsf.Framework.Serialization;
+using Gsf.Framework.Web.Securite.Owin;
+using Gsf.Framework.Web;
+using Gsf.TestFwk.Web.ServiceHR;
+using Gsf.TestFwk.Web.Models;
+using Kendo.Mvc.UI.Html;
+using Gsf.Framework.Web.MVC.URLEncryption;
+
+
+
+namespace Gsf.TestFwk.Web.Controllers
+{
+    public partial class HomeController : Gsf.Framework.Web.MVC.Controllers.GsfBaseController
+    {
+        public ActionResult Index()
+        {
+            return View();
+        }
+
+
+        // Données Tableau Principal
+
+        public ActionResult HierarchyBinding_Employees([DataSourceRequest] DataSourceRequest request, Int32? numSS, DateTime dateEmbParam, String dt_dateDebutGTA, String dt_dateFinGTA, String nomParam, String prenomParam)
+        {
+            ServiceHR.POCServicePortTypeClient lo_service = new ServiceHR.POCServicePortTypeClient();
+
+            //dateEmbParam = new DateTime(2015, 1, 1);
+            string str_dateEmbParam = dateEmbParam.ToString("yyyy-MM-dd");
+            str_dateEmbParam = "2013-01-01";
+
+            dt_dateDebutGTA = "2013-01-01";
+            dt_dateFinGTA = "2013-05-01";
+
+            nomParam = "mercurin";
+            prenomParam = "jerome";
+
+            string li_numSS = Convert.ToString(numSS);
+
+            if (li_numSS != null)
+            {
+                lo_service.Open();
+                li_numSS = "1761083137292";
+                string nomParamMaj = nomParam.ToUpper();
+                string prenomParamMaj = prenomParam.ToUpper();
+
+                List<DossierHRDto> lo_dossiers = lo_service.getDossierHR(new ServiceHR.RequestDossierHRDto() { numSS = li_numSS, nom = nomParamMaj, prenom = prenomParamMaj, dateEmbauche = str_dateEmbParam, dateDebutGTA = dt_dateDebutGTA, dateFinGTA = dt_dateFinGTA }).ToList();
+                //264075901
+
+                
+
+                lo_dossiers.Count();
+                lo_service.Close();
+
+                IEnumerable<RecupDossier> lo_MesDossiers = (from test in lo_dossiers
+                                                            select new RecupDossier()
+                                                            {
+                                                                RDosNom = test.nom,
+                                                                RDosPrenom = test.prenom,
+                                                                RDosAge = Convert.ToInt16(test.age), //RDosAge = test.age,
+                                                                RDosDateEntreeSoc = test.dateEntSoc,
+                                                                Matricule = Convert.ToInt32(test.matriculeNew),
+                                                                RDosMatriculePres = test.matriculeNew,
+                                                                RDosNumSS = test.numSS,
+                                                                RDosDateSortie = test.es[0].dateSortie[0],
+                                                                RDosDateEntree = test.es[0].dateEntree[0],
+                                                                RDosMotifEntree = test.es[0].motifEntree[0],
+                                                                RDosMotifEntreeLib = test.es[0].motifEntreeLib[0],
+                                                                RDosMotifSortie = test.es[0].motifSortie[0],
+                                                                RDosMotifSortieLib = test.es[0].motifSortieLib[0],
+                                                                RDosDateDebAF = test.affect[0].dateDebut[0],
+                                                                RDosDateFinAF = test.affect[0].dateFin[0],
+                                                                RDosEmploiAF = test.affect[0].emploi[0],
+                                                                RDosEmploiLibAF = test.affect[0].emploiLib[0],
+                                                                //model_date_sortie = test.ES[0].DateSortie[0],
+                                                                //model_date_entree = test.ES[0].DateEntree[0],
+                                                                //model_motif_entree = test.ES[0].MotifEntree[0],
+                                                                //model_motif_entree_lib = test.ES[0].MotifEntreeLib[0],
+                                                                //model_motif_sortie = test.ES[0].MotifSortie[0],
+                                                                //model_motif_sortie_lib = test.ES[0].MotifSortieLib[0],
+                                                            });
+
+                return Json(lo_MesDossiers.ToDataSourceResult(request));
+            }
+            else
+            {
+                return Json(null);
+            } 
+        }
+
+        // Données Sous Tableau 
+        [AllowClearQSAttribute(Params = "numSS")]
+        public ActionResult HierarchyBinding_EmployeeData([DataSourceRequest] DataSourceRequest request, Int32? numSS, String dateEmbauche, String dateDebutGTA, String dateFinGTA, String nom, String prenom)
+        {
+            ServiceHR.POCServicePortTypeClient lo_service = new ServiceHR.POCServicePortTypeClient();
+
+            dateEmbauche = "2013-01-01";
+            dateDebutGTA = "2013-01-01";
+            dateFinGTA = "2013-05-01";
+
+            nom = "MERCURIN";
+            prenom = "JEROME";
+
+            string li_numSS = Convert.ToString(numSS);
+
+            if (li_numSS != null)
+            {
+
+                lo_service.Open();
+                List<DossierHRDto> lo_dossiers = lo_service.getDossierHR(new ServiceHR.RequestDossierHRDto() { numSS = li_numSS, nom = nom, prenom = prenom, dateEmbauche = dateEmbauche, dateDebutGTA = dateDebutGTA, dateFinGTA = dateFinGTA }).ToList();
+                
+                //SalarieDto lo_dossiers = lo_service.getEmployes(new ServiceHR.RequestListeSalarieDto() { matricule = li_numSS, nom = nom, prenom = prenom, numSS = li_numSS, date = dateEmbauche });
+                //264075901s
+                lo_dossiers.Count();
+                lo_service.Close();
+
+                List<RecupData> lo_MesDossiers = new List<RecupData>();
+
+                lo_MesDossiers.Add(new RecupData
+                                                         {
+                                                             //model_nom = test.nom,
+                                                             //model_prenom = test.prenom,
+                                                             //model_age = test.age,
+                                                             //model_date_entree_soc = test.dateEntSoc,
+                                                             Matricule = 1,//Convert.ToInt32(test.matriculeNew),
+                                                             RDatDateSortie = DateTime.Now,//. test.es[0].dateSortie[0],
+                                                             //RDatDateEntree = test.es[0].dateEntree[0],
+                                                             //RDatMotifEntree = test.es[0].motifEntree[0],
+                                                             //RDatMotifEntreeLib = test.es[0].motifEntreeLib[0],
+                                                             //RDatMotifSortie = test.es[0].motifSortie[0],
+                                                             //RDatMotifSortieLib = test.es[0].motifSortieLib[0],
+                                                         });
+                    
+                    
+                    //(from test in lo_dossiers
+                    //                                     select new RecupData()
+                    //                                     {
+                    //                                         //model_nom = test.nom,
+                    //                                         //model_prenom = test.prenom,
+                    //                                         //model_age = test.age,
+                    //                                         //model_date_entree_soc = test.dateEntSoc,
+                    //                                         Matricule = Convert.ToInt32(test.matriculeNew),
+                    //                                         RDatDateSortie = test.es[0].dateSortie[0],
+                    //                                         //RDatDateEntree = test.es[0].dateEntree[0],
+                    //                                         //RDatMotifEntree = test.es[0].motifEntree[0],
+                    //                                         //RDatMotifEntreeLib = test.es[0].motifEntreeLib[0],
+                    //                                         //RDatMotifSortie = test.es[0].motifSortie[0],
+                    //                                         //RDatMotifSortieLib = test.es[0].motifSortieLib[0],
+                    //                                     });
+                return Json(lo_MesDossiers.ToDataSourceResult(request));
+            }
+            else
+            {
+                return Json(null);
+            }
+        }
+    }
+}
+
+RecupDossier.cs
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+
+namespace Gsf.TestFwk.Web.Models
+{
+    public class RecupDossier
+    {
+        public RecupDossier()
+        {
+            this.Datas = new HashSet<RecupData>();
+        }
+
+        public String RDosNom { get; set; }
+        public String RDosPrenom { get; set; }
+        public Nullable<int> Matricule { get; set; }
+        public String RDosMatriculePres { get; set; }
+        public Nullable<int> RDosAge { get; set; }
+        public DateTime RDosDateEntreeSoc { get; set; }
+        public String RDosNumSS { get; set; }
+
+        public Nullable<DateTime> RDosDateEntree { get; set; }
+        public Nullable<DateTime> RDosDateSortie { get; set; }
+        public String RDosMotifEntree { get; set; }
+        public String RDosMotifSortie { get; set; }
+        public String RDosMotifEntreeLib { get; set; }
+        public String RDosMotifSortieLib { get; set; }
+
+        public Nullable<DateTime> RDosDateDebAF { get; set; }
+        public Nullable<DateTime> RDosDateFinAF { get; set; }
+        public String RDosEmploiAF { get; set; }
+        public String RDosEmploiLibAF { get; set; }
+
+        public virtual ICollection<RecupData> Datas { get; set; }
+
+        public String RDosSexe { get; set; }
+        public String RDosNomNaiss { get; set; }
+        public String RDosVilleNaiss { get; set; }
+        public DateTime RDosDateNaiss { get; set; }
+        public String RDosNationalite { get; set; }
+        //public String RDosEmail { get; set; }
+        public String RDosSitFAm { get; set; }
+        public Nullable<int> RDosNbKids {get; set;}
+        public Nullable<int> RDosNbPersCharge { get; set; }
+        public String RDosAdresse { get; set; }
+    }
+
+}

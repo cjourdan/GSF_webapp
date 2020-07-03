@@ -1,0 +1,15 @@
+﻿@inherits Gsf.Framework.Web.MVC.GsfWebViewPageSimple<Gsf.TestFwk.Web.Models.UserDeleteViewModel>
+
+<div class="container">
+    @using (Html.HtmlMVC.BeginForm("DeleteUser", "Home", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-signin" }))
+    {
+        @Html.PanelDefault("Suppression Utilisateur",
+        @<text>
+            @Html.TextBoxFor(m => m.Mail).PlaceHolder("Mail")
+            <button class="k-button k-primary fullwidth-input" type="submit">Supprimer Utilisateur</button>
+            @Html.ValidationSummary()
+        </text>,
+                                                                        "Fin")
+    }
+</div>
+<div class="bg_pattern"></div>
